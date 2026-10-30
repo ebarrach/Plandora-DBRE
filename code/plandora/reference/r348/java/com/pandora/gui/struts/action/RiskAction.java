@@ -1,0 +1,411 @@
+
+package com.pandora.gui.struts.action;
+
+import java.util.Iterator;
+import java.util.Vector;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import com.pandora.CategoryTO;
+import com.pandora.LeaderTO;
+import com.pandora.MetaFieldTO;
+import com.pandora.PlanningRelationTO;
+import com.pandora.ProjectTO;
+import com.pandora.RiskStatusTO;
+import com.pandora.RiskTO;
+import com.pandora.TransferObject;
+import com.pandora.UserTO;
+import com.pandora.delegate.CategoryDelegate;
+import com.pandora.delegate.MetaFieldDelegate;
+import com.pandora.delegate.ProjectDelegate;
+import com.pandora.delegate.RiskDelegate;
+import com.pandora.delegate.RiskStatusDelegate;
+import com.pandora.delegate.UserDelegate;
+import com.pandora.exception.BusinessException;
+import com.pandora.exception.MetaFieldNumericTypeException;
+import com.pandora.gui.struts.form.RiskForm;
+import com.pandora.helper.SessionUtil;
+
+/**
+ */
+public class RiskAction extends GeneralStrutsAction {
+    
+    
+	public ActionForward prepareForm(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+		final ProjectDelegate pdel = new ProjectDelegate();
+		final String forward = "showRisk";
+
+		try {
+			this.clearForm(form, request);
+			
+			final UserTO uto = SessionUtil.getCurrentUser(request);
+			final RiskForm rfrm = (RiskForm)form;
+			rfrm.setSaveMethod(RiskForm.INSERT_METHOD, uto);
+		
+			final ProjectTO pto = pdel.getProjectObject(new ProjectTO(rfrm.getProjectId()), true);
+			if (pto!=null) {
+				rfrm.setProject(pto);
+				rfrm.setProjectName(pto.getName());				
+			}
+			
+		    this.refresh(mapping, form, request, response);    
+		    this.refreshAuxiliarList(mapping, form, request, response);			
+
+		} catch(final Exception e){
+		    this.setErrorFormSession(request, "error.formRisk.showForm", e);
+		}	    
+	    
+		return mapping.findForward(forward);		
+	}
+	
+	public ActionForward navigate(ActionMapping mapping, ActionForm form,
+			 HttpServletRequest request, HttpServletResponse response){
+		return mapping.findForward("showRisk");
+	}
+	
+	public ActionForward saveRisk(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+		
+		ActionForward fwd = null;
+		boolean materialized = false;
+		final RiskForm frm = (RiskForm)form;
+		
+		try {
+			final RiskDelegate rdel = new RiskDelegate();
+			fwd = mapping.findForward("showRisk");
+			final RiskTO rto = this.getTransferObjectFromActionForm(frm, request);
+						
+			materialized = rdel.isMaterializedRisk(rto);
+		} catch(final MetaFieldNumericTypeException e){
+			this.setErrorFormSession(request, e.getMessage(), e.getMetaFieldName(), null, null, null, null, e);
+		} catch(final Exception e){
+		    this.setErrorFormSession(request, "error.formRisk.showForm", e);
+		}	    
+			
+		if (materialized) {
+			frm.setShowIssueConfirmation("on");
+		} else {
+			fwd = updateOrInsertRisk(mapping, form,	request, response);
+		}
+		
+		return fwd;		
+	}
+
+	public ActionForward updateOrInsertRisk(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+	    final String forward = "showRisk";
+		String errorMsg = "error.formRisk.showForm";
+		String succeMsg = "message.success";
+		final CategoryDelegate cdel = new CategoryDelegate();
+		
+		try {
+		    final RiskForm rfrm = (RiskForm)form;
+		    rfrm.setShowIssueConfirmation("off");
+		    final RiskDelegate rdel = new RiskDelegate();
+		    final RiskTO rto = this.getTransferObjectFromActionForm(rfrm, request);
+
+			CategoryTO cto = rto.getCategory();
+			cto = cdel.getCategory(cto);
+			rto.setCategory(cto);
+		    
+		    final String createIssue = request.getParameter("create_issue");
+		    rto.setCreateIssueLinked(createIssue!=null && 
+		    		createIssue.equals("on") && rdel.isMaterializedRisk(rto));		    
+		    
+			if (rfrm.getSaveMethod().equals(RiskForm.INSERT_METHOD)){
+			    errorMsg = "error.formRisk.insert";
+			    succeMsg = "message.insertRisk";
+			    rdel.insertRisk(rto);
+			} else {
+			    errorMsg = "error.formRisk.update";
+			    succeMsg = "message.updateRisk";
+			    rdel.updateRisk(rto);
+			}
+		
+			this.clear(mapping, form, request, response );				
+			this.setSuccessFormSession(request, succeMsg);				
+
+		    //set the current user connected
+			final UserTO uto = SessionUtil.getCurrentUser(request);			
+		    rfrm.setSaveMethod(RiskForm.INSERT_METHOD, uto);
+		    		        			
+		} catch(final MetaFieldNumericTypeException e){
+			this.setErrorFormSession(request, e.getMessage(), e.getMetaFieldName(), null, null, null, null, e);
+		} catch(final BusinessException e){
+		    this.setErrorFormSession(request, errorMsg, e);
+		} catch(final NullPointerException e){
+		    this.setErrorFormSession(request, errorMsg, e);		    
+		}	    
+		return mapping.findForward(forward);	    
+	}
+
+
+	public ActionForward refresh(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+	    final String forward = "showRisk";
+
+		try {
+		    final RiskForm rfrm = (RiskForm)form;
+		    final RiskDelegate rdel = new RiskDelegate();
+		    final ProjectTO pto = new ProjectTO(rfrm.getProjectId());
+		    
+		    final UserTO uto = SessionUtil.getCurrentUser(request);
+		    
+		    final Vector<RiskTO> oList = rdel.getRiskList(pto.getId(), uto.getId());
+		    request.getSession().setAttribute("riskList", oList);
+		    
+		    final CategoryDelegate cdel = new CategoryDelegate();
+		    final Vector<CategoryTO> cList = cdel.getCategoryListByType(CategoryTO.TYPE_RISK, pto, false);
+		    request.getSession().setAttribute("categoryList", cList);
+		    
+		    final RiskStatusDelegate rsdel = new RiskStatusDelegate();
+		    final Vector<RiskStatusTO> sList = rsdel.getRiskStatusList();
+		    request.getSession().setAttribute("riskStatusList", sList);
+
+	        final UserDelegate udel = new UserDelegate();
+		    final Vector<LeaderTO> projectLeaders = udel.getLeaderByProject("'" + pto + "'");
+		    final Vector<TransferObject> visibilityList = getVisibilityList(projectLeaders, uto, request);
+	        request.getSession().setAttribute("visibilityList", visibilityList);
+		    
+		    request.getSession().setAttribute("metaFieldList", new Vector<MetaFieldTO>());
+		    
+		    rfrm.setShowIssueConfirmation("off");
+		    
+		} catch(final BusinessException e){
+		   this.setErrorFormSession(request, "error.formRisk.showForm", e);
+		}
+	    
+		return mapping.findForward(forward);	    
+	}
+	
+	private Vector<TransferObject> getVisibilityList(Vector<LeaderTO> projectLeaders, UserTO uto, HttpServletRequest request){
+		final Vector<TransferObject> visibilityList = new Vector<TransferObject>();
+		visibilityList.add(new TransferObject("1", this.getBundleMessage(request, "label.public")));
+		
+		final Iterator<LeaderTO> itleader = projectLeaders.iterator();
+		while(itleader.hasNext()){
+			if(uto.getId().equals(itleader.next().getId())){
+				visibilityList.add(new TransferObject("0", this.getBundleMessage(request, "label.private")));
+				break;
+			}
+		}
+		return visibilityList;
+	}
+	
+
+	public void refreshAuxiliarList(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+            request.getSession().setAttribute("tendencyList", this.getTendencyCombo(request));
+            request.getSession().setAttribute("probabilityList", this.getProbabilityCombo(request));
+            request.getSession().setAttribute("impactList", this.getImpactCombo(request));
+	}
+
+	
+	public ActionForward showConfirmation(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+		final String forward = "showIssueRiskConfirm";
+		return mapping.findForward(forward);		
+	}
+
+	
+	
+    public ActionForward editRisk(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+	    final String forward = "showRisk";
+	    final RiskDelegate rdel = new RiskDelegate();
+		
+		try {
+			final MetaFieldDelegate mfdel = new MetaFieldDelegate();
+		    final RiskForm frm = (RiskForm)form;
+		    final RiskTO rto = rdel.getRisk(new RiskTO(frm.getId()));
+		    
+			if (frm.getId()!=null && !frm.getId().equals("")) {
+				final Vector<MetaFieldTO> list = mfdel.getListByProjectAndContainer(rto.getProject().getId(), frm.getCategoryId(), MetaFieldTO.APPLY_TO_RISK);
+				request.getSession().setAttribute("metaFieldList", list);		    
+			} else {
+			    request.getSession().setAttribute("metaFieldList", new Vector<MetaFieldTO>());
+			}
+		    
+		    this.getActionFormFromTransferObject(rto, frm, request);
+		    		    
+			//set current operation status for Updating	
+		    frm.setSaveMethod(RiskForm.UPDATE_METHOD, SessionUtil.getCurrentUser(request));
+		    
+		    frm.setShowIssueConfirmation("off");
+		    
+		} catch(final BusinessException e){
+		    this.setErrorFormSession(request, "error.formRisk.showForm", e);
+		}
+		
+		return mapping.findForward(forward);				
+	}
+    
+
+	public ActionForward removeRisk(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response){
+	    final String forward = "showRisk";
+		try {
+		    final RiskForm rfrm = (RiskForm)form;
+		    final RiskDelegate rdel = new RiskDelegate();
+			
+			this.clearForm(rfrm, request);
+			
+			final RiskTO rto = new RiskTO();
+			rto.setId(rfrm.getId());
+			rdel.removeRisk(rto);
+			
+			//set success message into http session
+			this.setSuccessFormSession(request, "message.removeRisk");
+			this.refresh(mapping, form, request, response);
+			
+		    //set the current user connected
+			final UserTO uto = SessionUtil.getCurrentUser(request);
+		    rfrm.setSaveMethod(RiskForm.INSERT_METHOD, uto);
+		    rfrm.setShowIssueConfirmation("off");
+		    
+		} catch(final BusinessException e){
+		    this.setErrorFormSession(request, "error.formRisk.remove", e);
+		}
+	    
+		return mapping.findForward(forward);	    
+	}
+
+		
+	public ActionForward clear(ActionMapping mapping, ActionForm form,
+			 HttpServletRequest request, HttpServletResponse response){
+		final String forward = "showRisk";		
+		this.prepareForm(mapping, form, request, response);
+		return mapping.findForward(forward);		
+	}
+	
+
+	private void clearForm(ActionForm form, HttpServletRequest request){
+	    final RiskForm rfrm = (RiskForm)form;		
+	    rfrm.clear();
+	    
+	    //set the relationship of risk
+	    request.getSession().setAttribute("riskRelationshipList", new Vector<PlanningRelationTO>());
+	    
+	    this.clearMessages(request);
+	}
+	
+	
+	private void getActionFormFromTransferObject(RiskTO to, RiskForm frm, HttpServletRequest request){
+	    frm.setId(to.getId());
+	    frm.setCategoryId(to.getCategory().getId());
+	    frm.setContingency(to.getContingency());
+	    frm.setCreationDate(to.getCreationDate());
+	    frm.setDescription(to.getDescription());
+	    frm.setName(to.getName());
+	    frm.setProbability(to.getProbability());
+	    frm.setImpact(to.getImpact());
+	    frm.setProject(to.getProject());
+	    frm.setProjectId(to.getProject().getId());
+	    frm.setResponsible(to.getResponsible());
+	    frm.setStatus(to.getStatus().getId());
+	    frm.setStrategy(to.getStrategy());
+	    frm.setTendency(to.getTendency());   
+	    frm.setAdditionalFields(to.getAdditionalFields());	 
+	    frm.setVisible(to.getVisible()?"1":"0");
+	    frm.setRiskComment(to.getLastComment());
+	    
+	    frm.setCostImpact(to.getCostImpact());
+	    frm.setTimeImpact(to.getTimeImpact());
+	    frm.setQualityImpact(to.getQualityImpact());
+	    frm.setScopeImpact(to.getScopeImpact());
+	    
+	    if (to.getProject()!=null) {
+	    	frm.setProjectName(to.getProject().getName());	
+	    } else {
+	    	frm.setProjectName("");
+	    }	    
+	    
+	    if (to.getRiskType()!=null) {
+	    	frm.setRiskType(to.getRiskType().toString());	
+	    } else {
+	    	frm.setRiskType(RiskTO.RISK_TYPE_THREAT+"");	
+	    }
+	    
+	    //set the relationship of risk
+	    request.getSession().setAttribute("riskRelationshipList", to.getRelationList());
+	}
+	
+	
+	@SuppressWarnings("rawtypes")
+	private RiskTO getTransferObjectFromActionForm(RiskForm frm, HttpServletRequest request) throws MetaFieldNumericTypeException{
+	    final RiskTO rto = new RiskTO();
+        rto.setId(frm.getId());
+        rto.setCategory(new CategoryTO(frm.getCategoryId()));
+        rto.setContingency(frm.getContingency());
+        rto.setName(frm.getName());
+        rto.setProbability(frm.getProbability());
+        rto.setProject(new ProjectTO(frm.getProjectId()));
+        rto.setResponsible(frm.getResponsible());
+        rto.setStrategy(frm.getStrategy());
+        rto.setImpact(frm.getImpact());
+        rto.setTendency(frm.getTendency());
+        rto.setStatus(new RiskStatusTO(frm.getStatus()));        
+	    rto.setDescription(frm.getDescription());
+	    rto.setCreationDate(frm.getCreationDate());	    
+	    rto.setLastComment(frm.getRiskComment());
+	    
+	    rto.setCostImpact(frm.getCostImpact());
+	    rto.setTimeImpact(frm.getTimeImpact());
+	    rto.setQualityImpact(frm.getQualityImpact());
+	    rto.setScopeImpact(frm.getScopeImpact());
+	    rto.setRiskType(new Integer(frm.getRiskType()));
+	    rto.setVisible(frm.getVisible().equals("1"));
+	    final UserTO uto = SessionUtil.getCurrentUser(request);
+	    rto.setHandler(uto);
+
+		@SuppressWarnings("unchecked") final
+		Vector<MetaFieldTO> metaFieldList = (Vector)request.getSession().getAttribute("metaFieldList");
+		super.setMetaFieldValuesFromForm(metaFieldList, request, rto, frm.getAdditionalFields());	    
+		if (metaFieldList!=null) {
+		    frm.setAdditionalFields(rto.getAdditionalFields());
+		}
+
+	    return rto;
+	}
+
+	
+	public Vector<TransferObject> getProbabilityCombo(HttpServletRequest request){
+	    final Vector<TransferObject> response = new Vector<TransferObject>();
+	    for(int i=1; i<=5; i++){
+	        final TransferObject to = new TransferObject();
+	        to.setId(i+""); 
+	        to.setGenericTag(this.getBundleMessage(request, "label.formRisk.probability." + i));
+	        response.addElement(to);
+	    }
+	    return response;
+	}
+
+	public Vector<TransferObject> getImpactCombo(HttpServletRequest request){
+	    final Vector<TransferObject> response = new Vector<TransferObject>();
+	    for(int i=1; i<=5; i++){
+	        final TransferObject to = new TransferObject();
+	        to.setId(i+""); 
+	        to.setGenericTag(this.getBundleMessage(request, "label.formRisk.impact." + i));
+	        response.addElement(to);
+	    }
+	    return response;
+	}
+	
+	public Vector<TransferObject> getTendencyCombo(HttpServletRequest request){
+	    final Vector<TransferObject> response = new Vector<TransferObject>();
+	    for(int i=1; i<=3; i++){
+	        final TransferObject to = new TransferObject();
+	        to.setId(i+"");
+	        to.setGenericTag(this.getBundleMessage(request, "label.formRisk.tendency." + i));
+	        response.addElement(to);
+	    }
+	    return response;
+	}	
+	
+}

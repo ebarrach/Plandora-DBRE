@@ -1,0 +1,229 @@
+package com.pandora.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import com.pandora.CostTO;
+import com.pandora.ExpenseTO;
+import com.pandora.ProjectTO;
+import com.pandora.TransferObject;
+import com.pandora.UserTO;
+import com.pandora.exception.DataAccessException;
+import com.pandora.helper.DateUtil;
+
+public class ExpenseDAO extends PlanningDAO {
+
+	public Vector<ExpenseTO> getListByUserId(String userId, boolean hideClosed) throws DataAccessException {
+        Vector<ExpenseTO> response = null;
+        Connection c = null;
+		try {
+			c = getConnection();
+			response = this.getListByUserId(userId, hideClosed, c);
+		} catch(Exception e) {
+			throw new DataAccessException(e);
+		} finally {
+			this.closeConnection(c);
+		}
+        return response;
+	}
+
+	
+	private Vector<ExpenseTO> getListByUserId(String userId, boolean hideClosed, Connection c) throws DataAccessException {
+		Vector<ExpenseTO> response= new Vector<ExpenseTO>();
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		try {
+			
+			String closedWhere = "";
+			if (hideClosed) {
+				closedWhere = " and (sub.c is not null and sub.c > 0)";
+			}
+			
+			pstmt = c.prepareStatement("select e.id, e.project_id, e.user_id, u.name, p.name as PROJECT_NAME, " +
+										      "a.description, a.creation_date, a.final_date, a.iteration, a.rich_text_desc, sub.c " +
+										"from tool_user u, project p, planning a, expense e  " +
+				                                   "left outer join (select c.expense_id, count(s.state_machine_order) as c " + 
+				                                                      "from cost c, cost_status s, cost_installment i  " +
+								                                     "where i.cost_id = c.id and s.id = i.cost_status_id  " +
+								                                       "and s.state_machine_order<>100 and s.state_machine_order<>101 " +
+								                                     "group by c.expense_id " +
+								                                    ") as sub on sub.expense_id = e.id " +
+			                            "where e.user_id = u.id and e.project_id = p.id and a.id = e.id and e.user_id=?" + closedWhere);
+			pstmt.setString(1, userId);	
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+			    ExpenseTO eto = this.populateObjectByResultSet(rs, c);
+			    response.addElement(eto);
+			}
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		} finally {
+			super.closeStatement(rs, pstmt);
+		}
+		return response;
+    }
+    
+    
+    public TransferObject getObject(TransferObject to, Connection c) throws DataAccessException {
+    	ExpenseTO response= null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null; 
+		try {
+			ExpenseTO filter = (ExpenseTO)to;
+			pstmt = c.prepareStatement("select e.id, e.project_id, e.user_id, u.name, p.name as PROJECT_NAME, " +
+									      "a.description, a.creation_date, a.final_date, a.iteration, a.rich_text_desc " +
+									   "from expense e, tool_user u, project p, planning a " +
+									   "where e.id=? and e.user_id = u.id and e.project_id = p.id and a.id = e.id");
+			pstmt.setString(1, filter.getId());
+			rs = pstmt.executeQuery();						
+			if (rs.next()){
+				response = this.populateObjectByResultSet(rs, c);
+			} 						
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		}finally{
+			super.closeStatement(rs, pstmt);
+		}	 
+		return response;
+    }
+
+    
+    public void update(TransferObject to, Connection c)  throws DataAccessException {
+		PreparedStatement pstmt = null;
+		CostDAO cdao = new CostDAO();
+		try {		    
+			ExpenseTO eto = (ExpenseTO)to;
+			
+		    super.update(eto, c);		    
+		    pstmt = c.prepareStatement("update expense set project_id=?, user_id=? where id=?");
+			pstmt.setString(1, eto.getProject().getId());
+			pstmt.setString(2, eto.getUser().getId());
+			pstmt.setString(3, eto.getId());
+			pstmt.executeUpdate();
+			
+			cdao.removeByExpense(eto, c);
+			
+			//include a list of expenses items...
+			if (eto.getExpensesItems()!=null) {
+				for (CostTO cto : eto.getExpensesItems()) {
+					cto.setProject(eto.getProject());
+					cto.setExpense(eto);
+					cdao.insert(cto, c);		
+				}
+			}
+			
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		}finally{
+			super.closeStatement(null, pstmt);
+		}        
+    }
+    
+
+    public void insert(TransferObject to, Connection c) throws DataAccessException {
+		PreparedStatement pstmt = null;
+		CostDAO cdao = new CostDAO();
+		try {
+			ExpenseTO eto = (ExpenseTO)to;
+			
+		    eto.setId(this.getNewId());
+		    eto.setCreationDate(DateUtil.getNow());
+		    super.insert(eto, c);
+		    
+		    pstmt = c.prepareStatement("insert into expense (id, project_id, user_id) values (?, ?, ?)");
+			pstmt.setString(1, eto.getId());		    
+			pstmt.setString(2, eto.getProject().getId());
+			pstmt.setString(3, eto.getUser().getId());
+			pstmt.executeUpdate();
+
+			//include a list of expenses items...
+			if (eto.getExpensesItems()!=null) {
+				for (CostTO cto : eto.getExpensesItems()) {
+					cto.setExpense(eto);
+					cdao.insert(cto, c);		
+				}
+			}
+			
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		}finally{
+			super.closeStatement(null, pstmt);
+		}               
+    }
+	
+    
+    public void remove(TransferObject to, Connection c)  throws DataAccessException {
+    	CostDAO cdao = new CostDAO();
+		PreparedStatement pstmt1 = null;
+		PreparedStatement pstmt2 = null;
+		PreparedStatement pstmt3 = null;
+		PreparedStatement pstmt4 = null;
+		try {
+			ExpenseTO eto = (ExpenseTO)to;
+		    		
+			cdao.removeByExpense(eto, c);
+			
+			pstmt1 = c.prepareStatement("delete from expense where id=?");
+			pstmt1.setString(1, eto.getId());
+			pstmt1.executeUpdate();
+
+			pstmt2 = c.prepareStatement("delete from plan_relation where plan_related_id=? or planning_id=?");
+			pstmt2.setString(1, eto.getId());
+			pstmt2.setString(2, eto.getId());
+			pstmt2.executeUpdate();	
+
+			pstmt3 = c.prepareStatement("delete from additional_field where planning_id=?");
+			pstmt3.setString(1, eto.getId());
+			pstmt3.executeUpdate();	
+			
+			pstmt4 = c.prepareStatement("delete from planning where id = ?");
+			pstmt4.setString(1, eto.getId());			
+			pstmt4.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DataAccessException(e);
+		}finally{
+			super.closeStatement(null, pstmt1);
+			super.closeStatement(null, pstmt2);
+			super.closeStatement(null, pstmt3);
+			super.closeStatement(null, pstmt4);
+		}        
+    }
+    
+    
+    public ExpenseTO populateObjectByResultSet(ResultSet rs, Connection c) throws DataAccessException{
+    	CostDAO cdao = new CostDAO();
+    	AdditionalFieldDAO afdao = new AdditionalFieldDAO();
+	    AttachmentDAO atDAO = new AttachmentDAO();
+	    
+    	ExpenseTO response = new ExpenseTO();       
+        response.setId(getString(rs, "id"));
+        response.setDescription(getString(rs, "description"));
+        response.setCreationDate(getTimestamp(rs, "creation_date"));
+        response.setFinalDate(getTimestamp(rs, "final_date"));
+
+        ProjectTO pto = new ProjectTO(getString(rs, "project_id"));
+        pto.setName(getString(rs, "PROJECT_NAME"));
+        response.setProject(pto);
+        
+        UserTO uto = new UserTO(getString(rs, "user_id"));
+        uto.setName(getString(rs, "name"));
+        response.setUser(uto);
+        
+        response.setExpensesItems(cdao.getListByExpenseId(response.getId(), c));
+        
+	    //get the additional fields
+	    response.setAdditionalFields(afdao.getListByPlanning(response, null, c));
+
+        //obs: the projectId argument here is null because, the system must display only attachments linked with expense id
+        response.setAttachments(atDAO.getListByPlanningId(response.getId(), null)); 
+
+        
+        return response;
+    }
+
+	
+}

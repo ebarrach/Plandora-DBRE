@@ -1,0 +1,250 @@
+package com.pandora.delegate;
+
+import java.sql.Timestamp;
+import java.util.Vector;
+
+import com.pandora.CategoryTO;
+import com.pandora.CustomerTO;
+import com.pandora.PlanningRelationTO;
+import com.pandora.ProjectTO;
+import com.pandora.RequirementHistoryTO;
+import com.pandora.RequirementTO;
+import com.pandora.ResourceTaskTO;
+import com.pandora.TaskHistoryTO;
+import com.pandora.TaskTO;
+import com.pandora.UserTO;
+import com.pandora.bus.TaskBUS;
+import com.pandora.exception.BusinessException;
+import com.pandora.helper.DateUtil;
+
+/**
+ * This class has the interface for Task entity information access.
+ */
+public class TaskDelegate extends GeneralDelegate {
+
+    /** The Business object related with current delegate */    
+    TaskBUS bus = new TaskBUS();
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTaskListByRequirement(com.pandora.RequirementTO, com.pandora.ProjectTO, boolean)
+     */
+    public Vector<TaskTO> getTaskListByRequirement(RequirementTO rto, ProjectTO pto, boolean evenClose) throws BusinessException {
+        return bus.getTaskListByRequirement(rto, pto, evenClose, true);
+    }
+
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTaskListByRequirement(com.pandora.RequirementTO, com.pandora.ProjectTO, boolean, boolean)
+     */
+    public Vector<TaskTO> getTaskListByRequirement(RequirementTO rto, ProjectTO pto, boolean evenClose, boolean isSort) throws BusinessException {
+        return bus.getTaskListByRequirement(rto, pto, evenClose, isSort);
+    }
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.isUserTaskOwner(com.pandora.TaskTO, com.pandora.UserTO)
+     */
+    public boolean isUserTaskOwner(TaskTO tto, UserTO currentUser) {
+    	return bus.isUserTaskOwner(tto, currentUser);
+    }
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getAvailableParentTaskList(com.pandora.RequirementTO, java.lang.String)
+     */
+    public Vector<TaskTO> getAvailableParentTaskList(RequirementTO rto, String projectId) throws BusinessException {       
+        return bus.getAvailableParentTaskList(rto, projectId); 
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getSubTasksList(com.pandora.TaskTO)
+     */    
+    public Vector<TaskTO> getSubTasksList(TaskTO parenttask) throws BusinessException {       
+        return bus.getSubTasksList(parenttask); 
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.isBlocked(com.pandora.TaskTO)
+     */    
+    public boolean isBlocked(TaskTO tto) {
+    	return bus.isBlocked(tto);
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.insertTask(com.pandora.TaskTO)
+     */
+    public void insertTask(TaskTO tto) throws BusinessException {
+        bus.insertTask(tto);
+    }
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.insertTask(com.pandora.TaskTO, boolean)
+     */
+    public void insertTask(TaskTO tto, boolean ignoreWeekend) throws BusinessException {
+        bus.insertTask(tto, ignoreWeekend);
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.insertTask(java.util.Vector)
+     */    
+    public void insertTask(Vector<TaskTO> list) throws BusinessException {
+        bus.insertTask(list, false);
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.insertTask(java.util.Vector, boolean)
+     */    
+    public void insertTask(Vector<TaskTO> list, boolean ignoreWeekend) throws BusinessException {
+        bus.insertTask(list, ignoreWeekend);
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.updateTask(com.pandora.TaskTO, boolean)
+     */
+    public void updateTask(TaskTO tto, boolean closeReqIfLastTask) throws BusinessException {
+        bus.updateTask(tto, closeReqIfLastTask);        
+    }
+
+    
+    public void updateByResource(TaskTO to) throws BusinessException {
+    	bus.updateByResource(to);
+    }
+    
+
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.removeTask(com.pandora.TaskTO)
+     */
+    public void removeTaskByOwner(TaskTO tto) throws BusinessException {
+        bus.removeTask(tto);        
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.cancelTask(com.pandora.TaskTO, boolean)
+     */
+    public void cancelTask(TaskTO tto, boolean reopenRelatedReq) throws BusinessException {
+        bus.cancelTask(tto, reopenRelatedReq);        
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTaskObject(com.pandora.TaskTO)
+     */
+    public TaskTO getTaskObject(TaskTO tto) throws BusinessException {
+        return bus.getTaskObject(tto);
+    }
+    
+        
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTaskListByProject(com.pandora.ProjectTO, java.util.Timestamp, java.util.Timestamp, boolean, boolean)
+     */
+    public Vector<TaskTO> getTaskListByProject(ProjectTO pto, Timestamp iniRange, Timestamp finalRange, boolean orderedIt, boolean includeSubProjects) throws BusinessException { 
+        return bus.getTaskListByProject(pto, iniRange, finalRange, orderedIt, includeSubProjects);        
+    }    
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTaskListByProjectInTree(com.pandora.ProjectTO)
+     */
+    public Vector<TaskTO> getTaskListByProjectInTree(ProjectTO pto) throws BusinessException{
+        return bus.getTaskListByProjectInTree(pto);                
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getDateFromTaskList(java.util.Vector, boolean)
+     */
+    public Timestamp getDateFromTaskList(Vector<TaskTO> taskList, boolean isInitial) throws BusinessException {
+        return bus.getDateFromTaskList(taskList, isInitial);        
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getLastHistoryByTask(com.pandora.ResourceTaskTO)
+     */
+    public TaskHistoryTO getLastHistoryByTask(ResourceTaskTO rtto) throws BusinessException {
+        return bus.getLastHistoryByTask(rtto);
+    }
+
+
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getHistory(java.lang.String)
+     */
+    public Vector<TaskHistoryTO> getHistory(String taskId) throws BusinessException {
+        return bus.getHistory(taskId);
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getHistoryByRequirementId(java.lang.String)
+     */
+    public Vector<TaskHistoryTO> getHistoryByRequirementId(String reqId) throws BusinessException {
+        return bus.getHistoryByRequirementId(reqId);
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTechCommentsFromTask(com.pandora.RequirementHistoryTO, com.pandora.CustomerTO)
+     */    
+    public String getTechCommentsFromTask(RequirementHistoryTO rhto, CustomerTO cto) throws BusinessException {
+        return bus.getTechCommentsFromTask(rhto, cto);
+    }
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getTechCommentsFromTask(java.util.Vector, com.pandora.CustomerTO)
+     */    
+    public String getTechCommentsFromTask(Vector<TaskHistoryTO> items, CustomerTO cto) throws BusinessException {
+        return bus.getTechCommentsFromTask(items, cto);
+    }    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.TaskBUS.getReopenTimes(com.pandora.TaskTO)
+     */        
+    public int getReopenTimes(TaskTO tto) throws BusinessException {
+    	return bus.getReopenTimes(tto);
+    }
+    
+    public TaskTO createTaskObject(String name, String desc, ProjectTO pto,
+			CategoryTO cto, UserTO uto, String reqId) throws BusinessException {
+		TaskTO tto = new TaskTO();
+		RequirementDelegate rdel = new RequirementDelegate();
+		
+		tto.setAdditionalFields(null);
+		tto.setAttachments(null);
+		tto.setComment(null);
+		tto.setDecisionNode(null);
+		tto.setDiscussionTopics(null);
+		tto.setIteration(null);
+		tto.setRelationList(null);
+		tto.setTemplateInstanceId(null);
+
+		if (reqId.trim().equalsIgnoreCase("N/A")) {
+			tto.setRequirement(null);	
+		} else {
+			RequirementTO req = rdel.getRequirement(new RequirementTO(reqId));
+			if (req!=null) {
+				tto.setRequirement(req);	
+			} else {
+				throw new BusinessException("The request [" + reqId + "] was not found.");
+			}
+		}
+		
+		tto.setCategory(cto);
+		tto.setCreatedBy(uto);
+		tto.setCreationDate(DateUtil.getNow());
+		tto.setDescription(desc);
+		tto.setFinalDate(null);
+		tto.setHandler(uto);
+		tto.setIsParentTask(new Integer(0));
+		tto.setIsUnpredictable(new Boolean(true));
+		tto.setName(name);
+		tto.setParentTask(null);
+		tto.setProject(pto);
+		tto.setType(PlanningRelationTO.ENTITY_TASK);
+		return tto;
+	}
+}
