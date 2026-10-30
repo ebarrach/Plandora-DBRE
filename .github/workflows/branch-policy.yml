@@ -1,0 +1,33 @@
+﻿name: Branch policy
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  develop-only:
+    name: develop-only
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch and repository
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          HEAD_BRANCH: ${{ github.head_ref }}
+          HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          BASE_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "Branch policy check registered."
+            exit 0
+          fi
+
+          if [ "$HEAD_BRANCH" != "develop" ] ||
+             [ "$HEAD_REPOSITORY" != "$BASE_REPOSITORY" ]; then
+            echo "::error::Only develop from this repository may target main."
+            exit 1
+          fi
