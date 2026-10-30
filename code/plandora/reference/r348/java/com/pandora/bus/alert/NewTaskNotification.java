@@ -1,0 +1,191 @@
+package com.pandora.bus.alert;
+
+import java.sql.Timestamp;
+import java.util.Locale;
+import java.util.Vector;
+
+import com.pandora.CategoryTO;
+import com.pandora.FieldValueTO;
+import com.pandora.NotificationFieldTO;
+import com.pandora.ProjectTO;
+import com.pandora.ResourceTaskTO;
+import com.pandora.RootTO;
+import com.pandora.TaskTO;
+import com.pandora.UserTO;
+import com.pandora.bus.EventBUS;
+import com.pandora.delegate.CategoryDelegate;
+import com.pandora.delegate.ProjectDelegate;
+import com.pandora.delegate.ResourceTaskDelegate;
+import com.pandora.delegate.TaskDelegate;
+import com.pandora.delegate.UserDelegate;
+import com.pandora.helper.DateUtil;
+import com.pandora.helper.LogUtil;
+import com.pandora.helper.StringUtil;
+
+public class NewTaskNotification extends Notification {
+
+	private static final String NEWTASK_PROJECT_ID  = "NEWTASK_PROJ_ID";
+    private static final String NEWTASK_CATEGORY_ID = "NEWTASK_CAT_ID";
+    private static final String NEWTASK_NAME        = "NEWTASK_NAME";
+    private static final String NEWTASK_DESC        = "NEWTASK_DESC";
+    private static final String NEWTASK_EST_TIME    = "NEWTASK_EST_TIME";
+    private static final String NEWTASK_EST_DATE    = "NEWTASK_EST_DATE";
+    private static final String NEWTASK_RES_ID      = "NEWTASK_RES_ID";
+    private static final String NEWTASK_REQ_ID      = "NEWTASK_REQ_ID";
+
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#sendNotification(java.util.Vector, java.util.Vector)
+     */
+    public boolean sendNotification(Vector<NotificationFieldTO> fields, Vector<Vector<Object>> sqlData) throws Exception {
+    	boolean response = false;
+    	EventBUS bus = new EventBUS();
+		ProjectDelegate pdel = new ProjectDelegate();
+		CategoryDelegate cdel = new CategoryDelegate();
+		TaskDelegate tdel = new TaskDelegate();
+		UserDelegate udel = new UserDelegate();
+		ResourceTaskDelegate rtdel = new ResourceTaskDelegate();
+		
+		for (int i=1; i<sqlData.size(); i++) {
+			Vector<Object> sqlDataItem = (Vector<Object>)sqlData.elementAt(i);
+			
+			String projectId = this.getParamByKey(NEWTASK_PROJECT_ID, fields);
+			String categoryId = this.getParamByKey(NEWTASK_CATEGORY_ID, fields);
+			String name = this.getParamByKey(NEWTASK_NAME, fields);
+			String desc = this.getParamByKey(NEWTASK_DESC, fields);
+			String estTime = this.getParamByKey(NEWTASK_EST_TIME, fields);
+			String estDate = this.getParamByKey(NEWTASK_EST_DATE, fields);
+			String resId = this.getParamByKey(NEWTASK_RES_ID, fields);
+			String reqId = this.getParamByKey(NEWTASK_REQ_ID, fields);
+			Locale loc = new Locale("pt", "BR");
+
+			//replace the wildcards with the fields...
+			projectId = super.replaceByToken(sqlDataItem, projectId);
+			categoryId = super.replaceByToken(sqlDataItem, categoryId);
+			name = super.replaceByToken(sqlDataItem, name);
+			desc = super.replaceByToken(sqlDataItem, desc);
+			estTime = super.replaceByToken(sqlDataItem, estTime);
+			estDate = super.replaceByToken(sqlDataItem, estDate);
+			resId = super.replaceByToken(sqlDataItem, resId);
+			reqId = super.replaceByToken(sqlDataItem, reqId);
+			
+			if (projectId!=null && categoryId!=null && name!=null && estTime!=null && estDate!=null && reqId!=null
+					&& !projectId.trim().equals("") && !categoryId.trim().equals("") && !name.trim().equals("")
+					&& !estTime.trim().equals("") && !estDate.trim().equals("") && !reqId.trim().equals("")) {
+
+				float time = StringUtil.getStringToFloat(estTime, loc);
+				if (time>0) {
+					Timestamp startDate = DateUtil.getDateTime(estDate, "yyyyMMdd", new Locale("pt", "BR"));
+					if (startDate!=null) {
+						ProjectTO pto = pdel.getProjectObject(new ProjectTO(projectId.trim()), false);
+						if (pto!=null) {
+							CategoryTO cto = cdel.getCategory(new CategoryTO(categoryId.trim()));
+							if (cto!=null) {
+								UserTO uto = udel.getRoot();
+						    	TaskTO tto = tdel.createTaskObject(name, desc, pto, cto, uto, reqId);
+						    	
+						    	if (resId==null || resId.trim().equals("")) {
+						    		resId = uto.getId();
+						    	}
+
+						    	ResourceTaskTO rtto = rtdel.createResourceTask(resId, startDate, time, pto, uto, tto);					    	
+						    	Vector<ResourceTaskTO> restaskList = new Vector<ResourceTaskTO>();
+						    	restaskList.add(rtto);
+						    	tto.setAllocResources(restaskList);
+						    	
+						    	tdel.insertTask(tto);
+						    	response = true;
+
+						        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The Task [" + 
+						        		categoryId + "] was created successfully.", RootTO.ROOT_USER, null);								
+
+							} else {
+						        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The category id [" + 
+						        		categoryId + "] was not found.", RootTO.ROOT_USER, null);								
+							}
+						} else {
+					        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The project id [" + 
+					        		projectId + "] was not found.", RootTO.ROOT_USER, null);			
+						}				
+					} else {
+				        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The estimated date field [" + 
+				        		estDate + "] is invalid.", RootTO.ROOT_USER, null);							
+					}				
+				} else {
+			        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The estimated time field [" + 
+			        		estTime + "] is invalid.", RootTO.ROOT_USER, null);											
+				}
+			} else {
+		        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "There are empty fields [" + 
+		        		projectId + "] [" + categoryId + "] [" + name + "] [" + estTime + "] [" + 
+		        		estDate + "]", RootTO.ROOT_USER, null);			
+			}			
+		}
+		
+        return response;
+    }
+
+
+  
+   
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getFields()
+     */        
+    public Vector<FieldValueTO> getFields(){
+        Vector<FieldValueTO> response = new Vector<FieldValueTO>();
+        response.add(new FieldValueTO(NEWTASK_PROJECT_ID, "notification.newTask.project", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        response.add(new FieldValueTO(NEWTASK_CATEGORY_ID, "notification.newTask.category", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        response.add(new FieldValueTO(NEWTASK_NAME, "notification.newTask.name", FieldValueTO.FIELD_TYPE_TEXT, 50, 50));
+        response.add(new FieldValueTO(NEWTASK_DESC, "notification.newTask.desc", FieldValueTO.FIELD_TYPE_AREA, 85, 4));
+        response.add(new FieldValueTO(NEWTASK_EST_DATE, "notification.newTask.estdate", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        response.add(new FieldValueTO(NEWTASK_EST_TIME, "notification.newTask.esttime", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        response.add(new FieldValueTO(NEWTASK_RES_ID, "notification.newTask.resid", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        response.add(new FieldValueTO(NEWTASK_REQ_ID, "notification.newTask.reqid", FieldValueTO.FIELD_TYPE_TEXT, 10, 10));
+        
+        return response;
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getUniqueName()
+     */
+    public String getUniqueName() {
+        return "New Task";
+    }
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getContextHelp()
+     */
+    public String getContextHelp() {
+        return "notification.newTask.help";
+    }
+
+    
+    
+    
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getFieldTypes()
+     */    
+    public Vector<String> getFieldTypes() {
+        return null;
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getFieldKeys()
+     */    
+    public Vector<String> getFieldKeys() {
+        return null;
+    }
+
+    
+    /* (non-Javadoc)
+     * @see com.pandora.bus.alert.Notification#getFieldLabels()
+     */
+    public Vector<String> getFieldLabels() {
+        return null;
+    }
+    
+}
