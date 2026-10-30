@@ -1,0 +1,3 @@
+[submodule "code/external/rea"]
+	path = code/external/rea
+	url = https://github.com/morluto/rea.git
