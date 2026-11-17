@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="2812" viewBox="0 0 1880 2812">
+<rect width="100%" height="100%" fill="#f6f8fc"/>
+<text x="30" y="40" font-family="sans-serif" font-size="25" fill="#15324f">Conceptual schema - candidate business model</text>
+<text x="30" y="70" font-family="sans-serif" font-size="14">SVN r348 | 24 tables | numbered references below | repository 12c9a7b8355e</text>
+<text x="30" y="92" font-family="sans-serif" font-size="14">NULL unspecified is distinct from explicit NULL. Blue = declared; orange dashed = recovered. No live database.</text>
+<rect x="30" y="115" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="139" font-family="monospace" font-size="11" fill="#15324f">Planning item</text>
+<text x="42" y="154" font-family="monospace" font-size="11" fill="#15324f">maps: planning</text>
+<text x="42" y="169" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="42" y="184" font-family="monospace" font-size="11" fill="#15324f">Properties: description, creation_date, final_date, iteration,</text>
+<text x="42" y="199" font-family="monospace" font-size="11" fill="#15324f">rich_text_desc, visible</text>
+<text x="42" y="214" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="42" y="229" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:296-305</text>
+<rect x="490" y="115" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="139" font-family="monospace" font-size="11" fill="#15324f">Planning dependency</text>
+<text x="502" y="154" font-family="monospace" font-size="11" fill="#15324f">maps: plan_relation</text>
+<text x="502" y="169" font-family="monospace" font-size="11" fill="#15324f">Identifier: planning_id, plan_related_id</text>
+<text x="502" y="184" font-family="monospace" font-size="11" fill="#15324f">Properties: plan_type, plan_related_type, relation_type</text>
+<text x="502" y="199" font-family="monospace" font-size="11" fill="#15324f">Associations: F38</text>
+<text x="502" y="214" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:614-621</text>
+<rect x="950" y="115" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="139" font-family="monospace" font-size="11" fill="#15324f">Project</text>
+<text x="962" y="154" font-family="monospace" font-size="11" fill="#15324f">maps: project</text>
+<text x="962" y="169" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="962" y="184" font-family="monospace" font-size="11" fill="#15324f">Candidate subtype; inclusion only</text>
+<text x="962" y="199" font-family="monospace" font-size="11" fill="#15324f">Totality/disjointness: unknown</text>
+<text x="962" y="214" font-family="monospace" font-size="11" fill="#15324f">Associations: F9, F10, F11, F14</text>
+<text x="962" y="229" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:235-250</text>
+<rect x="1410" y="115" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="139" font-family="monospace" font-size="11" fill="#15324f">Project status</text>
+<text x="1422" y="154" font-family="monospace" font-size="11" fill="#15324f">maps: project_status</text>
+<text x="1422" y="169" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="1422" y="184" font-family="monospace" font-size="11" fill="#15324f">Properties: name, note, state_machine_order</text>
+<text x="1422" y="199" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="1422" y="214" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:209-215</text>
+<rect x="30" y="279" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="303" font-family="monospace" font-size="11" fill="#15324f">Project transition</text>
+<text x="42" y="318" font-family="monospace" font-size="11" fill="#15324f">maps: project_history</text>
+<text x="42" y="333" font-family="monospace" font-size="11" fill="#15324f">Identifier: project_id, project_status_id, creation_date</text>
+<text x="42" y="348" font-family="monospace" font-size="11" fill="#15324f">Properties:</text>
+<text x="42" y="363" font-family="monospace" font-size="11" fill="#15324f">Associations: F21, F22</text>
+<text x="42" y="378" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:317-322</text>
+<rect x="490" y="279" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="303" font-family="monospace" font-size="11" fill="#15324f">Request</text>
+<text x="502" y="318" font-family="monospace" font-size="11" fill="#15324f">maps: requeriment</text>
+<text x="502" y="333" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="502" y="348" font-family="monospace" font-size="11" fill="#15324f">Candidate subtype; inclusion only</text>
+<text x="502" y="363" font-family="monospace" font-size="11" fill="#15324f">Totality/disjointness: unknown</text>
+<text x="502" y="378" font-family="monospace" font-size="11" fill="#15324f">Associations: F12, F13, F15, F16, F17</text>
+<text x="502" y="393" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:252-264</text>
+<rect x="950" y="279" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="303" font-family="monospace" font-size="11" fill="#15324f">Request status</text>
+<text x="962" y="318" font-family="monospace" font-size="11" fill="#15324f">maps: requeriment_status</text>
+<text x="962" y="333" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="962" y="348" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description, state_machine_order,</text>
+<text x="962" y="363" font-family="monospace" font-size="11" fill="#15324f">accept_project_id, parent_id</text>
+<text x="962" y="378" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="962" y="393" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:217-225</text>
+<rect x="1410" y="279" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="303" font-family="monospace" font-size="11" fill="#15324f">Request transition</text>
+<text x="1422" y="318" font-family="monospace" font-size="11" fill="#15324f">maps: requeriment_history</text>
+<text x="1422" y="333" font-family="monospace" font-size="11" fill="#15324f">Identifier: requeriment_id, requeriment_status_id, creation_date</text>
+<text x="1422" y="348" font-family="monospace" font-size="11" fill="#15324f">Properties: user_id, iteration, comment</text>
+<text x="1422" y="363" font-family="monospace" font-size="11" fill="#15324f">Associations: F18, F19, F20</text>
+<text x="1422" y="378" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:307-315</text>
+<rect x="30" y="443" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="467" font-family="monospace" font-size="11" fill="#15324f">Task</text>
+<text x="42" y="482" font-family="monospace" font-size="11" fill="#15324f">maps: task</text>
+<text x="42" y="497" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="42" y="512" font-family="monospace" font-size="11" fill="#15324f">Candidate subtype; inclusion only</text>
+<text x="42" y="527" font-family="monospace" font-size="11" fill="#15324f">Totality/disjointness: unknown</text>
+<text x="42" y="542" font-family="monospace" font-size="11" fill="#15324f">Associations: F23, F24, F25, F26, F27</text>
+<text x="42" y="557" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:266-277</text>
+<rect x="490" y="443" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="467" font-family="monospace" font-size="11" fill="#15324f">Assignment status</text>
+<text x="502" y="482" font-family="monospace" font-size="11" fill="#15324f">maps: task_status</text>
+<text x="502" y="497" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="502" y="512" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description, state_machine_order</text>
+<text x="502" y="527" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="502" y="542" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:227-233</text>
+<rect x="950" y="443" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="467" font-family="monospace" font-size="11" fill="#15324f">Assignment transition</text>
+<text x="962" y="482" font-family="monospace" font-size="11" fill="#15324f">maps: task_history</text>
+<text x="962" y="497" font-family="monospace" font-size="11" fill="#15324f">Identifier: task_id, resource_id, project_id, task_status_id,</text>
+<text x="962" y="512" font-family="monospace" font-size="11" fill="#15324f">creation_date</text>
+<text x="962" y="527" font-family="monospace" font-size="11" fill="#15324f">Properties: start_date, estimated_time, actual_date,</text>
+<text x="962" y="542" font-family="monospace" font-size="11" fill="#15324f">actual_time, user_id, iteration, comment</text>
+<text x="962" y="557" font-family="monospace" font-size="11" fill="#15324f">Associations: F32, F33, F34</text>
+<text x="962" y="572" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:324-338</text>
+<rect x="1410" y="443" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="467" font-family="monospace" font-size="11" fill="#15324f">Assignment</text>
+<text x="1422" y="482" font-family="monospace" font-size="11" fill="#15324f">maps: resource_task</text>
+<text x="1422" y="497" font-family="monospace" font-size="11" fill="#15324f">Identifier: task_id, resource_id, project_id</text>
+<text x="1422" y="512" font-family="monospace" font-size="11" fill="#15324f">Properties: start_date, estimated_time, actual_date,</text>
+<text x="1422" y="527" font-family="monospace" font-size="11" fill="#15324f">actual_time, task_status_id, is_acceptance_task, billable,</text>
+<text x="1422" y="542" font-family="monospace" font-size="11" fill="#15324f">approver_id, approved</text>
+<text x="1422" y="557" font-family="monospace" font-size="11" fill="#15324f">Associations: F28, F29, F30, F31</text>
+<text x="1422" y="572" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:279-293</text>
+<rect x="30" y="622" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="646" font-family="monospace" font-size="11" fill="#15324f">Actual allocation</text>
+<text x="42" y="661" font-family="monospace" font-size="11" fill="#15324f">maps: resource_task_alloc</text>
+<text x="42" y="676" font-family="monospace" font-size="11" fill="#15324f">Identifier: task_id, resource_id, project_id, sequence</text>
+<text x="42" y="691" font-family="monospace" font-size="11" fill="#15324f">Properties: alloc_time</text>
+<text x="42" y="706" font-family="monospace" font-size="11" fill="#15324f">Associations: F35</text>
+<text x="42" y="721" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:340-347</text>
+<rect x="490" y="622" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="646" font-family="monospace" font-size="11" fill="#15324f">Planned allocation</text>
+<text x="502" y="661" font-family="monospace" font-size="11" fill="#15324f">maps: resource_task_alloc_plann</text>
+<text x="502" y="676" font-family="monospace" font-size="11" fill="#15324f">Identifier: task_id, resource_id, project_id, sequence</text>
+<text x="502" y="691" font-family="monospace" font-size="11" fill="#15324f">Properties: alloc_time</text>
+<text x="502" y="706" font-family="monospace" font-size="11" fill="#15324f">Associations: F36</text>
+<text x="502" y="721" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:349-356</text>
+<rect x="950" y="622" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="646" font-family="monospace" font-size="11" fill="#15324f">Capacity slot</text>
+<text x="962" y="661" font-family="monospace" font-size="11" fill="#15324f">maps: resource_capacity</text>
+<text x="962" y="676" font-family="monospace" font-size="11" fill="#15324f">Identifier: resource_id, project_id, cap_year, cap_month,</text>
+<text x="962" y="691" font-family="monospace" font-size="11" fill="#15324f">cap_day</text>
+<text x="962" y="706" font-family="monospace" font-size="11" fill="#15324f">Properties: capacity, cost_per_hour</text>
+<text x="962" y="721" font-family="monospace" font-size="11" fill="#15324f">Associations: F39</text>
+<text x="962" y="736" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:742-751</text>
+<rect x="1410" y="622" width="440" height="169" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="646" font-family="monospace" font-size="11" fill="#15324f">User</text>
+<text x="1422" y="661" font-family="monospace" font-size="11" fill="#15324f">maps: tool_user</text>
+<text x="1422" y="676" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="1422" y="691" font-family="monospace" font-size="11" fill="#15324f">Properties: username, password, name, email, phone, color,</text>
+<text x="1422" y="706" font-family="monospace" font-size="11" fill="#15324f">department_id, area_id, function_id, company_id, country,</text>
+<text x="1422" y="721" font-family="monospace" font-size="11" fill="#15324f">language, auth_mode, birth, permission, pic_file, final_date,</text>
+<text x="1422" y="736" font-family="monospace" font-size="11" fill="#15324f">creation_date</text>
+<text x="1422" y="751" font-family="monospace" font-size="11" fill="#15324f">Associations: F1, F2, F3, F4</text>
+<text x="1422" y="766" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:112-133</text>
+<rect x="30" y="816" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="840" font-family="monospace" font-size="11" fill="#15324f">Project participation</text>
+<text x="42" y="855" font-family="monospace" font-size="11" fill="#15324f">maps: customer</text>
+<text x="42" y="870" font-family="monospace" font-size="11" fill="#15324f">Identifier: id, project_id</text>
+<text x="42" y="885" font-family="monospace" font-size="11" fill="#15324f">Properties: is_disable, is_req_acceptable, can_see_tech_comment,</text>
+<text x="42" y="900" font-family="monospace" font-size="11" fill="#15324f">pre_approve_req, can_see_discussion, function_id,</text>
+<text x="42" y="915" font-family="monospace" font-size="11" fill="#15324f">can_see_other_reqs, can_open_otherowner_reqs</text>
+<text x="42" y="930" font-family="monospace" font-size="11" fill="#15324f">Associations: F5, F8</text>
+<text x="42" y="945" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:171-183</text>
+<rect x="490" y="816" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="840" font-family="monospace" font-size="11" fill="#15324f">Resource participation</text>
+<text x="502" y="855" font-family="monospace" font-size="11" fill="#15324f">maps: resource</text>
+<text x="502" y="870" font-family="monospace" font-size="11" fill="#15324f">Identifier: id, project_id</text>
+<text x="502" y="885" font-family="monospace" font-size="11" fill="#15324f">Candidate subtype; inclusion only</text>
+<text x="502" y="900" font-family="monospace" font-size="11" fill="#15324f">Totality/disjointness: unknown</text>
+<text x="502" y="915" font-family="monospace" font-size="11" fill="#15324f">Associations: F6</text>
+<text x="502" y="930" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:185-195</text>
+<rect x="950" y="816" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="840" font-family="monospace" font-size="11" fill="#15324f">Leader participation</text>
+<text x="962" y="855" font-family="monospace" font-size="11" fill="#15324f">maps: leader</text>
+<text x="962" y="870" font-family="monospace" font-size="11" fill="#15324f">Identifier: id, project_id</text>
+<text x="962" y="885" font-family="monospace" font-size="11" fill="#15324f">Candidate subtype; inclusion only</text>
+<text x="962" y="900" font-family="monospace" font-size="11" fill="#15324f">Totality/disjointness: unknown</text>
+<text x="962" y="915" font-family="monospace" font-size="11" fill="#15324f">Associations: F7</text>
+<text x="962" y="930" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:197-201</text>
+<rect x="1410" y="816" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="840" font-family="monospace" font-size="11" fill="#15324f">Company</text>
+<text x="1422" y="855" font-family="monospace" font-size="11" fill="#15324f">maps: company</text>
+<text x="1422" y="870" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="1422" y="885" font-family="monospace" font-size="11" fill="#15324f">Properties: name, full_name, company_number, address, city,</text>
+<text x="1422" y="900" font-family="monospace" font-size="11" fill="#15324f">state_province, country</text>
+<text x="1422" y="915" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="1422" y="930" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:100-110</text>
+<rect x="30" y="995" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="1019" font-family="monospace" font-size="11" fill="#15324f">Department</text>
+<text x="42" y="1034" font-family="monospace" font-size="11" fill="#15324f">maps: department</text>
+<text x="42" y="1049" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="42" y="1064" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description</text>
+<text x="42" y="1079" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="42" y="1094" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:135-140</text>
+<rect x="490" y="995" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="1019" font-family="monospace" font-size="11" fill="#15324f">Area</text>
+<text x="502" y="1034" font-family="monospace" font-size="11" fill="#15324f">maps: area</text>
+<text x="502" y="1049" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="502" y="1064" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description</text>
+<text x="502" y="1079" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="502" y="1094" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:149-154</text>
+<rect x="950" y="995" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="1019" font-family="monospace" font-size="11" fill="#15324f">Function</text>
+<text x="962" y="1034" font-family="monospace" font-size="11" fill="#15324f">maps: function</text>
+<text x="962" y="1049" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="962" y="1064" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description</text>
+<text x="962" y="1079" font-family="monospace" font-size="11" fill="#15324f">Associations:</text>
+<text x="962" y="1094" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:142-147</text>
+<rect x="1410" y="995" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="1019" font-family="monospace" font-size="11" fill="#15324f">Project category</text>
+<text x="1422" y="1034" font-family="monospace" font-size="11" fill="#15324f">maps: category</text>
+<text x="1422" y="1049" font-family="monospace" font-size="11" fill="#15324f">Identifier: id</text>
+<text x="1422" y="1064" font-family="monospace" font-size="11" fill="#15324f">Properties: name, description, type, project_id, billable,</text>
+<text x="1422" y="1079" font-family="monospace" font-size="11" fill="#15324f">disable_view, is_defect, is_testing, is_developing,</text>
+<text x="1422" y="1094" font-family="monospace" font-size="11" fill="#15324f">category_order</text>
+<text x="1422" y="1109" font-family="monospace" font-size="11" fill="#15324f">Associations: F37</text>
+<text x="1422" y="1124" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:156-169</text>
+<text x="30" y="1204" font-family="sans-serif" font-size="20">Relationship register - child to parent; reverse multiplicity after semicolon</text>
+<text x="30" y="1234" font-family="monospace" font-size="13" fill="#15324f">F1 belongs to department | tool_user(department_id) -&gt; department(id)</text>
+<text x="30" y="1253" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | user_department | mysql.sql:1009</text>
+<text x="30" y="1272" font-family="monospace" font-size="13" fill="#15324f">F2 belongs to area | tool_user(area_id) -&gt; area(id)</text>
+<text x="30" y="1291" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | user_area | mysql.sql:1011</text>
+<text x="30" y="1310" font-family="monospace" font-size="13" fill="#15324f">F3 holds function | tool_user(function_id) -&gt; function(id)</text>
+<text x="30" y="1329" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | user_function | mysql.sql:1013</text>
+<text x="30" y="1348" font-family="monospace" font-size="13" fill="#15324f">F4 affiliated with company | tool_user(company_id) -&gt; company(id)</text>
+<text x="30" y="1367" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | user_company | mysql.sql:1015</text>
+<text x="30" y="1386" font-family="monospace" font-size="13" fill="#15324f">F5 participates as user | customer(id) -&gt; tool_user(id)</text>
+<text x="30" y="1405" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | customer_user | mysql.sql:1017</text>
+<text x="30" y="1424" font-family="monospace" font-size="13" fill="#15324f">F6 specializes participation (candidate) | resource(id,project_id) -&gt; customer(id,project_id)</text>
+<text x="30" y="1443" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | resource_customer | mysql.sql:1019</text>
+<text x="30" y="1462" font-family="monospace" font-size="13" fill="#15324f">F7 specializes participation (candidate) | leader(id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="1481" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | leader_resource | mysql.sql:1021</text>
+<text x="30" y="1500" font-family="monospace" font-size="13" fill="#15324f">F8 participates in project | customer(project_id) -&gt; project(id)</text>
+<text x="30" y="1519" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | customer_project | mysql.sql:1025</text>
+<text x="30" y="1538" font-family="monospace" font-size="13" fill="#15324f">F9 has parent project | project(parent_id) -&gt; project(id)</text>
+<text x="30" y="1557" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | project_parent_project | mysql.sql:1027</text>
+<text x="30" y="1576" font-family="monospace" font-size="13" fill="#15324f">F10 has current project status | project(project_status_id) -&gt; project_status(id)</text>
+<text x="30" y="1595" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | project_status_project | mysql.sql:1029</text>
+<text x="30" y="1614" font-family="monospace" font-size="13" fill="#15324f">F11 belongs to company | project(company_id) -&gt; company(id)</text>
+<text x="30" y="1633" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | proj_company | mysql.sql:1031</text>
+<text x="30" y="1652" font-family="monospace" font-size="13" fill="#15324f">F12 specializes planning (candidate) | requeriment(id) -&gt; planning(id)</text>
+<text x="30" y="1671" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | req_parent | mysql.sql:1033</text>
+<text x="30" y="1690" font-family="monospace" font-size="13" fill="#15324f">F13 classified by category | requeriment(category_id) -&gt; category(id)</text>
+<text x="30" y="1709" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | req_cat | mysql.sql:1035</text>
+<text x="30" y="1728" font-family="monospace" font-size="13" fill="#15324f">F14 specializes planning (candidate) | project(id) -&gt; planning(id)</text>
+<text x="30" y="1747" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | project_parent | mysql.sql:1037</text>
+<text x="30" y="1766" font-family="monospace" font-size="13" fill="#15324f">F15 requested in project | requeriment(project_id) -&gt; project(id)</text>
+<text x="30" y="1785" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_project | mysql.sql:1039</text>
+<text x="30" y="1804" font-family="monospace" font-size="13" fill="#15324f">F16 has current request status | requeriment(requeriment_status_id) -&gt; requeriment_status(id)</text>
+<text x="30" y="1823" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_status_req | mysql.sql:1041</text>
+<text x="30" y="1842" font-family="monospace" font-size="13" fill="#15324f">F17 requested by user | requeriment(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="1861" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_user | mysql.sql:1043</text>
+<text x="30" y="1880" font-family="monospace" font-size="13" fill="#15324f">F18 records request transition | requeriment_history(requeriment_id) -&gt; requeriment(id)</text>
+<text x="30" y="1899" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_hist_req | mysql.sql:1045</text>
+<text x="30" y="1918" font-family="monospace" font-size="13" fill="#15324f">F19 records resulting request status | requeriment_history(requeriment_status_id) -&gt; requeriment_status(id)</text>
+<text x="30" y="1937" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_hist_status | mysql.sql:1047</text>
+<text x="30" y="1956" font-family="monospace" font-size="13" fill="#15324f">F20 handled by user | requeriment_history(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="1975" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | req_hist_user | mysql.sql:1049</text>
+<text x="30" y="1994" font-family="monospace" font-size="13" fill="#15324f">F21 records project transition | project_history(project_id) -&gt; project(id)</text>
+<text x="30" y="2013" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | prj_hist_prj | mysql.sql:1051</text>
+<text x="30" y="2032" font-family="monospace" font-size="13" fill="#15324f">F22 records resulting project status | project_history(project_status_id) -&gt; project_status(id)</text>
+<text x="30" y="2051" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | prj_hist_status | mysql.sql:1053</text>
+<text x="30" y="2070" font-family="monospace" font-size="13" fill="#15324f">F23 specializes planning (candidate) | task(id) -&gt; planning(id)</text>
+<text x="30" y="2089" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | task_parent | mysql.sql:1055</text>
+<text x="30" y="2108" font-family="monospace" font-size="13" fill="#15324f">F24 scheduled in project | task(project_id) -&gt; project(id)</text>
+<text x="30" y="2127" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_proj | mysql.sql:1057</text>
+<text x="30" y="2146" font-family="monospace" font-size="13" fill="#15324f">F25 implements request | task(requeriment_id) -&gt; requeriment(id)</text>
+<text x="30" y="2165" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_req | mysql.sql:1059</text>
+<text x="30" y="2184" font-family="monospace" font-size="13" fill="#15324f">F26 classified by category | task(category_id) -&gt; category(id)</text>
+<text x="30" y="2203" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_cat | mysql.sql:1061</text>
+<text x="30" y="2222" font-family="monospace" font-size="13" fill="#15324f">F27 has parent task | task(task_id) -&gt; task(id)</text>
+<text x="30" y="2241" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_task | mysql.sql:1063</text>
+<text x="30" y="2260" font-family="monospace" font-size="13" fill="#15324f">F28 assigns task | resource_task(task_id) -&gt; task(id)</text>
+<text x="30" y="2279" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_res_task | mysql.sql:1065</text>
+<text x="30" y="2298" font-family="monospace" font-size="13" fill="#15324f">F29 assigns resource participation | resource_task(resource_id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="2317" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_res_task | mysql.sql:1067</text>
+<text x="30" y="2336" font-family="monospace" font-size="13" fill="#15324f">F30 has assignment status | resource_task(task_status_id) -&gt; task_status(id)</text>
+<text x="30" y="2355" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_task_status_task | mysql.sql:1069</text>
+<text x="30" y="2374" font-family="monospace" font-size="13" fill="#15324f">F31 approved by user | resource_task(approver_id) -&gt; tool_user(id)</text>
+<text x="30" y="2393" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | approver_res_task_fk | mysql.sql:1071</text>
+<text x="30" y="2412" font-family="monospace" font-size="13" fill="#15324f">F32 records assignment transition | task_history(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="2431" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_hist_res_task | mysql.sql:1073</text>
+<text x="30" y="2450" font-family="monospace" font-size="13" fill="#15324f">F33 records resulting assignment status | task_history(task_status_id) -&gt; task_status(id)</text>
+<text x="30" y="2469" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_hist_status_task | mysql.sql:1075</text>
+<text x="30" y="2488" font-family="monospace" font-size="13" fill="#15324f">F34 handled by user | task_history(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="2507" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_hist_user | mysql.sql:1077</text>
+<text x="30" y="2526" font-family="monospace" font-size="13" fill="#15324f">F35 allocates assignment | resource_task_alloc(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="2545" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | alloc_res_task | mysql.sql:1079</text>
+<text x="30" y="2564" font-family="monospace" font-size="13" fill="#15324f">F36 allocates assignment | resource_task_alloc_plann(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="2583" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | alloc_plan_res_task | mysql.sql:1081</text>
+<text x="30" y="2602" font-family="monospace" font-size="13" fill="#15324f">F37 defines category in project | category(project_id) -&gt; project(id)</text>
+<text x="30" y="2621" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | cat_project | mysql.sql:1101</text>
+<text x="30" y="2640" font-family="monospace" font-size="13" fill="#15324f">F38 has originating planning item | plan_relation(planning_id) -&gt; planning(id)</text>
+<text x="30" y="2659" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | plan_plan_relation | mysql.sql:1141</text>
+<text x="30" y="2678" font-family="monospace" font-size="13" fill="#15324f">F39 provides capacity for | resource_capacity(resource_id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="2697" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_cap_resource | mysql.sql:1151</text>
+<text x="30" y="2716" font-family="monospace" font-size="13" fill="#a65c00">I1 RECOVERED plan_relation.plan_related_id -&gt; planning.id</text>
+<text x="30" y="2735" font-family="monospace" font-size="13" fill="#a65c00">   Candidate 0..1 / 0..N; unenforced; PlanningRelationDAO.java:40-44</text>
+<text x="30" y="2754" font-family="monospace" font-size="13" fill="#a65c00">I2 RECOVERED task.created_by -&gt; tool_user.id</text>
+<text x="30" y="2773" font-family="monospace" font-size="13" fill="#a65c00">   Candidate 0..1 / 0..N; unenforced; TaskDAO.java:1001-1011</text>
+</svg>
