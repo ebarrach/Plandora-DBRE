@@ -1,0 +1,1061 @@
+{
+  "differences": [
+    {
+      "table": "planning",
+      "mysql": {
+        "name": "description",
+        "ordinal": 2,
+        "type": "text",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "description text",
+        "line": 298
+      },
+      "hsql": {
+        "name": "description",
+        "ordinal": 2,
+        "type": "varchar(1000000)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "description varchar(1000000)",
+        "line": 295
+      }
+    },
+    {
+      "table": "planning",
+      "mysql": {
+        "name": "rich_text_desc",
+        "ordinal": 6,
+        "type": "text",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "rich_text_desc text null",
+        "line": 302
+      },
+      "hsql": {
+        "name": "rich_text_desc",
+        "ordinal": 6,
+        "type": "varchar(1000000)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "rich_text_desc varchar(1000000) null",
+        "line": 299
+      }
+    },
+    {
+      "table": "project",
+      "mysql": {
+        "name": "allow_billable",
+        "ordinal": 11,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "allow_billable int(1) null",
+        "line": 246
+      },
+      "hsql": {
+        "name": "allow_billable",
+        "ordinal": 11,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "allow_billable int null",
+        "line": 245
+      }
+    },
+    {
+      "table": "project",
+      "mysql": {
+        "name": "budget",
+        "ordinal": 13,
+        "type": "bigint(20)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "budget bigint(20) NOT NULL",
+        "line": 248
+      },
+      "hsql": {
+        "name": "budget",
+        "ordinal": 13,
+        "type": "decimal(13)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "budget decimal(13) null",
+        "line": 247
+      }
+    },
+    {
+      "table": "project_status",
+      "mysql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint(4)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint(4)",
+        "line": 213
+      },
+      "hsql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint",
+        "line": 212
+      }
+    },
+    {
+      "table": "requeriment",
+      "mysql": {
+        "name": "priority",
+        "ordinal": 7,
+        "type": "int(1)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "priority int(1) not null",
+        "line": 259
+      },
+      "hsql": {
+        "name": "priority",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "priority int not null",
+        "line": 258
+      }
+    },
+    {
+      "table": "requeriment",
+      "mysql": {
+        "name": "is_acceptance",
+        "ordinal": 8,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_acceptance int(1) null",
+        "line": 260
+      },
+      "hsql": {
+        "name": "is_acceptance",
+        "ordinal": 8,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_acceptance int null",
+        "line": 259
+      }
+    },
+    {
+      "table": "requeriment",
+      "mysql": {
+        "name": "reopening",
+        "ordinal": 10,
+        "type": "bigint(6)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "reopening bigint(6) null",
+        "line": 262
+      },
+      "hsql": {
+        "name": "reopening",
+        "ordinal": 10,
+        "type": "bigint",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "reopening bigint null",
+        "line": 261
+      }
+    },
+    {
+      "table": "requeriment_status",
+      "mysql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint(4)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint(4)",
+        "line": 221
+      },
+      "hsql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint",
+        "line": 220
+      }
+    },
+    {
+      "table": "requeriment_history",
+      "mysql": {
+        "name": "comment",
+        "ordinal": 6,
+        "type": "text",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "comment text",
+        "line": 313
+      },
+      "hsql": {
+        "name": "comment",
+        "ordinal": 6,
+        "type": "varchar(1000000)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "comment varchar(1000000)",
+        "line": 310
+      }
+    },
+    {
+      "table": "task",
+      "mysql": {
+        "name": "is_parent_task",
+        "ordinal": 7,
+        "type": "int(1)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "is_parent_task int(1)",
+        "line": 273
+      },
+      "hsql": {
+        "name": "is_parent_task",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "is_parent_task int",
+        "line": 272
+      }
+    },
+    {
+      "table": "task",
+      "mysql": {
+        "name": "is_unpredictable",
+        "ordinal": 9,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_unpredictable int(1) null",
+        "line": 275
+      },
+      "hsql": {
+        "name": "is_unpredictable",
+        "ordinal": 9,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_unpredictable int null",
+        "line": 274
+      }
+    },
+    {
+      "table": "task_status",
+      "mysql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint(4)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint(4)",
+        "line": 231
+      },
+      "hsql": {
+        "name": "state_machine_order",
+        "ordinal": 4,
+        "type": "bigint",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "state_machine_order bigint",
+        "line": 230
+      }
+    },
+    {
+      "table": "task_history",
+      "mysql": {
+        "name": "estimated_time",
+        "ordinal": 7,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "estimated_time bigint(6) not null",
+        "line": 331
+      },
+      "hsql": {
+        "name": "estimated_time",
+        "ordinal": 7,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "estimated_time bigint not null",
+        "line": 328
+      }
+    },
+    {
+      "table": "task_history",
+      "mysql": {
+        "name": "actual_time",
+        "ordinal": 9,
+        "type": "bigint(6)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "actual_time bigint(6) null",
+        "line": 333
+      },
+      "hsql": {
+        "name": "actual_time",
+        "ordinal": 9,
+        "type": "bigint",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "actual_time bigint null",
+        "line": 330
+      }
+    },
+    {
+      "table": "task_history",
+      "mysql": {
+        "name": "comment",
+        "ordinal": 12,
+        "type": "text",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "comment text",
+        "line": 336
+      },
+      "hsql": {
+        "name": "comment",
+        "ordinal": 12,
+        "type": "varchar(1000000)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "comment varchar(1000000)",
+        "line": 333
+      }
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "estimated_time",
+        "ordinal": 5,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "estimated_time bigint(6) not null",
+        "line": 284
+      },
+      "hsql": {
+        "name": "estimated_time",
+        "ordinal": 5,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "estimated_time bigint not null",
+        "line": 283
+      }
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "actual_time",
+        "ordinal": 7,
+        "type": "bigint(6)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "actual_time bigint(6) null",
+        "line": 286
+      },
+      "hsql": {
+        "name": "actual_time",
+        "ordinal": 7,
+        "type": "bigint",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "actual_time bigint null",
+        "line": 285
+      }
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "is_acceptance_task",
+        "ordinal": 9,
+        "type": "int(1)",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "is_acceptance_task int(1)",
+        "line": 288
+      },
+      "hsql": {
+        "name": "is_acceptance_task",
+        "ordinal": 9,
+        "type": "int",
+        "null_declaration": null,
+        "default_explicit": null,
+        "declaration": "is_acceptance_task int",
+        "line": 287
+      }
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "billable",
+        "ordinal": 10,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "billable int(1) null",
+        "line": 289
+      },
+      "hsql": {
+        "name": "billable",
+        "ordinal": 10,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "billable int null",
+        "line": 288
+      }
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "approver_id",
+        "ordinal": 11,
+        "type": "varchar (10)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "approver_id varchar (10) null",
+        "line": 290
+      },
+      "hsql": null
+    },
+    {
+      "table": "resource_task",
+      "mysql": {
+        "name": "approved",
+        "ordinal": 12,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "approved int(1) null",
+        "line": 291
+      },
+      "hsql": null
+    },
+    {
+      "table": "resource_task_alloc",
+      "mysql": {
+        "name": "sequence",
+        "ordinal": 4,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "sequence bigint(6) not null",
+        "line": 344
+      },
+      "hsql": {
+        "name": "sequence",
+        "ordinal": 4,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "sequence bigint not null",
+        "line": 341
+      }
+    },
+    {
+      "table": "resource_task_alloc",
+      "mysql": {
+        "name": "alloc_time",
+        "ordinal": 5,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "alloc_time bigint(6) not null",
+        "line": 345
+      },
+      "hsql": {
+        "name": "alloc_time",
+        "ordinal": 5,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "alloc_time bigint not null",
+        "line": 342
+      }
+    },
+    {
+      "table": "resource_task_alloc_plann",
+      "mysql": {
+        "name": "sequence",
+        "ordinal": 4,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "sequence bigint(6) not null",
+        "line": 353
+      },
+      "hsql": {
+        "name": "sequence",
+        "ordinal": 4,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "sequence bigint not null",
+        "line": 350
+      }
+    },
+    {
+      "table": "resource_task_alloc_plann",
+      "mysql": {
+        "name": "alloc_time",
+        "ordinal": 5,
+        "type": "bigint(6)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "alloc_time bigint(6) not null",
+        "line": 354
+      },
+      "hsql": {
+        "name": "alloc_time",
+        "ordinal": 5,
+        "type": "bigint",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "alloc_time bigint not null",
+        "line": 351
+      }
+    },
+    {
+      "table": "resource_capacity",
+      "mysql": {
+        "name": "cap_year",
+        "ordinal": 3,
+        "type": "int(4)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_year int(4) NOT NULL",
+        "line": 745
+      },
+      "hsql": {
+        "name": "cap_year",
+        "ordinal": 3,
+        "type": "int",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_year int NOT NULL",
+        "line": 717
+      }
+    },
+    {
+      "table": "resource_capacity",
+      "mysql": {
+        "name": "cap_month",
+        "ordinal": 4,
+        "type": "int(2)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_month int(2) NOT NULL",
+        "line": 746
+      },
+      "hsql": {
+        "name": "cap_month",
+        "ordinal": 4,
+        "type": "int",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_month int NOT NULL",
+        "line": 718
+      }
+    },
+    {
+      "table": "resource_capacity",
+      "mysql": {
+        "name": "cap_day",
+        "ordinal": 5,
+        "type": "int(2)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_day int(2) NOT NULL",
+        "line": 747
+      },
+      "hsql": {
+        "name": "cap_day",
+        "ordinal": 5,
+        "type": "int",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "cap_day int NOT NULL",
+        "line": 719
+      }
+    },
+    {
+      "table": "resource_capacity",
+      "mysql": {
+        "name": "capacity",
+        "ordinal": 6,
+        "type": "int(4)",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "capacity int(4) NOT NULL",
+        "line": 748
+      },
+      "hsql": {
+        "name": "capacity",
+        "ordinal": 6,
+        "type": "int",
+        "null_declaration": "NOT NULL",
+        "default_explicit": null,
+        "declaration": "capacity int NOT NULL",
+        "line": 720
+      }
+    },
+    {
+      "table": "resource_capacity",
+      "mysql": {
+        "name": "cost_per_hour",
+        "ordinal": 7,
+        "type": "int(10)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "cost_per_hour int(10) NULL",
+        "line": 749
+      },
+      "hsql": {
+        "name": "cost_per_hour",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "cost_per_hour int NULL",
+        "line": 721
+      }
+    },
+    {
+      "table": "tool_user",
+      "mysql": {
+        "name": "permission",
+        "ordinal": 16,
+        "type": "text",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "permission text null",
+        "line": 128
+      },
+      "hsql": {
+        "name": "permission",
+        "ordinal": 16,
+        "type": "varchar(100000)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "permission varchar(100000) null",
+        "line": 127
+      }
+    },
+    {
+      "table": "tool_user",
+      "mysql": {
+        "name": "pic_file",
+        "ordinal": 17,
+        "type": "mediumblob",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "pic_file mediumblob null",
+        "line": 129
+      },
+      "hsql": {
+        "name": "pic_file",
+        "ordinal": 17,
+        "type": "LONGVARBINARY",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "pic_file LONGVARBINARY null",
+        "line": 128
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "is_disable",
+        "ordinal": 3,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_disable int(1) null",
+        "line": 174
+      },
+      "hsql": {
+        "name": "is_disable",
+        "ordinal": 3,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_disable int null",
+        "line": 173
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "is_req_acceptable",
+        "ordinal": 4,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_req_acceptable int(1) null",
+        "line": 175
+      },
+      "hsql": {
+        "name": "is_req_acceptable",
+        "ordinal": 4,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_req_acceptable int null",
+        "line": 174
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "can_see_tech_comment",
+        "ordinal": 5,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_tech_comment int(1) null",
+        "line": 176
+      },
+      "hsql": {
+        "name": "can_see_tech_comment",
+        "ordinal": 5,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_tech_comment int null",
+        "line": 175
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "pre_approve_req",
+        "ordinal": 6,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "pre_approve_req int(1) null",
+        "line": 177
+      },
+      "hsql": {
+        "name": "pre_approve_req",
+        "ordinal": 6,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "pre_approve_req int null",
+        "line": 176
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "can_see_discussion",
+        "ordinal": 7,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_discussion int(1) null",
+        "line": 178
+      },
+      "hsql": {
+        "name": "can_see_discussion",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_discussion int null",
+        "line": 177
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "can_see_other_reqs",
+        "ordinal": 9,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_other_reqs int(1) null",
+        "line": 180
+      },
+      "hsql": {
+        "name": "can_see_other_reqs",
+        "ordinal": 9,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_other_reqs int null",
+        "line": 179
+      }
+    },
+    {
+      "table": "customer",
+      "mysql": {
+        "name": "can_open_otherowner_reqs",
+        "ordinal": 10,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_open_otherowner_reqs int(1) null",
+        "line": 181
+      },
+      "hsql": {
+        "name": "can_open_otherowner_reqs",
+        "ordinal": 10,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_open_otherowner_reqs int null",
+        "line": 180
+      }
+    },
+    {
+      "table": "resource",
+      "mysql": {
+        "name": "can_self_alloc",
+        "ordinal": 3,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_self_alloc int(1) null",
+        "line": 188
+      },
+      "hsql": {
+        "name": "can_self_alloc",
+        "ordinal": 3,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_self_alloc int null",
+        "line": 187
+      }
+    },
+    {
+      "table": "resource",
+      "mysql": {
+        "name": "can_see_repository",
+        "ordinal": 4,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_repository int(1) null",
+        "line": 189
+      },
+      "hsql": {
+        "name": "can_see_repository",
+        "ordinal": 4,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_repository int null",
+        "line": 188
+      }
+    },
+    {
+      "table": "resource",
+      "mysql": {
+        "name": "can_see_invoice",
+        "ordinal": 5,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_invoice int(1) null",
+        "line": 190
+      },
+      "hsql": {
+        "name": "can_see_invoice",
+        "ordinal": 5,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_invoice int null",
+        "line": 189
+      }
+    },
+    {
+      "table": "resource",
+      "mysql": {
+        "name": "can_see_customer",
+        "ordinal": 7,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_customer int(1) null",
+        "line": 192
+      },
+      "hsql": {
+        "name": "can_see_customer",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "can_see_customer int null",
+        "line": 191
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "type",
+        "ordinal": 4,
+        "type": "int(2)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "type int(2) null",
+        "line": 160
+      },
+      "hsql": {
+        "name": "type",
+        "ordinal": 4,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "type int null",
+        "line": 159
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "billable",
+        "ordinal": 6,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "billable int(1) NULL",
+        "line": 162
+      },
+      "hsql": {
+        "name": "billable",
+        "ordinal": 6,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "billable int NULL",
+        "line": 161
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "disable_view",
+        "ordinal": 7,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "disable_view int(1) NULL",
+        "line": 163
+      },
+      "hsql": {
+        "name": "disable_view",
+        "ordinal": 7,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "disable_view int NULL",
+        "line": 162
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "is_defect",
+        "ordinal": 8,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_defect int(1) NULL",
+        "line": 164
+      },
+      "hsql": {
+        "name": "is_defect",
+        "ordinal": 8,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_defect int NULL",
+        "line": 163
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "is_testing",
+        "ordinal": 9,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_testing int(1) NULL",
+        "line": 165
+      },
+      "hsql": {
+        "name": "is_testing",
+        "ordinal": 9,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_testing int NULL",
+        "line": 164
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "is_developing",
+        "ordinal": 10,
+        "type": "int(1)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_developing int(1) NULL",
+        "line": 166
+      },
+      "hsql": {
+        "name": "is_developing",
+        "ordinal": 10,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "is_developing int NULL",
+        "line": 165
+      }
+    },
+    {
+      "table": "category",
+      "mysql": {
+        "name": "category_order",
+        "ordinal": 11,
+        "type": "int(2)",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "category_order int(2) null",
+        "line": 167
+      },
+      "hsql": {
+        "name": "category_order",
+        "ordinal": 11,
+        "type": "int",
+        "null_declaration": "NULL",
+        "default_explicit": null,
+        "declaration": "category_order int null",
+        "line": 166
+      }
+    }
+  ],
+  "hsql_fk_count": 95,
+  "note": "Separate dialect, never merged with mysql inventory"
+}

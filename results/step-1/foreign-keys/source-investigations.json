@@ -1,0 +1,1244 @@
+{
+  "customer_function": [
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 112,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 180,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 210,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 240,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 273,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 42,
+      "text": "pstmt = c.prepareStatement(\"select customer_id, project_id, function_id, creation_date \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 43,
+      "text": "\"from customer_function \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 44,
+      "text": "\"where customer_id=? and project_id=? and function_id=?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 69,
+      "text": "pstmt = c.prepareStatement(\"select c.customer_id, c.project_id, c.function_id, c.creation_date, f.name \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 70,
+      "text": "\"from function f, customer_function c \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 71,
+      "text": "\"where c.function_id = f.id and c.customer_id=? and c.project_id=?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 104,
+      "text": "pstmt = c.prepareStatement(\"insert into customer_function(customer_id, project_id, function_id, creation_date) \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 124,
+      "text": "pstmt = c.prepareStatement(\"delete from customer_function \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 125,
+      "text": "\"where customer_id=? and project_id=? and function_id=?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 169,
+      "text": "pstmt = c.prepareStatement(\"delete from customer_function where customer_id=? and project_id=?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+      "line": 186,
+      "text": "FunctionTO fto = new FunctionTO(getString(rs, \"function_id\"));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java",
+      "line": 69,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java",
+      "line": 121,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java",
+      "line": 172,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 214,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.deactivation_date, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 264,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 314,
+      "text": "\"u.phone, u.password, u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 345,
+      "text": "\"u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/RootDAO.java",
+      "line": 30,
+      "text": "\"u.PHONE, u.PASSWORD, u.DEPARTMENT_ID, u.AREA_ID, u.FUNCTION_ID, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 63,
+      "text": "\"phone, password, department_id, area_id, function_id, country, language, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 94,
+      "text": "\"phone, password, department_id, area_id, function_id, country, language, birth, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 127,
+      "text": "\"phone, department_id, area_id, function_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 201,
+      "text": "\"area_id=?, function_id=?, country=?, language=?, birth=?, auth_mode=?, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 408,
+      "text": "\"phone, password, department_id, area_id, function_id, country, language, birth, company_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 464,
+      "text": "\"u.phone, u.password, u.department_id, u.area_id, u.function_id, u.country, u.language, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 525,
+      "text": "\"phone, password, department_id, area_id, function_id, country, language, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 582,
+      "text": "fto.setId(getString(rs, \"function_id\"));"
+    }
+  ],
+  "status_project": [],
+  "status_parent": [
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/DiscussionTopicBUS.java",
+      "line": 32,
+      "text": "dtto.setParentTopic(new DiscussionTopicTO(parentTopicId));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ProjectBUS.java",
+      "line": 184,
+      "text": "if (!cdao.checkCustomerExists(pto.getAllocUsers(), pto.getParentProject())){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ProjectBUS.java",
+      "line": 189,
+      "text": "if (pto.getParentProject()==null || pto.getParentProject().getId()==null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ProjectBUS.java",
+      "line": 707,
+      "text": "if (pto.getParentProject().getId()==null || pto.getParentProject().getId().equals(\"0\")){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/repository/WrapperDBRepository.java",
+      "line": 293,
+      "text": "sqls.add(\"insert into db_repository_item (id, repository_file_path, repository_file_name, project_id, is_directory, parent_id) values (?, ?, ?, ?, ?, ?)\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/repository/WrapperDBRepository.java",
+      "line": 439,
+      "text": "\"is_directory, parent_id) values (?, ?, ?, ?, ?, ?)\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/RequirementBUS.java",
+      "line": 298,
+      "text": "if (rto.getParentRequirementId()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/RequirementBUS.java",
+      "line": 299,
+      "text": "String[] ids = rto.getParentRequirementId().split(\";\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/RequirementBUS.java",
+      "line": 309,
+      "text": "if (!rto.getParentRequirementId().trim().equals(\"\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/RequirementBUS.java",
+      "line": 314,
+      "text": "throw new DifferentProjectFromParentReqException(\"The requirement [\" + rto.getId() + \"] is not into the same project of requirement [\" + rto.getParentRequirementId() + \"]\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/RequirementBUS.java",
+      "line": 317,
+      "text": "throw new ParentReqNotExistsException(\"The requirement [\" + rto.getParentRequirementId() + \"] not exists.\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ResourceTaskBUS.java",
+      "line": 434,
+      "text": "TaskTO parentTask = rtto.getTask().getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ResourceTaskBUS.java",
+      "line": 436,
+      "text": "tto.setParentTask(parentTask);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ResourceTaskBUS.java",
+      "line": 447,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/ResourceTaskBUS.java",
+      "line": 922,
+      "text": "TaskTO parenttask = subTask.getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 260,
+      "text": "child.setParentTask(tto);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 280,
+      "text": "TaskTO parentTask = tto.getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 410,
+      "text": "TaskTO parent = tto.getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 482,
+      "text": "if (tto.getParentTask()!=null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 485,
+      "text": "TaskTO parent = (TaskTO)hm.get(tto.getParentTask().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 494,
+      "text": "if (tto.getParentTask()==null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/bus/TaskBUS.java",
+      "line": 521,
+      "text": "if (tto.getParentTask()==null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 106,
+      "text": "\"sub.type, sub.parent_id, sub.parent_topic, sub.req_project, sub.task_project, sub.occ_project, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 111,
+      "text": "\"null as parent_id, null as parent_topic, null as req_project, h.project_id as task_project, null as occ_project, null as risk_project, null as replyuser \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 238,
+      "text": "response.setParentId(getString(rs, \"parent_id\"));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 239,
+      "text": "response.setParentTopic(getString(rs, \"parent_topic\"));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 240,
+      "text": "response.setParentTopicUser(getString(rs, \"replyuser\"));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 109,
+      "text": "clone.setParentTopic(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 117,
+      "text": "if (dtto.getParentTopic()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 192,
+      "text": "if (dtto.getParentTopic()!=null && dtto.getParentTopic().getId()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 193,
+      "text": "pstmt.setString(4, dtto.getParentTopic().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 217,
+      "text": "if (dtto.getParentTopic()!=null && dtto.getParentTopic().getId()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 218,
+      "text": "pstmt.setString(3, dtto.getParentTopic().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionTopicDAO.java",
+      "line": 247,
+      "text": "response.setParentTopic(new DiscussionTopicTO(parent));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 131,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, p.can_alloc, p.estimated_closure_date, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 163,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, pp.name as PARENT_PROJECT_NAME, ps.name as PROJECT_STATUS_NAME, p.can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 169,
+      "text": "\"from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 187,
+      "text": "ProjectTO parent = to.getParentProject();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 230,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, ps.name as PROJECT_STATUS_NAME, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 233,
+      "text": "\"from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 241,
+      "text": "ProjectTO parent = to.getParentProject();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 271,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, p.can_alloc, p.allow_billable, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 274,
+      "text": "\"where p.id = a.id and p.parent_id=?\" + finishWhere);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 308,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, ps.name as PROJECT_STATUS_NAME, p.can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 350,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, ps.name as PROJECT_STATUS_NAME, p.can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 415,
+      "text": "\"p.PROJECT_STATUS_ID, p.parent_id, p.company_id, ps.NAME as PROJECT_STATUS_NAME, p.can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 480,
+      "text": "String pprid = getString(rs, \"parent_id\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 486,
+      "text": "response.setParentProject(ppto);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 523,
+      "text": "pstmt = c.prepareStatement(\"insert into project (id, name, parent_id, project_status_id, can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 529,
+      "text": "pstmt.setString(3, pto.getParentProject().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 601,
+      "text": "pstmt = c.prepareStatement(\"update project set name=?, parent_id=?, project_status_id=?, can_alloc=?, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 606,
+      "text": "pstmt.setString(2, pto.getParentProject().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 697,
+      "text": "ProjectTO parent = pto.getParentProject();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java",
+      "line": 757,
+      "text": "\"p.project_status_id, p.parent_id, p.company_id, ps.name as PROJECT_STATUS_NAME, p.can_alloc, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java",
+      "line": 915,
+      "text": "String parentIds = rto.getParentRequirementId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java",
+      "line": 916,
+      "text": "if (parentIds!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java",
+      "line": 929,
+      "text": "if (!parentIds.equals(\"\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java",
+      "line": 930,
+      "text": "String[] ids = parentIds.split(\";\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 509,
+      "text": "//\t\t\t    \ttto.setParentTask(new TaskTO(parentTaskId));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 549,
+      "text": "tto.setParentTask(new TaskTO(parent));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 758,
+      "text": "tto.setParentTask(new TaskTO(parentTaskId));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 1227,
+      "text": "if (relatedNode==null && tto.getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 1228,
+      "text": "TaskTO macroTask = (TaskTO)tdao.getObject(tto.getParentTask(), c);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java",
+      "line": 1396,
+      "text": "TaskTO parenttask = tto.getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 631,
+      "text": "pstmt.setString(6, tto.getParentTaskId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 706,
+      "text": "pstmt.setString(5, tto.getParentTaskId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 776,
+      "text": "if (tto.getParentTask()!=null && !tto.getParentTaskId().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 777,
+      "text": "pstmt.setString(1, tto.getParentTaskId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 953,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java",
+      "line": 1023,
+      "text": "response.setParentTask(new TaskTO(parentTaskId));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskNodeTemplateDAO.java",
+      "line": 214,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/delegate/TaskDelegate.java",
+      "line": 245,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/DiscussionTopicTO.java",
+      "line": 55,
+      "text": "public DiscussionTopicTO getParentTopic() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/DiscussionTopicTO.java",
+      "line": 58,
+      "text": "public void setParentTopic(DiscussionTopicTO newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/DiscussionTopicTO.java",
+      "line": 108,
+      "text": "response.setParentTopic(this.getParentTopic());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 85,
+      "text": "if (tto.getParentTask()!=null && !tto.getParentTask().getId().trim().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 86,
+      "text": "frm.setParentTaskId(tto.getParentTask().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 88,
+      "text": "frm.setParentTaskId(\"-1\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 99,
+      "text": "frm.setParentTaskId(\"-1\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 178,
+      "text": "if (frm.getParentTaskId()!=null && !frm.getParentTaskId().trim().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 179,
+      "text": "tto.setParentTask(new TaskTO(frm.getParentTaskId()));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 181,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/AgilePanelTaskAction.java",
+      "line": 211,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/CostAction.java",
+      "line": 291,
+      "text": "Vector<TransferObject> list = this.getParentList(frm, uto);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/CostAction.java",
+      "line": 642,
+      "text": "private Vector<TransferObject> getParentList(CostForm frm, UserTO uto) throws BusinessException {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 348,
+      "text": "if (tto.getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 349,
+      "text": "macroTask = \" macroTask=\\\"\" + tto.getParentTask().getId() + \"\\\"\";"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 412,
+      "text": "if (tto.getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 413,
+      "text": "Vector<ResourceTaskTO> childList = response.get(tto.getParentTask().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 416,
+      "text": "response.put(tto.getParentTask().getId(), childList);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 622,
+      "text": "if (copyTask.getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GanttPanelAction.java",
+      "line": 623,
+      "text": "response = getIdentation(copyTask.getParentTask(), taskHash);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GeneralStrutsAction.java",
+      "line": 566,
+      "text": "String parentId = tokens[1];"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GeneralStrutsAction.java",
+      "line": 567,
+      "text": "if (parentId != null && parentId.trim().equals(\"\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GeneralStrutsAction.java",
+      "line": 568,
+      "text": "parentId = null;"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/GeneralStrutsAction.java",
+      "line": 570,
+      "text": "dtDel.replyDiscussionTopic(planningId, parentId, replyContent, frm.getCurrentUser());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/MindMapAction.java",
+      "line": 81,
+      "text": "TaskTO parentTask = ((TaskTO)pto).getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/MindMapAction.java",
+      "line": 147,
+      "text": "TaskTO parentTask = ((TaskTO)pto).getParentTask();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ProjectAction.java",
+      "line": 588,
+      "text": "if (to.getParentProject() != null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ProjectAction.java",
+      "line": 589,
+      "text": "frm.setParentProject(to.getParentProject().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ProjectAction.java",
+      "line": 591,
+      "text": "frm.setParentProject(\"\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ProjectAction.java",
+      "line": 664,
+      "text": "pto.setParentProject(new ProjectTO(frm.getParentProject()));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/projectpanel/ProjectInfoProjectPanel.java",
+      "line": 37,
+      "text": "ProjectTO parent = pto.getParentProject();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 985,
+      "text": "if (frm.getParentTaskId().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 986,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 988,
+      "text": "tto.setParentTask(new TaskTO(frm.getParentTaskId()));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 1103,
+      "text": "if (tto.getParentTask()!=null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 1104,
+      "text": "trfrm.setParentTaskId(tto.getParentTask().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ResTaskAction.java",
+      "line": 1106,
+      "text": "trfrm.setParentTaskId(\"-1\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ShowAllRequirementAction.java",
+      "line": 167,
+      "text": "if (parentReqId!=null && !parentReqId.equals(rto.getParentRequirementId())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ShowAllRequirementAction.java",
+      "line": 168,
+      "text": "if (parentReqId.equals(\"\") && rto.getParentRequirementId()==null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/ShowAllRequirementAction.java",
+      "line": 171,
+      "text": "rto.setParentRequirementId(parentReqId);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 246,
+      "text": "if (tto.getParentTask() != null && tto.getParentTask().getId().equals(tto.getId())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 603,
+      "text": "if (to.getParentTask() != null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 604,
+      "text": "frm.setParentTaskId(to.getParentTask().getId());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 606,
+      "text": "frm.setParentTaskId(\"-1\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 709,
+      "text": "if (frm.getParentTaskId().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 710,
+      "text": "tto.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/action/TaskAction.java",
+      "line": 712,
+      "text": "tto.setParentTask(new TaskTO(frm.getParentTaskId()));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/AgilePanelTaskForm.java",
+      "line": 142,
+      "text": "public String getParentTaskId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/AgilePanelTaskForm.java",
+      "line": 145,
+      "text": "public void setParentTaskId(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/ProjectForm.java",
+      "line": 181,
+      "text": "public String getParentProject() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/ProjectForm.java",
+      "line": 184,
+      "text": "public void setParentProject(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/ResTaskForm.java",
+      "line": 546,
+      "text": "public String getParentTaskId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/ResTaskForm.java",
+      "line": 549,
+      "text": "public void setParentTaskId(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/TaskForm.java",
+      "line": 254,
+      "text": "public String getParentTaskId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/struts/form/TaskForm.java",
+      "line": 257,
+      "text": "public void setParentTaskId(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/GridMindMapLinkDecorator.java",
+      "line": 37,
+      "text": "if (tag.equals(\"PARENT_ID\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/GridMindMapLinkDecorator.java",
+      "line": 40,
+      "text": "if (rtto.getTask()!=null && rtto.getTask().getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/GridMindMapLinkDecorator.java",
+      "line": 41,
+      "text": "columnValue = rtto.getTask().getParentTask().getId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/GridWorkflowDecorator.java",
+      "line": 43,
+      "text": "if (tto.getParentTask()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/GridWorkflowDecorator.java",
+      "line": 46,
+      "text": "TaskTO parent = tdel.getTaskObject(tto.getParentTask());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 83,
+      "text": "detailsLink = tito.getParentId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 149,
+      "text": "content.append(fileLbl + \" \" + fileName + \" \" + linkLbl + \" \" + this.getParentIdLink(tito));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 162,
+      "text": "if (tito.getParentTopicUser().equals(IterationOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 164,
+      "text": "} else if (tito.getParentTopicUser().equals(MilestoneOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 166,
+      "text": "} else if (tito.getParentTopicUser().equals(EventOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 168,
+      "text": "} else if (tito.getParentTopicUser().equals(LessonLearnedOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 170,
+      "text": "} else if (tito.getParentTopicUser().equals(IssueOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 172,
+      "text": "} else if (tito.getParentTopicUser().equals(StrategicObjectivesOccurrence.class.getName())) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 224,
+      "text": "if (tito.getParentTopic()!=null && !tito.getParentTopic().trim().equals(\"\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 226,
+      "text": "content.append(userLbl + \" <b>\" + tito.getParentTopicUser() + \"</b> \" + aboutLbl);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 231,
+      "text": "content.append(\" \" + this.getParentIdLink(tito));"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 269,
+      "text": "private String getParentIdLink(TeamInfoTO tito) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/InfoTeamContentDecorator.java",
+      "line": 270,
+      "text": "return \"<a class=\\\"gridLink\\\" href=\\\"javascript:loadMindMap(\" + tito.getParentId() + \");\\\" border=\\\"0\\\">[#\" + tito.getParentId() + \"]</a>\";"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/ProjectTreeDecorator.java",
+      "line": 35,
+      "text": "if (hiddenList!=null && pto.getParentProject()!=null && hiddenList.indexOf(pto.getParentProject().getId()+\"|\")>-1) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/ProjectTreeDecorator.java",
+      "line": 45,
+      "text": "if (pto.getParentProject()!=null && pto.getParentProject().getId()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/ProjectTreeDecorator.java",
+      "line": 46,
+      "text": "if (!pto.getParentProject().getId().equals(\"0\")){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/decorator/TaskTreeDecorator.java",
+      "line": 20,
+      "text": "if (tto.getParentTask()!=null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/discussiontopic/DiscussionTopic.java",
+      "line": 84,
+      "text": "if (dtto.getParentTopic()==null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/discussiontopic/DiscussionTopic.java",
+      "line": 98,
+      "text": "if (dtto.getParentTopic()!=null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/discussiontopic/DiscussionTopic.java",
+      "line": 100,
+      "text": "String key = dtto.getParentTopic().getId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PColumnTag.java",
+      "line": 76,
+      "text": "Object parent = this.getParent();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PColumnTag.java",
+      "line": 87,
+      "text": "parent = ((TagSupport) parent).getParent();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableHelper.java",
+      "line": 174,
+      "text": "String parentId = table.getParenttag();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableHelper.java",
+      "line": 176,
+      "text": "Object parentVal = getDataByReflexion(parentId, line);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableHelper.java",
+      "line": 1026,
+      "text": "if (table.getParenttag()==null) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableTag.java",
+      "line": 247,
+      "text": "if (getParenttag()!=null && !getParenttag().trim().equals(\"\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableTag.java",
+      "line": 340,
+      "text": "response.setParenttag(this.getParenttag());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableTag.java",
+      "line": 367,
+      "text": "public String getParenttag() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/gui/taglib/table/PTableTag.java",
+      "line": 370,
+      "text": "public void setParenttag(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/helper/XmlDomParse.java",
+      "line": 344,
+      "text": "* @param parentId"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/helper/XmlDomParse.java",
+      "line": 349,
+      "text": "public ArrayList getNodesByTag(String parentId, String tagName) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/helper/XmlDomParse.java",
+      "line": 357,
+      "text": "Node parent = (Node) element.getParentNode();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/helper/XmlDomParse.java",
+      "line": 359,
+      "text": "//verify if parent is 'parentId'"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/helper/XmlDomParse.java",
+      "line": 360,
+      "text": "if (parent.getNodeName().equals(parentId))\t{"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/imp/MsProjectXmlImportBUS.java",
+      "line": 439,
+      "text": "tto.setParentTask(parentTask);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/imp/RequestCSVImportBUS.java",
+      "line": 255,
+      "text": "rto.setParentRequirementId(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/ProjectTO.java",
+      "line": 211,
+      "text": "public ProjectTO getParentProject() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/ProjectTO.java",
+      "line": 214,
+      "text": "public void setParentProject(ProjectTO newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/ProjectTO.java",
+      "line": 473,
+      "text": "if (childPrj.getParentProject()!=null && childPrj.getParentProject().getId()!=null &&"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/ProjectTO.java",
+      "line": 474,
+      "text": "childPrj.getParentProject().getId().equals(this.getId())){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/RequirementTO.java",
+      "line": 91,
+      "text": "this.parentRequirementId=clone.getParentRequirementId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/RequirementTO.java",
+      "line": 228,
+      "text": "public String getParentRequirementId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/RequirementTO.java",
+      "line": 250,
+      "text": "public void setParentRequirementId(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 136,
+      "text": "response.setParentTask(null);"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 142,
+      "text": "if (rtto.getTask().getParentTask()!=null && !rtto.getTask().getParentTask().getId().equals(\"-1\")) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 143,
+      "text": "response.setParentTask(rtto.getTask().getParentTask());"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 168,
+      "text": "public String getParentTaskId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 170,
+      "text": "if (getParentTask()!=null){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 171,
+      "text": "parentTaskId = getParentTask().getId();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 217,
+      "text": "if (childTask.getParentTask()!=null && childTask.getParentTask().getId().equals(this.getId())){"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 332,
+      "text": "public TaskTO getParentTask() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TaskTO.java",
+      "line": 335,
+      "text": "public void setParentTask(TaskTO newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 28,
+      "text": "private String parentId;"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 101,
+      "text": "public String getParentTopic() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 104,
+      "text": "public void setParentTopic(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 110,
+      "text": "public String getParentId() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 111,
+      "text": "return parentId;"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 113,
+      "text": "public void setParentId(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 114,
+      "text": "this.parentId = newValue;"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 119,
+      "text": "public String getParentTopicUser() {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/TeamInfoTO.java",
+      "line": 122,
+      "text": "public void setParentTopicUser(String newValue) {"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/org/apache/taglibs/display/ColumnTag.java",
+      "line": 180,
+      "text": "Object parent = this.getParent();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/org/apache/taglibs/display/ColumnTag.java",
+      "line": 190,
+      "text": "parent = ((TagSupport) parent).getParent ();"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/org/apache/taglibs/display/SetPropertyTag.java",
+      "line": 51,
+      "text": "Object parent = this.getParent();"
+    }
+  ],
+  "user_persistence": [
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 116,
+      "text": "\"from tool_user u, customer c \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+      "line": 184,
+      "text": "\"from tool_user u, customer c \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/DiscussionDAO.java",
+      "line": 109,
+      "text": "\"from tool_user u, ( \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ExpenseDAO.java",
+      "line": 47,
+      "text": "\"from tool_user u, project p, planning a, expense e  \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java",
+      "line": 74,
+      "text": "\"from tool_user u, customer c, resource r, leader e \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java",
+      "line": 126,
+      "text": "\"from tool_user u, customer c, resource r, leader e \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 319,
+      "text": "\"from tool_user u, customer c, resource r \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java",
+      "line": 350,
+      "text": "\"from tool_user u, customer c, resource r \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java",
+      "line": 128,
+      "text": "\"from tool_user u, task_status ts, task t, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java",
+      "line": 177,
+      "text": "\"from tool_user u, task t, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java",
+      "line": 218,
+      "text": "\"from tool_user u, task_status ts, task t, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java",
+      "line": 268,
+      "text": "\"from tool_user u, task_status ts, task t, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 65,
+      "text": "\"from tool_user \" + hideWhere + \"order by username asc\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 96,
+      "text": "\"from tool_user where id = ?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 126,
+      "text": "pstmt = c.prepareStatement(\"insert into tool_user (id, username, color, email, name, \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 368,
+      "text": "pstmt = c.prepareStatement(\"DELETE from tool_user WHERE ID=?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 410,
+      "text": "\"from tool_user where username = ?\");"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 466,
+      "text": "\"from tool_user u left outer join company c on (c.id = u.company_id) \" +"
+    },
+    {
+      "path": "code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java",
+      "line": 527,
+      "text": "\"from tool_user \" +"
+    }
+  ]
+}

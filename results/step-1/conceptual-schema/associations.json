@@ -1,0 +1,919 @@
+[
+  {
+    "id": "F1",
+    "name": "belongs to department",
+    "table": "tool_user",
+    "constraint": "user_department",
+    "columns": [
+      "department_id"
+    ],
+    "target": "department",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1009,
+    "end_line": 1009,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F2",
+    "name": "belongs to area",
+    "table": "tool_user",
+    "constraint": "user_area",
+    "columns": [
+      "area_id"
+    ],
+    "target": "area",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1011,
+    "end_line": 1011,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F3",
+    "name": "holds function",
+    "table": "tool_user",
+    "constraint": "user_function",
+    "columns": [
+      "function_id"
+    ],
+    "target": "function",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1013,
+    "end_line": 1013,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F4",
+    "name": "affiliated with company",
+    "table": "tool_user",
+    "constraint": "user_company",
+    "columns": [
+      "company_id"
+    ],
+    "target": "company",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1015,
+    "end_line": 1015,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F5",
+    "name": "participates as user",
+    "table": "customer",
+    "constraint": "customer_user",
+    "columns": [
+      "id"
+    ],
+    "target": "tool_user",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1017,
+    "end_line": 1017,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F6",
+    "name": "specializes participation (candidate)",
+    "table": "resource",
+    "constraint": "resource_customer",
+    "columns": [
+      "id",
+      "project_id"
+    ],
+    "target": "customer",
+    "target_columns": [
+      "id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1019,
+    "end_line": 1019,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..1",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F7",
+    "name": "specializes participation (candidate)",
+    "table": "leader",
+    "constraint": "leader_resource",
+    "columns": [
+      "id",
+      "project_id"
+    ],
+    "target": "resource",
+    "target_columns": [
+      "id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1021,
+    "end_line": 1021,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..1",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F8",
+    "name": "participates in project",
+    "table": "customer",
+    "constraint": "customer_project",
+    "columns": [
+      "project_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1025,
+    "end_line": 1025,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F9",
+    "name": "has parent project",
+    "table": "project",
+    "constraint": "project_parent_project",
+    "columns": [
+      "parent_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1027,
+    "end_line": 1027,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F10",
+    "name": "has current project status",
+    "table": "project",
+    "constraint": "project_status_project",
+    "columns": [
+      "project_status_id"
+    ],
+    "target": "project_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1029,
+    "end_line": 1029,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F11",
+    "name": "belongs to company",
+    "table": "project",
+    "constraint": "proj_company",
+    "columns": [
+      "company_id"
+    ],
+    "target": "company",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1031,
+    "end_line": 1031,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F12",
+    "name": "specializes planning (candidate)",
+    "table": "requeriment",
+    "constraint": "req_parent",
+    "columns": [
+      "id"
+    ],
+    "target": "planning",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1033,
+    "end_line": 1033,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..1",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F13",
+    "name": "classified by category",
+    "table": "requeriment",
+    "constraint": "req_cat",
+    "columns": [
+      "category_id"
+    ],
+    "target": "category",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1035,
+    "end_line": 1035,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F14",
+    "name": "specializes planning (candidate)",
+    "table": "project",
+    "constraint": "project_parent",
+    "columns": [
+      "id"
+    ],
+    "target": "planning",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1037,
+    "end_line": 1037,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..1",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F15",
+    "name": "requested in project",
+    "table": "requeriment",
+    "constraint": "req_project",
+    "columns": [
+      "project_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1039,
+    "end_line": 1039,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F16",
+    "name": "has current request status",
+    "table": "requeriment",
+    "constraint": "req_status_req",
+    "columns": [
+      "requeriment_status_id"
+    ],
+    "target": "requeriment_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1041,
+    "end_line": 1041,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F17",
+    "name": "requested by user",
+    "table": "requeriment",
+    "constraint": "req_user",
+    "columns": [
+      "user_id"
+    ],
+    "target": "tool_user",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1043,
+    "end_line": 1043,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F18",
+    "name": "records request transition",
+    "table": "requeriment_history",
+    "constraint": "req_hist_req",
+    "columns": [
+      "requeriment_id"
+    ],
+    "target": "requeriment",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1045,
+    "end_line": 1045,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F19",
+    "name": "records resulting request status",
+    "table": "requeriment_history",
+    "constraint": "req_hist_status",
+    "columns": [
+      "requeriment_status_id"
+    ],
+    "target": "requeriment_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1047,
+    "end_line": 1047,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F20",
+    "name": "handled by user",
+    "table": "requeriment_history",
+    "constraint": "req_hist_user",
+    "columns": [
+      "user_id"
+    ],
+    "target": "tool_user",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1049,
+    "end_line": 1049,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F21",
+    "name": "records project transition",
+    "table": "project_history",
+    "constraint": "prj_hist_prj",
+    "columns": [
+      "project_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1051,
+    "end_line": 1051,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F22",
+    "name": "records resulting project status",
+    "table": "project_history",
+    "constraint": "prj_hist_status",
+    "columns": [
+      "project_status_id"
+    ],
+    "target": "project_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1053,
+    "end_line": 1053,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F23",
+    "name": "specializes planning (candidate)",
+    "table": "task",
+    "constraint": "task_parent",
+    "columns": [
+      "id"
+    ],
+    "target": "planning",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1055,
+    "end_line": 1055,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..1",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F24",
+    "name": "scheduled in project",
+    "table": "task",
+    "constraint": "task_proj",
+    "columns": [
+      "project_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1057,
+    "end_line": 1057,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F25",
+    "name": "implements request",
+    "table": "task",
+    "constraint": "task_req",
+    "columns": [
+      "requeriment_id"
+    ],
+    "target": "requeriment",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1059,
+    "end_line": 1059,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F26",
+    "name": "classified by category",
+    "table": "task",
+    "constraint": "task_cat",
+    "columns": [
+      "category_id"
+    ],
+    "target": "category",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1061,
+    "end_line": 1061,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F27",
+    "name": "has parent task",
+    "table": "task",
+    "constraint": "task_task",
+    "columns": [
+      "task_id"
+    ],
+    "target": "task",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1063,
+    "end_line": 1063,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F28",
+    "name": "assigns task",
+    "table": "resource_task",
+    "constraint": "task_res_task",
+    "columns": [
+      "task_id"
+    ],
+    "target": "task",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1065,
+    "end_line": 1065,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F29",
+    "name": "assigns resource participation",
+    "table": "resource_task",
+    "constraint": "res_res_task",
+    "columns": [
+      "resource_id",
+      "project_id"
+    ],
+    "target": "resource",
+    "target_columns": [
+      "id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1067,
+    "end_line": 1067,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F30",
+    "name": "has assignment status",
+    "table": "resource_task",
+    "constraint": "res_task_status_task",
+    "columns": [
+      "task_status_id"
+    ],
+    "target": "task_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1069,
+    "end_line": 1069,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F31",
+    "name": "approved by user",
+    "table": "resource_task",
+    "constraint": "approver_res_task_fk",
+    "columns": [
+      "approver_id"
+    ],
+    "target": "tool_user",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1071,
+    "end_line": 1071,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F32",
+    "name": "records assignment transition",
+    "table": "task_history",
+    "constraint": "task_hist_res_task",
+    "columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "target": "resource_task",
+    "target_columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1073,
+    "end_line": 1073,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F33",
+    "name": "records resulting assignment status",
+    "table": "task_history",
+    "constraint": "task_hist_status_task",
+    "columns": [
+      "task_status_id"
+    ],
+    "target": "task_status",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1075,
+    "end_line": 1075,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F34",
+    "name": "handled by user",
+    "table": "task_history",
+    "constraint": "task_hist_user",
+    "columns": [
+      "user_id"
+    ],
+    "target": "tool_user",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1077,
+    "end_line": 1077,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F35",
+    "name": "allocates assignment",
+    "table": "resource_task_alloc",
+    "constraint": "alloc_res_task",
+    "columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "target": "resource_task",
+    "target_columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1079,
+    "end_line": 1079,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F36",
+    "name": "allocates assignment",
+    "table": "resource_task_alloc_plann",
+    "constraint": "alloc_plan_res_task",
+    "columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "target": "resource_task",
+    "target_columns": [
+      "task_id",
+      "resource_id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1081,
+    "end_line": 1081,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F37",
+    "name": "defines category in project",
+    "table": "category",
+    "constraint": "cat_project",
+    "columns": [
+      "project_id"
+    ],
+    "target": "project",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1101,
+    "end_line": 1101,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "0..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F38",
+    "name": "has originating planning item",
+    "table": "plan_relation",
+    "constraint": "plan_plan_relation",
+    "columns": [
+      "planning_id"
+    ],
+    "target": "planning",
+    "target_columns": [
+      "id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1141,
+    "end_line": 1141,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  },
+  {
+    "id": "F39",
+    "name": "provides capacity for",
+    "table": "resource_capacity",
+    "constraint": "res_cap_resource",
+    "columns": [
+      "resource_id",
+      "project_id"
+    ],
+    "target": "resource",
+    "target_columns": [
+      "id",
+      "project_id"
+    ],
+    "actions_explicit": null,
+    "source": "code/plandora/reference/r348/mysql.sql",
+    "start_line": 1151,
+    "end_line": 1151,
+    "revision": "SVN r348",
+    "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+    "scope": "internal",
+    "source_to_target": "1..1",
+    "target_to_source": "0..N",
+    "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+  }
+]

@@ -1,0 +1,664 @@
+﻿constraint,result,interpretation,query_or_mapping,excerpt,ddl
+user_department,documentary agreement in cited operation; not runtime validation,DepartmentTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java"", ""start_line"": 550, ""end_line"": 580}","    protected UserTO populateUserByResultSet(ResultSet rs) throws DataAccessException{        
+        UserTO response = new UserTO();
+        DepartmentTO dto = new DepartmentTO();
+        AreaTO ato = new AreaTO();
+        FunctionTO fto = new FunctionTO();
+        CompanyTO cto = new CompanyTO();
+		ByteArrayInputStream bis = null;
+		ByteArrayOutputStream bos = null;
+        
+        response.setId(getString(rs, ""id""));
+        response.setUsername(getString(rs, ""username""));
+        response.setGenericTag(response.getUsername());
+        response.setColor(getString(rs, ""color""));
+        response.setEmail(getString(rs, ""email""));
+        response.setName(getString(rs, ""name""));
+        response.setPhone(getString(rs, ""phone""));
+        response.setPassword(getString(rs, ""password""));
+        response.setCountry(getString(rs, ""country""));
+        response.setLanguage(getString(rs, ""language""));
+        response.setPermission(getString(rs, ""permission""));
+        Date birth = getDate(rs, ""birth"");
+        if (birth!=null) {
+            response.setBirth(birth);    
+        }
+        response.setAuthenticationMode(getString(rs, ""auth_mode""));
+        
+        dto.setId(getString(rs, ""department_id""));
+        response.setDepartment(dto);
+        
+        ato.setId(getString(rs, ""area_id""));
+        response.setArea(ato);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1009, ""end_line"": 1009}"
+user_area,documentary agreement in cited operation; not runtime validation,AreaTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java"", ""start_line"": 550, ""end_line"": 580}","    protected UserTO populateUserByResultSet(ResultSet rs) throws DataAccessException{        
+        UserTO response = new UserTO();
+        DepartmentTO dto = new DepartmentTO();
+        AreaTO ato = new AreaTO();
+        FunctionTO fto = new FunctionTO();
+        CompanyTO cto = new CompanyTO();
+		ByteArrayInputStream bis = null;
+		ByteArrayOutputStream bos = null;
+        
+        response.setId(getString(rs, ""id""));
+        response.setUsername(getString(rs, ""username""));
+        response.setGenericTag(response.getUsername());
+        response.setColor(getString(rs, ""color""));
+        response.setEmail(getString(rs, ""email""));
+        response.setName(getString(rs, ""name""));
+        response.setPhone(getString(rs, ""phone""));
+        response.setPassword(getString(rs, ""password""));
+        response.setCountry(getString(rs, ""country""));
+        response.setLanguage(getString(rs, ""language""));
+        response.setPermission(getString(rs, ""permission""));
+        Date birth = getDate(rs, ""birth"");
+        if (birth!=null) {
+            response.setBirth(birth);    
+        }
+        response.setAuthenticationMode(getString(rs, ""auth_mode""));
+        
+        dto.setId(getString(rs, ""department_id""));
+        response.setDepartment(dto);
+        
+        ato.setId(getString(rs, ""area_id""));
+        response.setArea(ato);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1011, ""end_line"": 1011}"
+user_function,documentary agreement in cited operation; not runtime validation,FunctionTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java"", ""start_line"": 550, ""end_line"": 583}","    protected UserTO populateUserByResultSet(ResultSet rs) throws DataAccessException{        
+        UserTO response = new UserTO();
+        DepartmentTO dto = new DepartmentTO();
+        AreaTO ato = new AreaTO();
+        FunctionTO fto = new FunctionTO();
+        CompanyTO cto = new CompanyTO();
+		ByteArrayInputStream bis = null;
+		ByteArrayOutputStream bos = null;
+        
+        response.setId(getString(rs, ""id""));
+        response.setUsername(getString(rs, ""username""));
+        response.setGenericTag(response.getUsername());
+        response.setColor(getString(rs, ""color""));
+        response.setEmail(getString(rs, ""email""));
+        response.setName(getString(rs, ""name""));
+        response.setPhone(getString(rs, ""phone""));
+        response.setPassword(getString(rs, ""password""));
+        response.setCountry(getString(rs, ""country""));
+        response.setLanguage(getString(rs, ""language""));
+        response.setPermission(getString(rs, ""permission""));
+        Date birth = getDate(rs, ""birth"");
+        if (birth!=null) {
+            response.setBirth(birth);    
+        }
+        response.setAuthenticationMode(getString(rs, ""auth_mode""));
+        
+        dto.setId(getString(rs, ""department_id""));
+        response.setDepartment(dto);
+        
+        ato.setId(getString(rs, ""area_id""));
+        response.setArea(ato);
+        
+        fto.setId(getString(rs, ""function_id""));
+        response.setFunction(fto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1013, ""end_line"": 1013}"
+user_company,documentary agreement in cited operation; not runtime validation,CompanyTO nullable mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/UserDAO.java"", ""start_line"": 550, ""end_line"": 590}","    protected UserTO populateUserByResultSet(ResultSet rs) throws DataAccessException{        
+        UserTO response = new UserTO();
+        DepartmentTO dto = new DepartmentTO();
+        AreaTO ato = new AreaTO();
+        FunctionTO fto = new FunctionTO();
+        CompanyTO cto = new CompanyTO();
+		ByteArrayInputStream bis = null;
+		ByteArrayOutputStream bos = null;
+        
+        response.setId(getString(rs, ""id""));
+        response.setUsername(getString(rs, ""username""));
+        response.setGenericTag(response.getUsername());
+        response.setColor(getString(rs, ""color""));
+        response.setEmail(getString(rs, ""email""));
+        response.setName(getString(rs, ""name""));
+        response.setPhone(getString(rs, ""phone""));
+        response.setPassword(getString(rs, ""password""));
+        response.setCountry(getString(rs, ""country""));
+        response.setLanguage(getString(rs, ""language""));
+        response.setPermission(getString(rs, ""permission""));
+        Date birth = getDate(rs, ""birth"");
+        if (birth!=null) {
+            response.setBirth(birth);    
+        }
+        response.setAuthenticationMode(getString(rs, ""auth_mode""));
+        
+        dto.setId(getString(rs, ""department_id""));
+        response.setDepartment(dto);
+        
+        ato.setId(getString(rs, ""area_id""));
+        response.setArea(ato);
+        
+        fto.setId(getString(rs, ""function_id""));
+        response.setFunction(fto);
+
+        String companyId = getString(rs, ""company_id"");
+        if (companyId!=null) {
+        	cto.setId(companyId);
+        	response.setCompany(cto);
+        } else {
+        	response.setCompany(null);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1015, ""end_line"": 1015}"
+customer_user,documentary agreement in cited operation; not runtime validation,Equality join c.id=u.id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java"", ""start_line"": 111, ""end_line"": 120}","			pstmt = c.prepareStatement(""select c.id, c.project_id, u.username, u.color, u.email, u.name, u.phone, u.password, "" +
+									   ""u.department_id, u.area_id, u.function_id, u.country, u.language, u.birth, u.company_id, "" +
+									   ""u.auth_mode, u.permission, u.pic_file, u.final_date, u.creation_date, u.deactivation_date, "" +
+									   ""c.is_disable, c.can_see_tech_comment, c.is_req_acceptable, c.pre_approve_req, "" +
+									   ""c.can_see_discussion, c.can_see_other_reqs, c.can_open_otherowner_reqs "" +
+									   ""from tool_user u, customer c "" +
+									   ""WHERE c.ID = u.ID "" +
+									     ""AND c.ID = ?"");
+			pstmt.setString(1, filter.getId());
+			rs = pstmt.executeQuery();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1017, ""end_line"": 1017}"
+resource_customer,documentary agreement in cited operation; not runtime validation,"Inherited CustomerDAO population, composite project context","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java"", ""start_line"": 373, ""end_line"": 379}","    protected ResourceTO populateResourceByResultSet(ResultSet rs, Connection c) throws DataAccessException{
+    	ResourceCapacityDAO rcdao = new ResourceCapacityDAO();
+        ResourceTO response = null;
+        
+        //call parent class (CustomerDAO) and get all generic attributes
+        CustomerTO parent = super.populateCustomerByResultSet(rs);
+        response = new ResourceTO(parent);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1019, ""end_line"": 1019}"
+leader_resource,documentary agreement in cited operation; not runtime validation,Inherited ResourceDAO population,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/LeaderDAO.java"", ""start_line"": 198, ""end_line"": 203}","    protected LeaderTO populateLeaderByResultSet(ResultSet rs, Connection c) throws DataAccessException{
+        LeaderTO response = null;
+        
+        //call parent class (ResourceDAO) and get all generic attributes
+        ResourceTO parent = super.populateResourceByResultSet(rs, c);
+        response = new LeaderTO(parent);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1021, ""end_line"": 1021}"
+customer_project,documentary agreement in cited operation; not runtime validation,"ProjectTO from project_id; identity scoped by (id, project_id) at 272-281","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java"", ""start_line"": 427, ""end_line"": 436}","    protected CustomerTO populateCustomerByResultSet(ResultSet rs) throws DataAccessException{
+    	CustomerFunctionDAO cfdao = new CustomerFunctionDAO();
+        CustomerTO response = null;
+        
+        //call parent class (UserDAO) and get all generic attributes
+        UserTO parent = super.populateUserByResultSet(rs);
+        response = new CustomerTO(parent);
+
+        //get attributes specifics of customer.
+        response.setProject(new ProjectTO(getString(rs, ""project_id"")));","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1025, ""end_line"": 1025}"
+project_parent_project,documentary agreement in cited operation; not runtime validation,Parent ProjectTO; self/null normalized to sentinel 0 by application,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java"", ""start_line"": 479, ""end_line"": 486}","        //ref with parent project (NOT NULL collumn)
+        String pprid = getString(rs, ""parent_id"");
+        if (pprid!=null && !pprid.equals(response.getId())) {
+            ppto.setId(pprid);        	
+        } else {
+        	ppto.setId(""0"");
+        }
+        response.setParentProject(ppto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1027, ""end_line"": 1027}"
+project_status_project,documentary agreement in cited operation; not runtime validation,Current ProjectStatusTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java"", ""start_line"": 474, ""end_line"": 477}","        //ref with current project status (NOT NULL collumn)
+        String psid = getString(rs, ""project_status_id"");
+        psto.setId(psid);
+        response.setProjectStatus(psto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1029, ""end_line"": 1029}"
+proj_company,documentary agreement in cited operation; not runtime validation,CompanyTO mapping; -1 treated as sentinel by application,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java"", ""start_line"": 488, ""end_line"": 492}","        //ref with company project
+        String comId = getString(rs, ""company_id"");
+        if (comId!=null && !comId.equals(""-1"")) {
+        	response.setCompany(new CompanyTO(comId));        	
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1031, ""end_line"": 1031}"
+req_parent,documentary agreement in cited operation; not runtime validation,Equality join r.id=p.id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java"", ""start_line"": 250, ""end_line"": 252}","        			""WHERE r.ID > '"" + initialId + ""' and r.ID <= '"" + finalId + ""' "" +
+        			""AND rs.id = r.requeriment_status_id "" +
+        			""AND r.id = p.id "" +","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1033, ""end_line"": 1033}"
+req_cat,documentary agreement in cited operation; not runtime validation,CategoryTO from CATEGORY_ID,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java"", ""start_line"": 1138, ""end_line"": 1170}","        RequirementTO response = new RequirementTO();
+	    AttachmentDAO atDAO = new AttachmentDAO();
+	    
+        CustomerTO cto = new CustomerTO();
+        ProjectTO pto = new ProjectTO();
+        CategoryTO cato = new CategoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setDescription(getString(rs, ""description""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        response.setSuggestedDate(getTimestamp(rs, ""suggested_date""));
+        response.setDeadlineDate(getTimestamp(rs, ""deadline_date""));
+        response.setPriority(getInteger(rs, ""priority""));
+        response.setReopeningOccurrences(getInteger(rs, ""reopening""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        cto.setId(getString(rs, ""USER_ID""));
+        response.setRequester(cto);
+        
+        cato.setId(getString(rs, ""CATEGORY_ID""));
+        cato.setName(getString(rs, ""CATEGORY_NAME""));
+        response.setCategory(cato);
+        
+        pto.setId(getString(rs, ""project_id""));
+        response.setProject(pto);
+        
+        rsto.setId(getString(rs, ""REQUERIMENT_STATUS_ID""));
+        if (isRemainStatusValues){
+    	    rsto.setName(getString(rs, ""name""));
+    	    rsto.setStateMachineOrder(getInteger(rs, ""state_machine_order""));            
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1035, ""end_line"": 1035}"
+project_parent,documentary agreement in cited operation; not runtime validation,"Equality join project p / planning a, p.id=a.id","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectDAO.java"", ""start_line"": 169, ""end_line"": 174}","									   ""from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id, "" +
+									   ""customer c LEFT OUTER JOIN resource r on r.id = c.id and r.project_id = c.project_id "" +
+									   ""WHERE p.id = a.id "" +
+									     ""and p.id = c.project_id "" +
+									     ""and ps.id = p.project_status_id "" +
+									     ""and (c.is_disable is null OR c.is_disable = 0) "" +","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1037, ""end_line"": 1037}"
+req_project,documentary agreement in cited operation; not runtime validation,ProjectTO from project_id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java"", ""start_line"": 1138, ""end_line"": 1170}","        RequirementTO response = new RequirementTO();
+	    AttachmentDAO atDAO = new AttachmentDAO();
+	    
+        CustomerTO cto = new CustomerTO();
+        ProjectTO pto = new ProjectTO();
+        CategoryTO cato = new CategoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setDescription(getString(rs, ""description""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        response.setSuggestedDate(getTimestamp(rs, ""suggested_date""));
+        response.setDeadlineDate(getTimestamp(rs, ""deadline_date""));
+        response.setPriority(getInteger(rs, ""priority""));
+        response.setReopeningOccurrences(getInteger(rs, ""reopening""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        cto.setId(getString(rs, ""USER_ID""));
+        response.setRequester(cto);
+        
+        cato.setId(getString(rs, ""CATEGORY_ID""));
+        cato.setName(getString(rs, ""CATEGORY_NAME""));
+        response.setCategory(cato);
+        
+        pto.setId(getString(rs, ""project_id""));
+        response.setProject(pto);
+        
+        rsto.setId(getString(rs, ""REQUERIMENT_STATUS_ID""));
+        if (isRemainStatusValues){
+    	    rsto.setName(getString(rs, ""name""));
+    	    rsto.setStateMachineOrder(getInteger(rs, ""state_machine_order""));            
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1039, ""end_line"": 1039}"
+req_status_req,documentary agreement in cited operation; not runtime validation,RequirementStatusTO from REQUERIMENT_STATUS_ID,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java"", ""start_line"": 1138, ""end_line"": 1170}","        RequirementTO response = new RequirementTO();
+	    AttachmentDAO atDAO = new AttachmentDAO();
+	    
+        CustomerTO cto = new CustomerTO();
+        ProjectTO pto = new ProjectTO();
+        CategoryTO cato = new CategoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setDescription(getString(rs, ""description""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        response.setSuggestedDate(getTimestamp(rs, ""suggested_date""));
+        response.setDeadlineDate(getTimestamp(rs, ""deadline_date""));
+        response.setPriority(getInteger(rs, ""priority""));
+        response.setReopeningOccurrences(getInteger(rs, ""reopening""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        cto.setId(getString(rs, ""USER_ID""));
+        response.setRequester(cto);
+        
+        cato.setId(getString(rs, ""CATEGORY_ID""));
+        cato.setName(getString(rs, ""CATEGORY_NAME""));
+        response.setCategory(cato);
+        
+        pto.setId(getString(rs, ""project_id""));
+        response.setProject(pto);
+        
+        rsto.setId(getString(rs, ""REQUERIMENT_STATUS_ID""));
+        if (isRemainStatusValues){
+    	    rsto.setName(getString(rs, ""name""));
+    	    rsto.setStateMachineOrder(getInteger(rs, ""state_machine_order""));            
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1041, ""end_line"": 1041}"
+req_user,documentary agreement in cited operation; not runtime validation,"CustomerTO requester from USER_ID; DDL only guarantees tool_user, not project participation","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementDAO.java"", ""start_line"": 1138, ""end_line"": 1170}","        RequirementTO response = new RequirementTO();
+	    AttachmentDAO atDAO = new AttachmentDAO();
+	    
+        CustomerTO cto = new CustomerTO();
+        ProjectTO pto = new ProjectTO();
+        CategoryTO cato = new CategoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setDescription(getString(rs, ""description""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        response.setSuggestedDate(getTimestamp(rs, ""suggested_date""));
+        response.setDeadlineDate(getTimestamp(rs, ""deadline_date""));
+        response.setPriority(getInteger(rs, ""priority""));
+        response.setReopeningOccurrences(getInteger(rs, ""reopening""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        cto.setId(getString(rs, ""USER_ID""));
+        response.setRequester(cto);
+        
+        cato.setId(getString(rs, ""CATEGORY_ID""));
+        cato.setName(getString(rs, ""CATEGORY_NAME""));
+        response.setCategory(cato);
+        
+        pto.setId(getString(rs, ""project_id""));
+        response.setProject(pto);
+        
+        rsto.setId(getString(rs, ""REQUERIMENT_STATUS_ID""));
+        if (isRemainStatusValues){
+    	    rsto.setName(getString(rs, ""name""));
+    	    rsto.setStateMachineOrder(getInteger(rs, ""state_machine_order""));            
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1043, ""end_line"": 1043}"
+req_hist_req,documentary agreement in cited operation; not runtime validation,Requirement identifier retained,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementHistoryDAO.java"", ""start_line"": 150, ""end_line"": 163}","    protected RequirementHistoryTO populateByResultSet(ResultSet rs) throws DataAccessException{
+        RequirementHistoryTO response = new RequirementHistoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setRequirementId(getString(rs, ""requeriment_id""));
+        response.setComment(getString(rs, ""comment""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        UserTO uto = new UserTO(getString(rs, ""user_id""));
+        response.setResource(uto);
+        
+        rsto.setId(getString(rs, ""requeriment_status_id""));
+        response.setStatus(rsto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1045, ""end_line"": 1045}"
+req_hist_status,documentary agreement in cited operation; not runtime validation,RequirementStatusTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementHistoryDAO.java"", ""start_line"": 150, ""end_line"": 163}","    protected RequirementHistoryTO populateByResultSet(ResultSet rs) throws DataAccessException{
+        RequirementHistoryTO response = new RequirementHistoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setRequirementId(getString(rs, ""requeriment_id""));
+        response.setComment(getString(rs, ""comment""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        UserTO uto = new UserTO(getString(rs, ""user_id""));
+        response.setResource(uto);
+        
+        rsto.setId(getString(rs, ""requeriment_status_id""));
+        response.setStatus(rsto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1047, ""end_line"": 1047}"
+req_hist_user,documentary agreement in cited operation; not runtime validation,UserTO handler mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/RequirementHistoryDAO.java"", ""start_line"": 150, ""end_line"": 163}","    protected RequirementHistoryTO populateByResultSet(ResultSet rs) throws DataAccessException{
+        RequirementHistoryTO response = new RequirementHistoryTO();
+        RequirementStatusTO rsto = new RequirementStatusTO();
+        
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setRequirementId(getString(rs, ""requeriment_id""));
+        response.setComment(getString(rs, ""comment""));
+        response.setIteration(getString(rs, ""iteration""));
+        
+        UserTO uto = new UserTO(getString(rs, ""user_id""));
+        response.setResource(uto);
+        
+        rsto.setId(getString(rs, ""requeriment_status_id""));
+        response.setStatus(rsto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1049, ""end_line"": 1049}"
+prj_hist_prj,documentary agreement in cited operation; not runtime validation,INSERT binds ProjectHistoryTO.projectId,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectHistoryDAO.java"", ""start_line"": 29, ""end_line"": 35}","			pstmt = c.prepareStatement(""INSERT INTO project_history (project_id, "" +
+									   ""project_status_id, creation_date) "" +
+									   ""values (?,?,?)"");
+			pstmt.setString(1, phto.getProjectId());
+			pstmt.setString(2, phto.getStatus().getId());
+			pstmt.setTimestamp(3, DateUtil.getNow());
+			pstmt.executeUpdate();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1051, ""end_line"": 1051}"
+prj_hist_status,documentary agreement in cited operation; not runtime validation,INSERT binds status identifier,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ProjectHistoryDAO.java"", ""start_line"": 29, ""end_line"": 35}","			pstmt = c.prepareStatement(""INSERT INTO project_history (project_id, "" +
+									   ""project_status_id, creation_date) "" +
+									   ""values (?,?,?)"");
+			pstmt.setString(1, phto.getProjectId());
+			pstmt.setString(2, phto.getStatus().getId());
+			pstmt.setTimestamp(3, DateUtil.getNow());
+			pstmt.executeUpdate();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1053, ""end_line"": 1053}"
+task_parent,documentary agreement in cited operation; not runtime validation,Equality join t.id=p.id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java"", ""start_line"": 405, ""end_line"": 409}","		    String sql = ""select t.id, t.name, t.requeriment_id, t.project_id, "" +
+					     ""t.task_id, t.category_id, t.is_parent_task, t.created_by, p.description, "" +
+					     ""p.creation_date, p.final_date, p.iteration, t.is_unpredictable "" +
+					     ""from task t, planning p "" +
+					     ""WHERE t.id = p.id "" +","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1055, ""end_line"": 1055}"
+task_proj,documentary agreement in cited operation; not runtime validation,ProjectTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java"", ""start_line"": 1000, ""end_line"": 1024}","        TaskTO response = new TaskTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setName(getString(rs, ""name""));
+        
+        response.setDescription(getString(rs, ""description""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        
+        response.setProject(new ProjectTO(getString(rs, ""project_id"")));
+        response.setIsParentTask(getInteger(rs, ""is_parent_task""));
+        response.setCreatedBy(new UserTO(getString(rs, ""created_by"")));
+        response.setIteration(getString(rs, ""iteration""));
+
+        String reqId = getString(rs, ""requeriment_id"");
+        if (reqId!=null){
+            response.setRequirement(new RequirementTO(reqId));
+        }
+        
+        response.setCategory(new CategoryTO(getString(rs, ""category_id"")));
+        
+        String parentTaskId = getString(rs, ""task_id"");
+        if (parentTaskId!=null){
+            response.setParentTask(new TaskTO(parentTaskId));
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1057, ""end_line"": 1057}"
+task_req,documentary agreement in cited operation; not runtime validation,Optional RequirementTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java"", ""start_line"": 1000, ""end_line"": 1024}","        TaskTO response = new TaskTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setName(getString(rs, ""name""));
+        
+        response.setDescription(getString(rs, ""description""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        
+        response.setProject(new ProjectTO(getString(rs, ""project_id"")));
+        response.setIsParentTask(getInteger(rs, ""is_parent_task""));
+        response.setCreatedBy(new UserTO(getString(rs, ""created_by"")));
+        response.setIteration(getString(rs, ""iteration""));
+
+        String reqId = getString(rs, ""requeriment_id"");
+        if (reqId!=null){
+            response.setRequirement(new RequirementTO(reqId));
+        }
+        
+        response.setCategory(new CategoryTO(getString(rs, ""category_id"")));
+        
+        String parentTaskId = getString(rs, ""task_id"");
+        if (parentTaskId!=null){
+            response.setParentTask(new TaskTO(parentTaskId));
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1059, ""end_line"": 1059}"
+task_cat,documentary agreement in cited operation; not runtime validation,CategoryTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java"", ""start_line"": 1000, ""end_line"": 1024}","        TaskTO response = new TaskTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setName(getString(rs, ""name""));
+        
+        response.setDescription(getString(rs, ""description""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        
+        response.setProject(new ProjectTO(getString(rs, ""project_id"")));
+        response.setIsParentTask(getInteger(rs, ""is_parent_task""));
+        response.setCreatedBy(new UserTO(getString(rs, ""created_by"")));
+        response.setIteration(getString(rs, ""iteration""));
+
+        String reqId = getString(rs, ""requeriment_id"");
+        if (reqId!=null){
+            response.setRequirement(new RequirementTO(reqId));
+        }
+        
+        response.setCategory(new CategoryTO(getString(rs, ""category_id"")));
+        
+        String parentTaskId = getString(rs, ""task_id"");
+        if (parentTaskId!=null){
+            response.setParentTask(new TaskTO(parentTaskId));
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1061, ""end_line"": 1061}"
+task_task,documentary agreement in cited operation; not runtime validation,Optional parent TaskTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskDAO.java"", ""start_line"": 1000, ""end_line"": 1024}","        TaskTO response = new TaskTO();
+        
+        response.setId(getString(rs, ""id""));
+        response.setName(getString(rs, ""name""));
+        
+        response.setDescription(getString(rs, ""description""));
+        response.setCreationDate(getTimestamp(rs, ""creation_date""));
+        response.setFinalDate(getTimestamp(rs, ""final_date""));
+        
+        response.setProject(new ProjectTO(getString(rs, ""project_id"")));
+        response.setIsParentTask(getInteger(rs, ""is_parent_task""));
+        response.setCreatedBy(new UserTO(getString(rs, ""created_by"")));
+        response.setIteration(getString(rs, ""iteration""));
+
+        String reqId = getString(rs, ""requeriment_id"");
+        if (reqId!=null){
+            response.setRequirement(new RequirementTO(reqId));
+        }
+        
+        response.setCategory(new CategoryTO(getString(rs, ""category_id"")));
+        
+        String parentTaskId = getString(rs, ""task_id"");
+        if (parentTaskId!=null){
+            response.setParentTask(new TaskTO(parentTaskId));
+        }","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1063, ""end_line"": 1063}"
+task_res_task,documentary agreement in cited operation; not runtime validation,TaskTO from task_id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java"", ""start_line"": 1574, ""end_line"": 1597}","    protected ResourceTaskTO populateBeanByResultSet(ResultSet rs) throws DataAccessException{
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        ProjectTO pto = new ProjectTO(getString(rs, ""project_id""));
+        
+        rtto.setEstimatedTime(getInteger(rs, ""estimated_time""));        
+        rtto.setStartDate(getTimestamp(rs, ""start_date""));
+        rtto.setActualTime(getInteger(rs, ""actual_time""));        
+        rtto.setActualDate(getTimestamp(rs, ""actual_date""));
+        
+        Integer billable = getInteger(rs, ""billable"");
+        if (billable!=null) {
+        	rtto.setBillableStatus(new Boolean(billable.intValue()==1));	
+        }
+        
+        TaskTO tto = new TaskTO(getString(rs, ""task_id""));
+        tto.setProject(pto);
+        rtto.setTask(tto);
+        
+        rtto.setTaskStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        ResourceTO rto = new ResourceTO(getString(rs, ""resource_id""));
+        
+        rto.setProject(pto);
+        rtto.setResource(rto);        ","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1065, ""end_line"": 1065}"
+res_res_task,documentary agreement in cited operation; not runtime validation,ResourceTO receives resource_id and ProjectTO project_id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java"", ""start_line"": 1574, ""end_line"": 1597}","    protected ResourceTaskTO populateBeanByResultSet(ResultSet rs) throws DataAccessException{
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        ProjectTO pto = new ProjectTO(getString(rs, ""project_id""));
+        
+        rtto.setEstimatedTime(getInteger(rs, ""estimated_time""));        
+        rtto.setStartDate(getTimestamp(rs, ""start_date""));
+        rtto.setActualTime(getInteger(rs, ""actual_time""));        
+        rtto.setActualDate(getTimestamp(rs, ""actual_date""));
+        
+        Integer billable = getInteger(rs, ""billable"");
+        if (billable!=null) {
+        	rtto.setBillableStatus(new Boolean(billable.intValue()==1));	
+        }
+        
+        TaskTO tto = new TaskTO(getString(rs, ""task_id""));
+        tto.setProject(pto);
+        rtto.setTask(tto);
+        
+        rtto.setTaskStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        ResourceTO rto = new ResourceTO(getString(rs, ""resource_id""));
+        
+        rto.setProject(pto);
+        rtto.setResource(rto);        ","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1067, ""end_line"": 1067}"
+res_task_status_task,documentary agreement in cited operation; not runtime validation,TaskStatusTO mapping for assignment,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java"", ""start_line"": 1574, ""end_line"": 1597}","    protected ResourceTaskTO populateBeanByResultSet(ResultSet rs) throws DataAccessException{
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        ProjectTO pto = new ProjectTO(getString(rs, ""project_id""));
+        
+        rtto.setEstimatedTime(getInteger(rs, ""estimated_time""));        
+        rtto.setStartDate(getTimestamp(rs, ""start_date""));
+        rtto.setActualTime(getInteger(rs, ""actual_time""));        
+        rtto.setActualDate(getTimestamp(rs, ""actual_date""));
+        
+        Integer billable = getInteger(rs, ""billable"");
+        if (billable!=null) {
+        	rtto.setBillableStatus(new Boolean(billable.intValue()==1));	
+        }
+        
+        TaskTO tto = new TaskTO(getString(rs, ""task_id""));
+        tto.setProject(pto);
+        rtto.setTask(tto);
+        
+        rtto.setTaskStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        ResourceTO rto = new ResourceTO(getString(rs, ""resource_id""));
+        
+        rto.setProject(pto);
+        rtto.setResource(rto);        ","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1069, ""end_line"": 1069}"
+approver_res_task_fk,documentary agreement in cited operation; not runtime validation,UPDATE binds approver object identifier; no proof all existing values resolve,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskDAO.java"", ""start_line"": 1737, ""end_line"": 1746}","		    ResourceTaskTO rtto = (ResourceTaskTO)to;
+		    TaskStatusTO tsto = rtto.getTaskStatus();
+
+		    //update status of task
+			pstmt = c.prepareStatement(""update resource_task set approver_id=?, approved=? where task_id=?"");
+			
+			pstmt.setString(1, rtto.getApprover().getId());
+			pstmt.setInt(2, rtto.getApproved()?1:0);
+			pstmt.setString(3, rtto.getTask().getId());
+			pstmt.executeUpdate();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1071, ""end_line"": 1071}"
+task_hist_res_task,documentary agreement in cited operation; not runtime validation,ResourceTaskTO assembled with task/resource/project tuple,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java"", ""start_line"": 446, ""end_line"": 472}","        TaskHistoryTO response = new TaskHistoryTO();
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        response.setActualDate(getTimestamp(rs, ""actual_date""));
+        response.setActualTime(getInteger(rs, ""actual_time""));
+        response.setEstimatedTime(getInteger(rs, ""estimated_time""));
+        response.setStartDate(getTimestamp(rs, ""start_date""));
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setComment(getString(rs, ""comment""));
+        response.setStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        response.setHandler(new UserTO(getString(rs, ""user_id"")));
+        
+        OccurrenceTO iteration = new OccurrenceTO(getString(rs, ""iteration""));
+        iteration.setName(getString(rs, ""ITERATION_NAME""));
+        response.setIteration(iteration);
+        
+        ProjectTO pto = new ProjectTO(getString(rs, ""project_id""));
+        
+        TaskTO tto = new TaskTO(getString(rs, ""task_id""));
+        tto.setProject(pto);
+        rtto.setTask(tto);
+        
+        ResourceTO rto = new ResourceTO(getString(rs, ""resource_id""));
+        rto.setProject(pto);
+        rtto.setResource(rto);        
+        
+        response.setResourceTask(rtto);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1073, ""end_line"": 1073}"
+task_hist_status_task,documentary agreement in cited operation; not runtime validation,TaskStatusTO mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java"", ""start_line"": 446, ""end_line"": 456}","        TaskHistoryTO response = new TaskHistoryTO();
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        response.setActualDate(getTimestamp(rs, ""actual_date""));
+        response.setActualTime(getInteger(rs, ""actual_time""));
+        response.setEstimatedTime(getInteger(rs, ""estimated_time""));
+        response.setStartDate(getTimestamp(rs, ""start_date""));
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setComment(getString(rs, ""comment""));
+        response.setStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        response.setHandler(new UserTO(getString(rs, ""user_id"")));","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1075, ""end_line"": 1075}"
+task_hist_user,documentary agreement in cited operation; not runtime validation,UserTO handler mapping,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/TaskHistoryDAO.java"", ""start_line"": 446, ""end_line"": 456}","        TaskHistoryTO response = new TaskHistoryTO();
+        ResourceTaskTO rtto = new ResourceTaskTO();
+        
+        response.setActualDate(getTimestamp(rs, ""actual_date""));
+        response.setActualTime(getInteger(rs, ""actual_time""));
+        response.setEstimatedTime(getInteger(rs, ""estimated_time""));
+        response.setStartDate(getTimestamp(rs, ""start_date""));
+        response.setDate(getTimestamp(rs, ""creation_date""));
+        response.setComment(getString(rs, ""comment""));
+        response.setStatus(new TaskStatusTO(getString(rs, ""task_status_id"")));
+        response.setHandler(new UserTO(getString(rs, ""user_id"")));","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1077, ""end_line"": 1077}"
+alloc_res_task,documentary agreement in cited operation; not runtime validation,SELECT filters ordered task/resource/project tuple and binds assignment,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskAllocDAO.java"", ""start_line"": 55, ""end_line"": 64}","			String sql = ""select task_id, resource_id, project_id, "" +
+					     ""sequence, alloc_time "" +
+					     ""from resource_task_alloc "" +
+					     ""where task_id=? and resource_id=? and project_id=?"";
+			pstmt = c.prepareStatement(sql);
+
+			pstmt.setString(1, rtto.getTask().getId());
+			pstmt.setString(2, rtto.getResource().getId());
+			pstmt.setString(3, rtto.getTask().getProject().getId());
+			rs = pstmt.executeQuery();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1079, ""end_line"": 1079}"
+alloc_plan_res_task,documentary agreement in cited operation; not runtime validation,INSERT binds ordered task/resource/project tuple,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceTaskAllocPlannedDAO.java"", ""start_line"": 27, ""end_line"": 35}","			    String sql = ""insert into resource_task_alloc_plann (task_id, resource_id, "" +
+		    			  ""project_id, sequence, alloc_time) values (?,?,?,?,?)"";
+				pstmt = c.prepareStatement(sql);
+				pstmt.setString(1, rtto.getTask().getId());
+				pstmt.setString(2, rtto.getResource().getId());
+				pstmt.setString(3, rtto.getTask().getProject().getId());		
+				pstmt.setInt(4, rtato.getSequence().intValue());
+			    pstmt.setInt(5, rtato.getAllocTime().intValue());    
+				pstmt.executeUpdate();","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1081, ""end_line"": 1081}"
+cat_project,documentary agreement in cited operation; not runtime validation,LEFT OUTER JOIN c.project_id=p.id; optional project,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/CategoryDAO.java"", ""start_line"": 75, ""end_line"": 78}","		    pstmt = c.prepareStatement(""select c.id, c.name, c.description, c.type, c.billable, c.is_defect, c.is_testing, "" +
+					   ""c.project_id, p.name as PROJECT_NAME, c.disable_view, c.is_developing, c.category_order "" +
+					   ""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +
+					   ""where (c.id='0' OR (c.type=? AND (c.project_id is NULL or c.project_id=?)) "" +","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1101, ""end_line"": 1101}"
+plan_plan_relation,documentary agreement in cited operation; not runtime validation,Equality join pr.planning_id=p.id,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/PlanningRelationDAO.java"", ""start_line"": 61, ""end_line"": 64}","			pstmt = c.prepareStatement(""select p.id, p.description, p.creation_date, p.final_date, "" +
+					""pr.planning_id, pr.plan_type, pr.plan_related_type, pr.relation_type "" +
+					""from planning p , plan_relation pr "" +
+					""where pr.planning_id = p.id and pr.plan_related_id=?"");","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1141, ""end_line"": 1141}"
+res_cap_resource,documentary agreement in cited operation; not runtime validation,Capacity lookup uses resource id and project id; DAO maps both at ResourceCapacityDAO:333-339,"{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/java/com/pandora/dao/ResourceDAO.java"", ""start_line"": 373, ""end_line"": 388}","    protected ResourceTO populateResourceByResultSet(ResultSet rs, Connection c) throws DataAccessException{
+    	ResourceCapacityDAO rcdao = new ResourceCapacityDAO();
+        ResourceTO response = null;
+        
+        //call parent class (CustomerDAO) and get all generic attributes
+        CustomerTO parent = super.populateCustomerByResultSet(rs);
+        response = new ResourceTO(parent);
+        
+        //get attributes specifics of resource.
+        response.setCanSeeCustomer(getBoolean(rs, ""can_see_customer""));
+        response.setCanSelfAlloc(getBoolean(rs, ""can_self_alloc""));
+        response.setCanSeeRepository(getBoolean(rs, ""can_see_repository""));
+        response.setCanSeeInvoice(getBoolean(rs, ""can_see_invoice""));        
+        
+        Vector<ResourceCapacityTO> capacityList = rcdao.getListByResourceProject(response.getId(), response.getProject().getId(), null, c);
+        response.setResourceCapacityList(capacityList);","{""revision"": ""SVN r348"", ""repository_revision"": ""12c9a7b8355ef311fd37b9afa30e18fabe652979"", ""path"": ""code/plandora/reference/r348/mysql.sql"", ""start_line"": 1151, ""end_line"": 1151}"
