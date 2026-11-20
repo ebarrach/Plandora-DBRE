@@ -1,0 +1,70 @@
+﻿constraint,scope,columns_exist,arity_equal,ordered_type_compatibility,ordered_target_candidate_key,null_declarations,source_to_target,target_to_source,source,start_line,end_line
+user_user_edi_link,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,991,991
+artif_templ_category,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,995,995
+artifact_planning,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,999,999
+invoice_category,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1001,1001
+invoice_planning,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1005,1005
+user_department,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1009,1009
+user_area,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1011,1011
+user_function,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1013,1013
+user_company,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1015,1015
+customer_user,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1017,1017
+resource_customer,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1019,1019
+leader_resource,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1021,1021
+root_leader,incoming,True,True,True,True,"[""NOT NULL"", ""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1023,1023
+customer_project,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1025,1025
+project_parent_project,internal,True,True,True,True,[null],0..1,0..N,code/plandora/reference/r348/mysql.sql,1027,1027
+project_status_project,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1029,1029
+proj_company,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1031,1031
+req_parent,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1033,1033
+req_cat,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1035,1035
+project_parent,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1037,1037
+req_project,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1039,1039
+req_status_req,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1041,1041
+req_user,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1043,1043
+req_hist_req,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1045,1045
+req_hist_status,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1047,1047
+req_hist_user,internal,True,True,True,True,[null],0..1,0..N,code/plandora/reference/r348/mysql.sql,1049,1049
+prj_hist_prj,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1051,1051
+prj_hist_status,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1053,1053
+task_parent,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1055,1055
+task_proj,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1057,1057
+task_req,internal,True,True,True,True,[null],0..1,0..N,code/plandora/reference/r348/mysql.sql,1059,1059
+task_cat,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1061,1061
+task_task,internal,True,True,True,True,[null],0..1,0..N,code/plandora/reference/r348/mysql.sql,1063,1063
+task_res_task,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1065,1065
+res_res_task,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1067,1067
+res_task_status_task,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1069,1069
+approver_res_task_fk,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1071,1071
+task_hist_res_task,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL"", ""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1073,1073
+task_hist_status_task,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1075,1075
+task_hist_user,internal,True,True,True,True,[null],0..1,0..N,code/plandora/reference/r348/mysql.sql,1077,1077
+alloc_res_task,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL"", ""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1079,1079
+alloc_plan_res_task,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL"", ""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1081,1081
+report_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1083,1083
+report_cat,incoming,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1085,1085
+user_preference,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1091,1091
+meta_field_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1093,1093
+meta_field_category,incoming,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1095,1095
+addinfo_field_planning,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1097,1097
+cat_project,internal,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1101,1101
+occur_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1103,1103
+occurrence_parent,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1105,1105
+occur_depend_planning,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1115,1115
+risk_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1121,1121
+planning_attach,incoming,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1127,1127
+planning_disc_topic,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1131,1131
+user_disc_topic,incoming,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1135,1135
+discussion_project,incoming,True,True,True,True,"[""NULL""]",0..1,0..N,code/plandora/reference/r348/mysql.sql,1137,1137
+discussion_category,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1139,1139
+plan_plan_relation,internal,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1141,1141
+res_cap_resource,internal,True,True,True,True,"[""NOT NULL"", ""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1151,1151
+cus_func_customer,incoming,True,True,True,False,"[""NOT NULL""]",unknown (target not candidate key),0..N,code/plandora/reference/r348/mysql.sql,1153,1153
+cus_func_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1155,1155
+cus_func_function,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1157,1157
+proj_rep_file_proj,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1159,1159
+rep_file_plan_plan,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1165,1165
+rep_polic_prj,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1167,1167
+cost_project,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1169,1169
+cost_planning,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..1,code/plandora/reference/r348/mysql.sql,1171,1171
+proj_rep_proj,incoming,True,True,True,True,"[""NOT NULL""]",1..1,0..N,code/plandora/reference/r348/mysql.sql,1177,1177

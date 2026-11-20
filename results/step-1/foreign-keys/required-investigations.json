@@ -1,0 +1,112 @@
+{
+  "customer_function": {
+    "ddl": {
+      "id": "H1",
+      "table": "customer",
+      "column": "function_id",
+      "candidate_target": "function.id",
+      "status": "unverified; excluded from reconstructed edges",
+      "ddl": {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/mysql.sql",
+        "start_line": 179,
+        "end_line": 179
+      },
+      "reason": "Column name/type suggest a relationship; no direct use establishing this column to target was found in the inspected Java tree"
+    },
+    "observed": "CustomerDAO selects u.function_id, not c.function_id. CustomerFunctionDAO uses a separate out-of-scope association table.",
+    "evidence": [
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+        "start_line": 111,
+        "end_line": 118
+      },
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerDAO.java",
+        "start_line": 335,
+        "end_line": 338
+      },
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/CustomerFunctionDAO.java",
+        "start_line": 69,
+        "end_line": 71
+      }
+    ]
+  },
+  "status_project": {
+    "ddl": {
+      "id": "H2",
+      "table": "requeriment_status",
+      "column": "accept_project_id",
+      "candidate_target": "project.id",
+      "status": "unverified; excluded from reconstructed edges",
+      "ddl": {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/mysql.sql",
+        "start_line": 222,
+        "end_line": 222
+      },
+      "reason": "Column name/type suggest a relationship; no direct use establishing this column to target was found in the inspected Java tree"
+    },
+    "exact_java_hits": [],
+    "observed": "No exact Java occurrence. RequirementStatusDAO SELECT and mapping omit this column.",
+    "evidence": [
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementStatusDAO.java",
+        "start_line": 26,
+        "end_line": 27
+      },
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementStatusDAO.java",
+        "start_line": 113,
+        "end_line": 119
+      }
+    ]
+  },
+  "status_parent": {
+    "ddl": {
+      "id": "H3",
+      "table": "requeriment_status",
+      "column": "parent_id",
+      "candidate_target": "requeriment_status.id",
+      "status": "unverified; excluded from reconstructed edges",
+      "ddl": {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/mysql.sql",
+        "start_line": 223,
+        "end_line": 223
+      },
+      "reason": "Column name/type suggest a relationship; no direct use establishing this column to target was found in the inspected Java tree"
+    },
+    "observed": "Generic parent_id occurrences exist elsewhere, but RequirementStatusDAO SELECT/mapping omit this column; no target established.",
+    "evidence": [
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementStatusDAO.java",
+        "start_line": 26,
+        "end_line": 27
+      },
+      {
+        "revision": "SVN r348",
+        "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+        "path": "code/plandora/reference/r348/java/com/pandora/dao/RequirementStatusDAO.java",
+        "start_line": 113,
+        "end_line": 119
+      }
+    ]
+  }
+}
