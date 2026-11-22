@@ -1,0 +1,575 @@
+======================================================================
+File: java/com/pandora/bus/alert/FileToTableNotification.java
+Candidate line: 97
+======================================================================
+      82:     	String deleteBefore = this.getParamByKey(PROC_DELETE_BEFORE, fields);
+      83: [blank line]
+      84:     	String sep    = this.getParamByKey(SOURCE_SEPARATOR, fields);
+      85: 		String table  = this.getParamByKey(DEST_TABLE_NAME, fields);
+      86: 		String flist  = this.getParamByKey(DEST_TABLE_FIELDS, fields);
+      87: 		String ftlist = this.getParamByKey(DEST_TABLE_FIELD_TYPES, fields);
+      88: 		String conn   = this.getParamByKey(DEST_DB_CONNECTION, fields);
+      89: [blank line]
+      90: 		String dbconnection = "";
+      91: 		if (!conn.equalsIgnoreCase("LOCAL")) {
+      92: 			dbconnection = "[" + conn + "]";
+      93: 		}
+      94: [blank line]
+      95: 		//remove all records before execution...
+      96: 		if (deleteBefore.equalsIgnoreCase("OK")) {
+>>    97: 			db.executeQuery(dbconnection + "delete from " + table);
+      98: 		}
+      99: [blank line]
+     100:         String str;
+     101:         while ((str = in.readLine()) != null) {
+     102:         	String[] tokens = str.split(sep);
+     103:         	String[] f = flist.split(";");
+     104:         	String[] t = ftlist.split(";");
+     105: [blank line]
+     106:         	int[] tp = new int[t.length];
+     107:         	Vector<Object> param = new Vector<Object>();
+     108: [blank line]
+     109:         	if (tokens.length == f.length && f.length == t.length) {
+     110: [blank line]
+     111:         		String sqlValues = "";
+     112:         		String sql = "insert into " + table + " (";
+
+======================================================================
+File: java/com/pandora/bus/alert/FileToTableNotification.java
+Candidate line: 148
+======================================================================
+     133:         		if (isDebug) {
+     134: 			        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "preparing insert statement: [" +
+     135: 			        		sql + "][" + str + "]", RootTO.ROOT_USER, null);
+     136:         		}
+     137:         		statement.add(dbconnection + sql);
+     138:         		dquery.add(new DBQueryParam(tp, param));
+     139:         	} else {
+     140:         		if (isDebug) {
+     141: 			        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The number of fields [" + f.length + "] or types [" + t.length + "] is different from number of values: [" +
+     142: 			        		str + "]", RootTO.ROOT_USER, null);
+     143:         		}
+     144:         	}
+     145:         }
+     146: [blank line]
+     147:         if (statement.size()>0 && dquery.size()>0 && statement.size()==dquery.size()) {
+>>   148:         	db.executeQuery(statement, dquery);
+     149:         } else {
+     150:     		if (isDebug) {
+     151: 		        bus.insertEvent(LogUtil.LOG_INFO, LogUtil.SUMMARY_NOTIFIC, "The number of fields [" + dquery.size() + "] is different from number of values: [" +
+     152: 		        		statement.size() + "]", RootTO.ROOT_USER, null);
+     153:     		}
+     154:         }
+     155: 	}
+     156: [blank line]
+     157: [blank line]
+     158: 	private Object getObject(String value, int type, String pattern) {
+     159: 		Object response = null;
+     160: [blank line]
+     161: 		if (type==Types.VARCHAR) {
+     162: 			response = value;
+     163: 		} else if (type==Types.INTEGER) {
+
+======================================================================
+File: java/com/pandora/bus/alert/NotificationBUS.java
+Candidate line: 78
+======================================================================
+      63:                             String sql = nto.getSqlStement();
+      64:                             sql = sql.replaceAll("#CURRENT_NOTIFICATION_ID#", nto.getId());
+      65: [blank line]
+      66:                             //run the SQL statement related to the notification
+      67:                             final DbQueryBUS dbBus = new DbQueryBUS();
+      68:                             Vector<Vector<Object>> notifResponse = null;
+      69:                             if (nbus.isQuery()) {
+      70:                             	final DBQueryResult r = dbBus.performQuery(sql, null, null);
+      71:                             	nbus.columnNames = r.getColumns();
+      72: [blank line]
+      73:                             	notifResponse = new Vector<Vector<Object>>();
+      74:                             	notifResponse.add(r.getColumns());
+      75:                             	notifResponse.addAll(r.getData());
+      76: [blank line]
+      77:                             } else {
+>>    78:                             	notifResponse = dbBus.executeQuery(sql);
+      79:                             }
+      80: [blank line]
+      81:                             //send the alarm if found something to notify!!
+      82:                             if (notifResponse!=null && !notifResponse.isEmpty() &&
+      83:                             		(notifResponse!=null && notifResponse.size()>0 && notifResponse.get(0).size()>0) ) {
+      84:                                 nbus.sendNotification(nto.getFields(), notifResponse);
+      85:                                 shouldDispatch = true;
+      86:                             }
+      87: [blank line]
+      88:                             dispatchOk = true;
+      89: [blank line]
+      90:                         } catch (final Exception e) {
+      91:                             //the message dispatching failed... :-(
+      92:                             LogUtil.log(LogUtil.SUMMARY_NOTIFIC, this, RootTO.ROOT_USER,
+      93:                             LogUtil.LOG_INFO, "The message dispatching failed. Retry number:[" + retry + "]", e);
+
+======================================================================
+File: java/com/pandora/bus/DbQueryBUS.java
+Candidate line: 56
+======================================================================
+      41: 		}
+      42: 		return response;
+      43: 	}
+      44: [blank line]
+      45: 	/**
+      46: 	 * Execute statement into data base
+      47: 	 *
+      48: 	 * @param sql
+      49: 	 * @return
+      50: 	 * @throws BusinessException
+      51: 	 */
+      52: 	public Vector executeQuery(String sql) throws BusinessException {
+      53: 		Vector response = new Vector();
+      54: 		try {
+      55: 			DbQueryDAO dao = new DbQueryDAO();
+>>    56: 			response = dao.executeQuery(sql);
+      57: 		} catch (DataAccessException e) {
+      58: 			throw new BusinessException(e);
+      59: 		}
+      60: 		return response;
+      61: 	}
+      62: [blank line]
+      63: 	public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws BusinessException {
+      64: 		Vector response = new Vector();
+      65: 		try {
+      66: 			DbQueryDAO dao = new DbQueryDAO();
+      67: 			response = dao.executeQuery(sql, params);
+      68: 		} catch (DataAccessException e) {
+      69: 			throw new BusinessException(e);
+      70: 		}
+      71: 		return response;
+
+======================================================================
+File: java/com/pandora/bus/DbQueryBUS.java
+Candidate line: 67
+======================================================================
+      52: 	public Vector executeQuery(String sql) throws BusinessException {
+      53: 		Vector response = new Vector();
+      54: 		try {
+      55: 			DbQueryDAO dao = new DbQueryDAO();
+      56: 			response = dao.executeQuery(sql);
+      57: 		} catch (DataAccessException e) {
+      58: 			throw new BusinessException(e);
+      59: 		}
+      60: 		return response;
+      61: 	}
+      62: [blank line]
+      63: 	public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws BusinessException {
+      64: 		Vector response = new Vector();
+      65: 		try {
+      66: 			DbQueryDAO dao = new DbQueryDAO();
+>>    67: 			response = dao.executeQuery(sql, params);
+      68: 		} catch (DataAccessException e) {
+      69: 			throw new BusinessException(e);
+      70: 		}
+      71: 		return response;
+      72: 	}
+      73: [blank line]
+      74: 	/**
+      75: 	 * For a tableName get all fields from it.
+      76: 	 */
+      77: 	public Vector<Vector<Object>> getMetaData(String tableName) throws BusinessException {
+      78: 		Vector<Vector<Object>> response = new Vector<Vector<Object>>();
+      79: 		try {
+      80: 			DbQueryDAO dao = new DbQueryDAO();
+      81: 			response = dao.getMetaData(tableName);
+      82: 		} catch (DataAccessException e) {
+
+======================================================================
+File: java/com/pandora/bus/repository/WrapperDBRepository.java
+Candidate line: 243
+======================================================================
+     228: 				}
+     229: 			}
+     230: [blank line]
+     231: 			sqls.add("delete from db_repository_version where repository_item_id=?");
+     232: 			int[] tp1 = {Types.VARCHAR};
+     233: 			Vector<Object> pr1 = new Vector<Object>();
+     234: 			pr1.add(rfto.getId());
+     235: 			params.add(new DBQueryParam(tp1, pr1));
+     236: [blank line]
+     237: 			sqls.add("delete from db_repository_item where id=?");
+     238: 			int[] tp2 = {Types.VARCHAR};
+     239: 			Vector<Object> pr2 = new Vector<Object>();
+     240: 			pr2.add(rfto.getId());
+     241: 			params.add(new DBQueryParam(tp2, pr2));
+     242: [blank line]
+>>   243: 			db.executeQuery(sqls, params);
+     244: 		}
+     245: 	}
+     246: [blank line]
+     247: [blank line]
+     248: [blank line]
+     249: 	public RepositoryFileTO getFileInfo(ProjectTO pto, String url, String pathName, String rev, String user, String pass) throws Exception {
+     250: 		return getFile(pto, url, pathName, rev, user, pass);
+     251: 	}
+     252: [blank line]
+     253: [blank line]
+     254: 	@Override
+     255: 	public void commitFile(ProjectTO pto, String url, String path, String fileName, String rev,
+     256: 			String user, String pass, String logMessage, String contentType, byte[] data) throws Exception {
+     257: 		DbQueryDelegate db = new DbQueryDelegate();
+     258: 		ArrayList<String> sqls = new ArrayList<String>();
+
+======================================================================
+File: java/com/pandora/bus/repository/WrapperDBRepository.java
+Candidate line: 325
+======================================================================
+     310: 		}
+     311: [blank line]
+     312: 		sqls.add("insert into db_repository_version (repository_item_id, version, content_type, creation_date, comment, user_id, file_size, binary_file) values (?, ?, ?, ?, ?, ?, ?, ?)");
+     313: 		int[] tp3 = {Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Types.TIMESTAMP, Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.BLOB};
+     314: 		Vector<Object> pr3 = new Vector<Object>();
+     315: 		pr3.add(seq);
+     316: 		pr3.add(new Integer(version+""));
+     317: 		pr3.add("application/octet-stream");
+     318: 		pr3.add(DateUtil.getNow());
+     319: 		pr3.add(logMessage);
+     320: 		pr3.add(uto.getId());
+     321: 		pr3.add(new Integer(data.length));
+     322: 		pr3.add(data);
+     323: 		params.add(new DBQueryParam(tp3, pr3));
+     324: [blank line]
+>>   325: 		db.executeQuery(sqls, params);
+     326: [blank line]
+     327: 	}
+     328: [blank line]
+     329: 	@Override
+     330: 	public Vector<RepositoryLogTO> getLogs(ProjectTO pto, String url, String path, String rev, String user, String pass) throws Exception {
+     331: 		Vector<RepositoryLogTO> response = new Vector<RepositoryLogTO>();
+     332: 		DbQueryDelegate db = new DbQueryDelegate();
+     333: 		UserDelegate udel = new UserDelegate();
+     334: 		String versionPath = "";
+     335: 		String directoryWhere = "";
+     336: [blank line]
+     337: 		long version = this.formatRevision(rev);
+     338: 		if (version>0) {
+     339: 			versionPath = " and v.version <= " + version;
+     340: 		}
+
+======================================================================
+File: java/com/pandora/bus/repository/WrapperDBRepository.java
+Candidate line: 454
+======================================================================
+     439: 										"is_directory, parent_id) values (?, ?, ?, ?, ?, ?)");
+     440: 					int[] tp = {Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.VARCHAR};
+     441: 					Vector<Object> pr = new Vector<Object>();
+     442: 					pr.add(seq); pr.add(currePath); pr.add(folderName); pr.add(pto.getId()); 	pr.add(new Integer(1)); pr.add(parentFolderId);
+     443: 					params.add(new DBQueryParam(tp, pr));
+     444: [blank line]
+     445: 					long version = this.getNewVersionSeq(pto);
+     446: [blank line]
+     447: 					sqls.add("insert into db_repository_version (repository_item_id, version, content_type, creation_date, " +
+     448: 							            "comment, user_id, file_size, binary_file) values (?, ?, 'application/octet-stream', ?, ?, ?, 0, null)");
+     449: 					int[] tp2 = {Types.VARCHAR, Types.INTEGER, Types.TIMESTAMP, Types.VARCHAR, Types.VARCHAR};
+     450: 					Vector<Object> pr2 = new Vector<Object>();
+     451: 					pr2.add(seq); pr2.add(new Integer(version+""));	pr2.add(DateUtil.getNow());	pr2.add(logMsg); pr2.add(uto.getId());
+     452: 					params.add(new DBQueryParam(tp2, pr2));
+     453: [blank line]
+>>   454: 					db.executeQuery(sqls, params);
+     455: [blank line]
+     456: 					response = this.getFile(pto, null, currePath, rev, null, null);
+     457: 					if (response==null) {
+     458: 						throw new Exception("The folder [" + path + "] cannot be created.");
+     459: 					}
+     460: 					parentFolderId = response.getId();
+     461: [blank line]
+     462: 				} else {
+     463: 					parentFolderId = parentFolder.getId();
+     464: 				}
+     465: [blank line]
+     466: 				if (partialPath.equals("")) {
+     467: 					partialPath = folderName;
+     468: 				} else {
+     469: 					partialPath = partialPath.concat("/" + folderName);
+
+======================================================================
+File: java/com/pandora/bus/repository/WrapperDBRepository.java
+Candidate line: 498
+======================================================================
+     483: 			int[] tp = {Types.VARCHAR};
+     484: 			Vector<Object> pr = new Vector<Object>();
+     485: 			pr.add(pto.getId());
+     486: 			Vector<Vector<Object>> vseq = del.performQuery("select id from db_repository_sequence where project_id=?", tp, pr);
+     487: 			if (vseq!=null && vseq.size()>1) {
+     488: 				Vector<Object> item = vseq.get(1);
+     489: 				currentValue = Long.parseLong((String)item.get(0));
+     490: 			}
+     491: 		} catch (NullPointerException e) {
+     492: 		    LogUtil.log(this, LogUtil.LOG_ERROR, "current project sequence is null, assuming value=1", e);
+     493: 		    currentValue = 0;
+     494: 		}
+     495: [blank line]
+     496: 	    currentValue++;
+     497: 		if (currentValue>1) {
+>>   498: 		    del.executeQuery("update db_repository_sequence set id=" + currentValue + " where project_id='" + pto.getId() + "'");
+     499: 		} else {
+     500: 		    del.executeQuery("insert into db_repository_sequence (id, project_id) values (1, '" + pto.getId() + "')");
+     501: 		}
+     502: [blank line]
+     503: 		return currentValue;
+     504: 	}
+     505: [blank line]
+     506: [blank line]
+     507: 	private String getWherePath(String path) {
+     508: 		String reponse = "";
+     509: [blank line]
+     510: 		if (path!=null) {
+     511: 			String localPath = path;
+     512: 			if (!path.trim().equals("")){
+     513: 				localPath = localPath + "/%";
+
+======================================================================
+File: java/com/pandora/bus/repository/WrapperDBRepository.java
+Candidate line: 500
+======================================================================
+     485: 			pr.add(pto.getId());
+     486: 			Vector<Vector<Object>> vseq = del.performQuery("select id from db_repository_sequence where project_id=?", tp, pr);
+     487: 			if (vseq!=null && vseq.size()>1) {
+     488: 				Vector<Object> item = vseq.get(1);
+     489: 				currentValue = Long.parseLong((String)item.get(0));
+     490: 			}
+     491: 		} catch (NullPointerException e) {
+     492: 		    LogUtil.log(this, LogUtil.LOG_ERROR, "current project sequence is null, assuming value=1", e);
+     493: 		    currentValue = 0;
+     494: 		}
+     495: [blank line]
+     496: 	    currentValue++;
+     497: 		if (currentValue>1) {
+     498: 		    del.executeQuery("update db_repository_sequence set id=" + currentValue + " where project_id='" + pto.getId() + "'");
+     499: 		} else {
+>>   500: 		    del.executeQuery("insert into db_repository_sequence (id, project_id) values (1, '" + pto.getId() + "')");
+     501: 		}
+     502: [blank line]
+     503: 		return currentValue;
+     504: 	}
+     505: [blank line]
+     506: [blank line]
+     507: 	private String getWherePath(String path) {
+     508: 		String reponse = "";
+     509: [blank line]
+     510: 		if (path!=null) {
+     511: 			String localPath = path;
+     512: 			if (!path.trim().equals("")){
+     513: 				localPath = localPath + "/%";
+     514: 			}
+     515: [blank line]
+
+======================================================================
+File: java/com/pandora/dao/DbQueryDAO.java
+Candidate line: 94
+======================================================================
+      79: 			this.closeConnection(c);
+      80: 		}
+      81:         return response;
+      82:     }
+      83: [blank line]
+      84:     /**
+      85:      * Execute statement into data base
+      86:      */
+      87:     public Vector executeQuery(String sql) throws DataAccessException{
+      88:         Vector response = null;
+      89:         Connection c = null;
+      90: 		try {
+      91: 			c = this.getConnectionBasedToSql(sql);
+      92: 			sql = removeConnStringFromSql(sql);
+      93: [blank line]
+>>    94: 			response = this.executeQuery(sql, null, c);
+      95: 		} catch(Exception e){
+      96: 			throw new DataAccessException(e);
+      97: 		} finally{
+      98: 			this.closeConnection(c);
+      99: 		}
+     100:         return response;
+     101:     }
+     102: [blank line]
+     103: 	public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws DataAccessException {
+     104:         Vector response = null;
+     105:         Connection c = null;
+     106: 		try {
+     107: 			c = this.getConnectionBasedToSql((String)sql.get(0), false);
+     108: 			for (int i=0; i<sql.size(); i++) {
+     109: 				String theSql = removeConnStringFromSql((String)sql.get(i));
+
+======================================================================
+File: java/com/pandora/dao/DbQueryDAO.java
+Candidate line: 110
+======================================================================
+      95: 		} catch(Exception e){
+      96: 			throw new DataAccessException(e);
+      97: 		} finally{
+      98: 			this.closeConnection(c);
+      99: 		}
+     100:         return response;
+     101:     }
+     102: [blank line]
+     103: 	public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws DataAccessException {
+     104:         Vector response = null;
+     105:         Connection c = null;
+     106: 		try {
+     107: 			c = this.getConnectionBasedToSql((String)sql.get(0), false);
+     108: 			for (int i=0; i<sql.size(); i++) {
+     109: 				String theSql = removeConnStringFromSql((String)sql.get(i));
+>>   110: 				Vector resp = this.executeQuery(theSql, (DBQueryParam)params.get(i), c);
+     111: 				if (response==null) {
+     112: 					response = new Vector();
+     113: 				}
+     114: 				response.add(resp.get(0));
+     115: 			}
+     116: [blank line]
+     117: 			c.commit();
+     118: [blank line]
+     119: 		} catch(Exception e){
+     120: 			try {
+     121: 				c.rollback();
+     122: 			} catch (SQLException er) {
+     123: 				LogUtil.log(this, LogUtil.LOG_ERROR, "", er);
+     124: 			}
+     125: 			throw new DataAccessException(e);
+
+======================================================================
+File: java/com/pandora/delegate/DbQueryDelegate.java
+Candidate line: 53
+======================================================================
+      38:     	v.addElement(r.getColumns());
+      39:     	v.addAll(r.getData());
+      40:         return v;
+      41:     }
+      42: [blank line]
+      43: [blank line]
+      44:     public String getNewId() throws BusinessException{
+      45:         return bus.getNewId();
+      46:     }
+      47: [blank line]
+      48: [blank line]
+      49:     /* (non-Javadoc)
+      50:      * @see com.pandora.bus.DbQueryBUS.executeQuery(java.lang.String)
+      51:      */
+      52:     public Vector executeQuery(String sql) throws BusinessException{
+>>    53:         return bus.executeQuery(sql);
+      54:     }
+      55: [blank line]
+      56:     public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws BusinessException{
+      57:         return bus.executeQuery(sql, params);
+      58:     }
+      59: [blank line]
+      60:     /* (non-Javadoc)
+      61:      * @see com.pandora.bus.DbQueryBUS.getMetaData(java.lang.String)
+      62:      */
+      63:     public Vector<Vector<Object>> getMetaData(String tableName) throws BusinessException{
+      64:         return bus.getMetaData(tableName);
+      65:     }
+      66: [blank line]
+      67: [blank line]
+      68:     public String getDBProductName() throws BusinessException{
+
+======================================================================
+File: java/com/pandora/delegate/DbQueryDelegate.java
+Candidate line: 57
+======================================================================
+      42: [blank line]
+      43: [blank line]
+      44:     public String getNewId() throws BusinessException{
+      45:         return bus.getNewId();
+      46:     }
+      47: [blank line]
+      48: [blank line]
+      49:     /* (non-Javadoc)
+      50:      * @see com.pandora.bus.DbQueryBUS.executeQuery(java.lang.String)
+      51:      */
+      52:     public Vector executeQuery(String sql) throws BusinessException{
+      53:         return bus.executeQuery(sql);
+      54:     }
+      55: [blank line]
+      56:     public Vector executeQuery(ArrayList<String> sql, ArrayList<DBQueryParam> params) throws BusinessException{
+>>    57:         return bus.executeQuery(sql, params);
+      58:     }
+      59: [blank line]
+      60:     /* (non-Javadoc)
+      61:      * @see com.pandora.bus.DbQueryBUS.getMetaData(java.lang.String)
+      62:      */
+      63:     public Vector<Vector<Object>> getMetaData(String tableName) throws BusinessException{
+      64:         return bus.getMetaData(tableName);
+      65:     }
+      66: [blank line]
+      67: [blank line]
+      68:     public String getDBProductName() throws BusinessException{
+      69:     	return bus.getDBProductName();
+      70:     }
+      71: [blank line]
+      72:     private String replaceStatement(String sql, String value) throws BusinessException {
+
+======================================================================
+File: java/com/pandora/gui/struts/action/DbAction.java
+Candidate line: 75
+======================================================================
+      60: [blank line]
+      61: [blank line]
+      62: 	private void performQuery(String sql, DbForm frm) throws BusinessException{
+      63: 	    DbQueryDelegate del = new DbQueryDelegate();
+      64: 	    Vector<Vector<Object>> list = null;
+      65: 	    list = del.performQuery(sql);
+      66:         StringBuffer result = formatOutput(list);
+      67:         frm.setResult(result.toString());
+      68: 	}
+      69: [blank line]
+      70: [blank line]
+      71: 	private void executeQuery(String sql, DbForm frm) throws BusinessException{
+      72: 	    String[] queryList = sql.split(";");
+      73: 	    DbQueryDelegate del = new DbQueryDelegate();
+      74: 	    for (int i=0; i< queryList.length; i++) {
+>>    75: 	        del.executeQuery(queryList[i]);
+      76: 	    }
+      77: 	    frm.setResult("<table width=\"95%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"><tr><td><center>EXECUTED.</center><td></tr></table>");
+      78: 	}
+      79: [blank line]
+      80: 	/**
+      81: 	 * write data in html table format.
+      82: 	 * @param list
+      83: 	 */
+      84: 	private StringBuffer formatOutput(Vector<Vector<Object>> list){
+      85: 	    StringBuffer response = new StringBuffer();
+      86: [blank line]
+      87: 	    response.append("<table width=\"95%\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\">");
+      88: 	    Iterator<Vector<Object>> i = list.iterator();
+      89: 	    while(i.hasNext()){
+      90: 	        response.append("\n<tr>");
+
+======================================================================
+File: java/com/tests/integration/ConnectorTest.java
+Candidate line: 35
+======================================================================
+      20:     Connector connector = null;
+      21: [blank line]
+      22:     String target = "://localhost:8080/pandora/do/connectorListener";
+      23: [blank line]
+      24: [blank line]
+      25:  	public void setUp() {
+      26:  	   connector = new Connector();
+      27:  	}
+      28: [blank line]
+      29:  	public void tearDown() {}
+      30: [blank line]
+      31: [blank line]
+      32:  	public void testExecute() throws IntegrationException{
+      33: [blank line]
+      34:  		String protoc = SystemSingleton.getInstance().getSystemProtocol();
+>>    35:  		IntegrationResponse resp0 = connector.execute(prepareResourceTaskList2(), protoc + target);
+      36:  		assertTrue("Test 0 ", resp0.wasSuccess());
+      37:  	  /**
+      38:  	   //Test 1 - check if call with empty list works
+      39:  	   IntegrationResponse resp1 = connector.execute(null, target);
+      40:  	   assertTrue("Test 1 - check if call with empty list works", resp1==null);
+      41: [blank line]
+      42:  	   //Test 2 - check if updating ResourceTask data works
+      43:  	   IntegrationResponse resp2 = connector.execute(this.prepareResourceTaskList(false, false), target);
+      44:  	   assertTrue("Test 2 - check if updating ResourceTask data works", resp2.wasSuccess());
+      45: [blank line]
+      46:  	   //Test 3 - check if test case failed because some transaction field is empty
+      47:  	   try {
+      48:  	      connector.execute(this.prepareResourceTaskList(false, true), target);
+      49:  	      assertTrue(false);
+      50:  	   } catch(IntegrationException e) {
