@@ -1,0 +1,6 @@
+﻿sql_type,query_count
+DELETE,89
+INSERT,67
+SELECT,502
+UNRESOLVED,9
+UPDATE,61

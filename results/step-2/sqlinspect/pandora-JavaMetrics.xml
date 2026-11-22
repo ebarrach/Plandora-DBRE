@@ -1,0 +1,807 @@
+<?xml version="1.0" ?>
+<JavaMetrics>
+<JavaElement Kind="JavaProject" Name="pandora">
+  <Metrics>
+    <Metric name="Hotspots" value="433"></Metric>
+    <Metric name="Queries" value="728"></Metric>
+    <Metric name="Inserts" value="67"></Metric>
+    <Metric name="Selects" value="489"></Metric>
+    <Metric name="Updates" value="61"></Metric>
+    <Metric name="Deletes" value="89"></Metric>
+  </Metrics>
+  <Children>
+    <JavaElement Kind="PackageFragmentRoot" Name="java">
+      <Metrics>
+        <Metric name="Hotspots" value="433"></Metric>
+        <Metric name="Queries" value="728"></Metric>
+        <Metric name="Inserts" value="67"></Metric>
+        <Metric name="Selects" value="489"></Metric>
+        <Metric name="Updates" value="61"></Metric>
+        <Metric name="Deletes" value="89"></Metric>
+      </Metrics>
+      <Children>
+        <JavaElement Kind="PackageFragment" Name="com.pandora.bus.alert">
+          <Metrics>
+            <Metric name="Hotspots" value="3"></Metric>
+            <Metric name="Queries" value="3"></Metric>
+            <Metric name="Inserts" value="0"></Metric>
+            <Metric name="Selects" value="0"></Metric>
+            <Metric name="Updates" value="0"></Metric>
+            <Metric name="Deletes" value="0"></Metric>
+          </Metrics>
+          <Children>
+            <JavaElement Kind="CompilationUnit" Name="ReplicateTableNotification.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="0"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+          </Children>
+        </JavaElement>
+        <JavaElement Kind="PackageFragment" Name="com.pandora.dao">
+          <Metrics>
+            <Metric name="Hotspots" value="430"></Metric>
+            <Metric name="Queries" value="725"></Metric>
+            <Metric name="Inserts" value="67"></Metric>
+            <Metric name="Selects" value="489"></Metric>
+            <Metric name="Updates" value="61"></Metric>
+            <Metric name="Deletes" value="89"></Metric>
+          </Metrics>
+          <Children>
+            <JavaElement Kind="CompilationUnit" Name="FunctionDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ResourceTaskAllocDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="6"></Metric>
+                <Metric name="Queries" value="8"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="5"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CompanyDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="5"></Metric>
+                <Metric name="Queries" value="5"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="PlanningDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="5"></Metric>
+                <Metric name="Queries" value="11"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="9"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ResourceTaskDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="16"></Metric>
+                <Metric name="Queries" value="38"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="29"></Metric>
+                <Metric name="Updates" value="5"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RequirementHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CostStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ProjectDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="10"></Metric>
+                <Metric name="Queries" value="18"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="16"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ExpenseDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="8"></Metric>
+                <Metric name="Queries" value="9"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="4"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ArtifactTemplateDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RootDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="1"></Metric>
+                <Metric name="Queries" value="1"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="DataAccess.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="DepartmentDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="1"></Metric>
+                <Metric name="Queries" value="1"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ExternalDataDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="7"></Metric>
+                <Metric name="Queries" value="7"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ArtifactDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="4"></Metric>
+                <Metric name="Queries" value="4"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CostDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="29"></Metric>
+                <Metric name="Queries" value="29"></Metric>
+                <Metric name="Inserts" value="3"></Metric>
+                <Metric name="Selects" value="5"></Metric>
+                <Metric name="Updates" value="4"></Metric>
+                <Metric name="Deletes" value="13"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="UtilDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="1"></Metric>
+                <Metric name="Queries" value="1"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RepositoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="15"></Metric>
+                <Metric name="Queries" value="16"></Metric>
+                <Metric name="Inserts" value="4"></Metric>
+                <Metric name="Selects" value="9"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="EventDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="1"></Metric>
+                <Metric name="Queries" value="1"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="0"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="OccurrenceHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="TaskNodeTemplateDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="15"></Metric>
+                <Metric name="Queries" value="16"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="13"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ReportDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="18"></Metric>
+                <Metric name="Queries" value="46"></Metric>
+                <Metric name="Inserts" value="3"></Metric>
+                <Metric name="Selects" value="34"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="3"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="TaskStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="4"></Metric>
+                <Metric name="Queries" value="4"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="4"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CustomerDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="9"></Metric>
+                <Metric name="Queries" value="10"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="6"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="PreferenceDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="4"></Metric>
+                <Metric name="Queries" value="4"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ResourceDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="7"></Metric>
+                <Metric name="Queries" value="10"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="7"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="InvoiceHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="DiscussionDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="PlanningRelationDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="4"></Metric>
+                <Metric name="Queries" value="4"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="AreaDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="6"></Metric>
+                <Metric name="Queries" value="6"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="TaskHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="8"></Metric>
+                <Metric name="Queries" value="8"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="5"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ResourceCapacityDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="7"></Metric>
+                <Metric name="Queries" value="12"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="6"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="LeaderDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="5"></Metric>
+                <Metric name="Queries" value="6"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="4"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RequirementDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="18"></Metric>
+                <Metric name="Queries" value="209"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="199"></Metric>
+                <Metric name="Updates" value="4"></Metric>
+                <Metric name="Deletes" value="5"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="UserDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="10"></Metric>
+                <Metric name="Queries" value="15"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="8"></Metric>
+                <Metric name="Updates" value="4"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ResourceTaskAllocPlannedDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="4"></Metric>
+                <Metric name="Queries" value="5"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="MetaFormDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="5"></Metric>
+                <Metric name="Queries" value="5"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="SurveyDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="21"></Metric>
+                <Metric name="Queries" value="24"></Metric>
+                <Metric name="Inserts" value="4"></Metric>
+                <Metric name="Selects" value="11"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="7"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CustomFormDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="6"></Metric>
+                <Metric name="Queries" value="6"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CategoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="7"></Metric>
+                <Metric name="Queries" value="8"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="5"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ReportResultDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="DbQueryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="CustomerFunctionDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="5"></Metric>
+                <Metric name="Queries" value="5"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="OccurrenceDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="21"></Metric>
+                <Metric name="Queries" value="24"></Metric>
+                <Metric name="Inserts" value="4"></Metric>
+                <Metric name="Selects" value="11"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="8"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RiskHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="TaskDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="22"></Metric>
+                <Metric name="Queries" value="27"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="11"></Metric>
+                <Metric name="Updates" value="6"></Metric>
+                <Metric name="Deletes" value="9"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="AttachmentHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="EdiDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="InvoiceDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="10"></Metric>
+                <Metric name="Queries" value="10"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="3"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ProjectHistoryDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="1"></Metric>
+                <Metric name="Queries" value="1"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="0"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RiskStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="AdditionalFieldDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="10"></Metric>
+                <Metric name="Queries" value="13"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="4"></Metric>
+                <Metric name="Updates" value="3"></Metric>
+                <Metric name="Deletes" value="4"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="DiscussionTopicDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="7"></Metric>
+                <Metric name="Queries" value="7"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="2"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="NotificationDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="8"></Metric>
+                <Metric name="Queries" value="9"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="4"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="2"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RiskDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="10"></Metric>
+                <Metric name="Queries" value="11"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="4"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="5"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="TaskTemplateDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RepositoryPolicyDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="1"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="MetaFieldDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="8"></Metric>
+                <Metric name="Queries" value="9"></Metric>
+                <Metric name="Inserts" value="1"></Metric>
+                <Metric name="Selects" value="6"></Metric>
+                <Metric name="Updates" value="1"></Metric>
+                <Metric name="Deletes" value="1"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="ProjectStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="InvoiceStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="2"></Metric>
+                <Metric name="Queries" value="2"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="2"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="AttachmentDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="13"></Metric>
+                <Metric name="Queries" value="13"></Metric>
+                <Metric name="Inserts" value="2"></Metric>
+                <Metric name="Selects" value="8"></Metric>
+                <Metric name="Updates" value="3"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+            <JavaElement Kind="CompilationUnit" Name="RequirementStatusDAO.java">
+              <Metrics>
+                <Metric name="Hotspots" value="3"></Metric>
+                <Metric name="Queries" value="3"></Metric>
+                <Metric name="Inserts" value="0"></Metric>
+                <Metric name="Selects" value="3"></Metric>
+                <Metric name="Updates" value="0"></Metric>
+                <Metric name="Deletes" value="0"></Metric>
+              </Metrics>
+              <Children>
+              </Children>
+            </JavaElement>
+          </Children>
+        </JavaElement>
+      </Children>
+    </JavaElement>
+  </Children>
+</JavaElement>
+</JavaMetrics>

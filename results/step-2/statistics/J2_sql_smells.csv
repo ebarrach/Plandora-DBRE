@@ -1,0 +1,17 @@
+﻿kind,file_path,line,certainty,message
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/AdditionalFieldDAO.java,119,LOW_CERTAINTY,'meta_field.is_qualifier' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/AdditionalFieldDAO.java,123,LOW_CERTAINTY,'meta_field.is_qualifier' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/CustomerDAO.java,249,LOW_CERTAINTY,'customer.can_see_other_reqs' is nullable and used in an expression without NULL check.
+IMPLICIT_COLUMNS,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/DbQueryDAO.java,139,NORMAL_CERTAINTY,Name columns explicitly.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/OccurrenceDAO.java,221,LOW_CERTAINTY,'planning.visible' is nullable and used in an expression without NULL check.
+IMPLICIT_COLUMNS,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/PreferenceDAO.java,90,NORMAL_CERTAINTY,Name columns explicitly.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/ReportDAO.java,342,LOW_CERTAINTY,'occurrence.occurrence_status' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/ReportDAO.java,342,LOW_CERTAINTY,'report.category_id' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/ReportDAO.java,489,LOW_CERTAINTY,'report.profile_view' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/RepositoryDAO.java,210,LOW_CERTAINTY,'repository_file_project.is_disable' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/RequirementDAO.java,541,LOW_CERTAINTY,'category.name' is nullable and used in an expression without NULL check.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/ResourceTaskDAO.java,636,LOW_CERTAINTY,'task.is_parent_task' is nullable and used in an expression without NULL check.
+IMPLICIT_COLUMNS,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/ResourceTaskDAO.java,731,NORMAL_CERTAINTY,Name columns explicitly.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/java/com/pandora/dao/RiskDAO.java,119,LOW_CERTAINTY,'planning.visible' is nullable and used in an expression without NULL check.
+IMPLICIT_COLUMNS,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/mysql.sql,1354,NORMAL_CERTAINTY,Name columns explicitly.
+FEAR_OF_THE_UNKNOWN,C:/Users/Tetbm/OneDrive/Bureau/plandora/plandora/mysql.sql,1357,LOW_CERTAINTY,'resource.cost_per_hour' is nullable and used in an expression without NULL check.
