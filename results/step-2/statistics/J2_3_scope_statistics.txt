@@ -1,0 +1,61 @@
+SQLInspect queries: 728
+Queries touching our 24 tables: 503, in 215 places in the code
+Accesses found only by the manual J2.2: 61
+
+Type
+  SELECT: 417
+  DELETE: 39
+  UPDATE: 27
+  INSERT: 20
+
+Complexity
+  low: 317
+  moderate: 132
+  high: 54
+
+File (top 10)
+  RequirementDAO.java: 208
+  ResourceTaskDAO.java: 36
+  ReportDAO.java: 30
+  TaskDAO.java: 25
+  ProjectDAO.java: 18
+  UserDAO.java: 15
+  ResourceCapacityDAO.java: 12
+  PlanningDAO.java: 11
+  CostDAO.java: 10
+  CustomerDAO.java: 10
+
+Table
+  planning: 309
+  tool_user: 281
+  project: 272
+  task: 243
+  category: 243
+  requeriment: 215
+  requeriment_status: 201
+  resource_task: 49
+  task_status: 42
+  customer: 38
+  resource: 34
+  task_history: 31
+  leader: 27
+  project_status: 16
+  resource_capacity: 12
+  resource_task_alloc: 11
+  plan_relation: 11
+  requeriment_history: 10
+  company: 6
+  area: 6
+  resource_task_alloc_plann: 6
+  function: 3
+  department: 1
+  project_history: 1
+
+Manual J2.2 accesses by kind
+  executor call: 43
+  jasper subreport: 12
+  sql stored in report table: 6
+
+Manual J2.2 accesses, SQL known
+  yes: 50
+  no: 11
