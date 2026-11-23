@@ -1,0 +1,12 @@
+ReqOverviewHistory.jasper
+ReqOverviewTask.jasper
+SurveyReport_multi.jasper
+SurveyReport_multichart.jasper
+SurveyReport_text.jasper
+projectReqAttendTime.jasper
+projectReqCategory.jasper
+projectReqPriority.jasper
+projectReqRequesters.jasper
+projectReqStatus.jasper
+projectTaskDurationActualTime.jasper
+taskAllocRanking.jasper

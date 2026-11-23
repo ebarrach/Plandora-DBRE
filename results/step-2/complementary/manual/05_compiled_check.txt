@@ -1,0 +1,3 @@
+ProjectRequirement.jasper | sql: [select count(id) as count, priority from requeriment | used by: 
+ReqsReport.jasper | sql:  | used by: 
+taskOfPeriod.jasper | sql: 7select u.id as user_id, u.name, c.name as category_name, c. | used by: 

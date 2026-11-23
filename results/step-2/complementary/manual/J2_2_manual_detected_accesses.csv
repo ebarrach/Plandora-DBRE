@@ -1,0 +1,62 @@
+id,file_path,line,kind,sql_known
+M01,java/com/pandora/bus/alert/FileToTableNotification.java,148,executor call,yes
+M02,java/com/pandora/bus/alert/FileToTableNotification.java,97,executor call,yes
+M03,java/com/pandora/bus/alert/NotificationBUS.java,78,executor call,no
+M04,java/com/pandora/bus/repository/WrapperDBRepository.java,243,executor call,yes
+M05,java/com/pandora/bus/repository/WrapperDBRepository.java,325,executor call,yes
+M06,java/com/pandora/bus/repository/WrapperDBRepository.java,454,executor call,yes
+M07,java/com/pandora/bus/repository/WrapperDBRepository.java,498,executor call,yes
+M08,java/com/pandora/bus/repository/WrapperDBRepository.java,500,executor call,yes
+M09,java/com/pandora/gui/struts/action/DbAction.java,75,executor call,no
+M10,java/com/pandora/imp/CostCsvExportBUS.java,135,executor call,yes
+M11,java/com/pandora/bus/repository/WrapperDBRepository.java,79,executor call,yes
+M12,java/com/pandora/bus/repository/WrapperDBRepository.java,145,executor call,yes
+M13,java/com/pandora/bus/repository/WrapperDBRepository.java,223,executor call,yes
+M14,java/com/pandora/bus/repository/WrapperDBRepository.java,361,executor call,yes
+M15,java/com/pandora/bus/repository/WrapperDBRepository.java,486,executor call,yes
+M16,java/com/pandora/bus/alert/NotificationBUS.java,70,executor call,no
+M17,java/com/pandora/bus/alert/ReplicateTableNotification.java,56,executor call,no
+M18,java/com/pandora/bus/alert/ReplicateTableNotification.java,164,executor call,yes
+M19,java/com/pandora/bus/gadget/PredictableTaskHighchartGadget.java,141,executor call,yes
+M20,java/com/pandora/bus/gadget/ResourceProjectAllocHighchartGadget.java,149,executor call,yes
+M21,java/com/pandora/bus/gadget/OccurrenceHighchartGadget.java,165,executor call,yes
+M22,java/com/pandora/bus/gadget/WorkflowTimeHighchartGadget.java,171,executor call,yes
+M23,java/com/pandora/bus/gadget/TaskStreamHtmlGadget.java,144,executor call,yes
+M24,java/com/pandora/bus/gadget/RequirementSummaryChartGadget.java,132,executor call,yes
+M25,java/com/pandora/bus/gadget/ResourceAllocationChartGadget.java,114,executor call,yes
+M26,java/com/pandora/bus/gadget/ResourceAllocationChartGadget.java,163,executor call,yes
+M27,java/com/pandora/bus/gadget/DefectTaskHighchartGadget.java,174,executor call,yes
+M28,java/com/pandora/bus/gadget/RequirementLeadTimeGadget.java,127,executor call,yes
+M29,java/com/pandora/bus/gadget/ResourceCategoryAllocHighchartGadget.java,208,executor call,yes
+M30,java/com/pandora/bus/gadget/InvoiceIncomeHighchartGadget.java,130,executor call,yes
+M31,java/com/pandora/bus/gadget/BillableTaskHighchartGadget.java,165,executor call,yes
+M32,java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,228,executor call,yes
+M33,java/com/pandora/bus/gadget/Gadget.java,231,executor call,yes
+M34,java/com/pandora/bus/gadget/Gadget.java,252,executor call,yes
+M35,java/com/pandora/bus/gadget/RemainingDaysHtmlGadget.java,118,executor call,yes
+M36,java/com/pandora/bus/gadget/KPIHistogramHighchartGadget.java,136,executor call,yes
+M37,java/com/pandora/bus/ReportBUS.java,271,executor call,no
+M38,java/com/pandora/bus/artifact/ArtifactTemplateBUS.java,203,executor call,no
+M39,java/com/pandora/gui/taglib/form/Forms.java,181,executor call,no
+M40,java/com/pandora/gui/struts/form/MetaFieldForm.java,279,executor call,no
+M41,java/com/pandora/gui/struts/action/DbAction.java,65,executor call,no
+M42,java/com/pandora/MetaFieldTO.java,388,executor call,no
+M43,java/com/pandora/helper/HtmlUtil.java,362,executor call,no
+M44,ReqOverviewHistory.jrxml,14,jasper subreport,yes
+M45,ReqOverviewTask.jrxml,14,jasper subreport,yes
+M46,SurveyReport_multi.jrxml,10,jasper subreport,yes
+M47,SurveyReport_multichart.jrxml,10,jasper subreport,yes
+M48,SurveyReport_text.jrxml,10,jasper subreport,yes
+M49,projectReqAttendTime.jrxml,29,jasper subreport,yes
+M50,projectReqCategory.jrxml,14,jasper subreport,yes
+M51,projectReqPriority.jrxml,27,jasper subreport,yes
+M52,projectReqRequesters.jrxml,27,jasper subreport,yes
+M53,projectReqStatus.jrxml,27,jasper subreport,yes
+M54,projectTaskDurationActualTime.jrxml,11,jasper subreport,yes
+M55,taskAllocRanking.jrxml,9,jasper subreport,yes
+M56,mysql.sql,1334,sql stored in report table,yes
+M57,mysql.sql,1335,sql stored in report table,yes
+M58,mysql.sql,1336,sql stored in report table,yes
+M59,mysql.sql,1337,sql stored in report table,yes
+M60,mysql.sql,1338,sql stored in report table,yes
+M61,mysql.sql,1339,sql stored in report table,yes
