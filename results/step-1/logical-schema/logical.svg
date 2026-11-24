@@ -1,0 +1,361 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="3517" viewBox="0 0 1880 3517">
+<rect width="100%" height="100%" fill="#f6f8fc"/>
+<text x="30" y="40" font-family="sans-serif" font-size="25" fill="#15324f">Logical schema - reconstructed relations</text>
+<text x="30" y="70" font-family="sans-serif" font-size="14">SVN r348 | 24 tables | numbered references below | repository 12c9a7b8355e</text>
+<text x="30" y="92" font-family="sans-serif" font-size="14">NULL unspecified is distinct from explicit NULL. Blue = declared; orange dashed = recovered. No live database.</text>
+<rect x="30" y="115" width="440" height="184" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="139" font-family="monospace" font-size="11" fill="#15324f">planning</text>
+<text x="42" y="154" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="42" y="169" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="42" y="184" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="42" y="199" font-family="monospace" font-size="11" fill="#15324f">creation_date : required</text>
+<text x="42" y="214" font-family="monospace" font-size="11" fill="#15324f">final_date : optional</text>
+<text x="42" y="229" font-family="monospace" font-size="11" fill="#15324f">iteration : optional</text>
+<text x="42" y="244" font-family="monospace" font-size="11" fill="#15324f">rich_text_desc : optional</text>
+<text x="42" y="259" font-family="monospace" font-size="11" fill="#15324f">visible : optional</text>
+<text x="42" y="274" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:296-305</text>
+<rect x="490" y="115" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="139" font-family="monospace" font-size="11" fill="#15324f">plan_relation</text>
+<text x="502" y="154" font-family="monospace" font-size="11" fill="#15324f">PK (planning_id, plan_related_id)</text>
+<text x="502" y="169" font-family="monospace" font-size="11" fill="#15324f">planning_id : required [F38]</text>
+<text x="502" y="184" font-family="monospace" font-size="11" fill="#15324f">plan_related_id : required</text>
+<text x="502" y="199" font-family="monospace" font-size="11" fill="#15324f">plan_type : required</text>
+<text x="502" y="214" font-family="monospace" font-size="11" fill="#15324f">plan_related_type : required</text>
+<text x="502" y="229" font-family="monospace" font-size="11" fill="#15324f">relation_type : required</text>
+<text x="502" y="244" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:614-621</text>
+<rect x="950" y="115" width="440" height="274" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="139" font-family="monospace" font-size="11" fill="#15324f">project</text>
+<text x="962" y="154" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="962" y="169" font-family="monospace" font-size="11" fill="#15324f">id : required [F14]</text>
+<text x="962" y="184" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="962" y="199" font-family="monospace" font-size="11" fill="#15324f">parent_id : optional [F9]</text>
+<text x="962" y="214" font-family="monospace" font-size="11" fill="#15324f">can_alloc : optional</text>
+<text x="962" y="229" font-family="monospace" font-size="11" fill="#15324f">project_status_id : required [F10]</text>
+<text x="962" y="244" font-family="monospace" font-size="11" fill="#15324f">repository_url : optional</text>
+<text x="962" y="259" font-family="monospace" font-size="11" fill="#15324f">repository_class : optional</text>
+<text x="962" y="274" font-family="monospace" font-size="11" fill="#15324f">repository_user : optional</text>
+<text x="962" y="289" font-family="monospace" font-size="11" fill="#15324f">repository_pass : optional</text>
+<text x="962" y="304" font-family="monospace" font-size="11" fill="#15324f">estimated_closure_date : optional</text>
+<text x="962" y="319" font-family="monospace" font-size="11" fill="#15324f">allow_billable : optional</text>
+<text x="962" y="334" font-family="monospace" font-size="11" fill="#15324f">company_id : optional [F11]</text>
+<text x="962" y="349" font-family="monospace" font-size="11" fill="#15324f">budget : required</text>
+<text x="962" y="364" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:235-250</text>
+<rect x="1410" y="115" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="139" font-family="monospace" font-size="11" fill="#15324f">project_status</text>
+<text x="1422" y="154" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="1422" y="169" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="1422" y="184" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="1422" y="199" font-family="monospace" font-size="11" fill="#15324f">note : optional</text>
+<text x="1422" y="214" font-family="monospace" font-size="11" fill="#15324f">state_machine_order : optional</text>
+<text x="1422" y="229" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:209-215</text>
+<rect x="30" y="414" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="438" font-family="monospace" font-size="11" fill="#15324f">project_history</text>
+<text x="42" y="453" font-family="monospace" font-size="11" fill="#15324f">PK (project_id, project_status_id, creation_date)</text>
+<text x="42" y="468" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F21]</text>
+<text x="42" y="483" font-family="monospace" font-size="11" fill="#15324f">project_status_id : required [F22]</text>
+<text x="42" y="498" font-family="monospace" font-size="11" fill="#15324f">creation_date : required</text>
+<text x="42" y="513" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:317-322</text>
+<rect x="490" y="414" width="440" height="229" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="438" font-family="monospace" font-size="11" fill="#15324f">requeriment</text>
+<text x="502" y="453" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="502" y="468" font-family="monospace" font-size="11" fill="#15324f">id : required [F12]</text>
+<text x="502" y="483" font-family="monospace" font-size="11" fill="#15324f">suggested_date : optional</text>
+<text x="502" y="498" font-family="monospace" font-size="11" fill="#15324f">deadline_date : optional</text>
+<text x="502" y="513" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F15]</text>
+<text x="502" y="528" font-family="monospace" font-size="11" fill="#15324f">user_id : required [F17]</text>
+<text x="502" y="543" font-family="monospace" font-size="11" fill="#15324f">requeriment_status_id : required [F16]</text>
+<text x="502" y="558" font-family="monospace" font-size="11" fill="#15324f">priority : required</text>
+<text x="502" y="573" font-family="monospace" font-size="11" fill="#15324f">is_acceptance : optional</text>
+<text x="502" y="588" font-family="monospace" font-size="11" fill="#15324f">category_id : optional [F13]</text>
+<text x="502" y="603" font-family="monospace" font-size="11" fill="#15324f">reopening : optional</text>
+<text x="502" y="618" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:252-264</text>
+<rect x="950" y="414" width="440" height="169" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="438" font-family="monospace" font-size="11" fill="#15324f">requeriment_status</text>
+<text x="962" y="453" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="962" y="468" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="962" y="483" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="962" y="498" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="962" y="513" font-family="monospace" font-size="11" fill="#15324f">state_machine_order : optional</text>
+<text x="962" y="528" font-family="monospace" font-size="11" fill="#15324f">accept_project_id : optional</text>
+<text x="962" y="543" font-family="monospace" font-size="11" fill="#15324f">parent_id : optional</text>
+<text x="962" y="558" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:217-225</text>
+<rect x="1410" y="414" width="440" height="169" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="438" font-family="monospace" font-size="11" fill="#15324f">requeriment_history</text>
+<text x="1422" y="453" font-family="monospace" font-size="11" fill="#15324f">PK (requeriment_id, requeriment_status_id, creation_date)</text>
+<text x="1422" y="468" font-family="monospace" font-size="11" fill="#15324f">requeriment_id : required [F18]</text>
+<text x="1422" y="483" font-family="monospace" font-size="11" fill="#15324f">requeriment_status_id : required [F19]</text>
+<text x="1422" y="498" font-family="monospace" font-size="11" fill="#15324f">creation_date : required</text>
+<text x="1422" y="513" font-family="monospace" font-size="11" fill="#15324f">user_id : optional [F20]</text>
+<text x="1422" y="528" font-family="monospace" font-size="11" fill="#15324f">iteration : optional</text>
+<text x="1422" y="543" font-family="monospace" font-size="11" fill="#15324f">comment : optional</text>
+<text x="1422" y="558" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:307-315</text>
+<rect x="30" y="668" width="440" height="214" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="692" font-family="monospace" font-size="11" fill="#15324f">task</text>
+<text x="42" y="707" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="42" y="722" font-family="monospace" font-size="11" fill="#15324f">id : required [F23]</text>
+<text x="42" y="737" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="42" y="752" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F24]</text>
+<text x="42" y="767" font-family="monospace" font-size="11" fill="#15324f">requeriment_id : optional [F25]</text>
+<text x="42" y="782" font-family="monospace" font-size="11" fill="#15324f">category_id : required [F26]</text>
+<text x="42" y="797" font-family="monospace" font-size="11" fill="#15324f">task_id : optional [F27]</text>
+<text x="42" y="812" font-family="monospace" font-size="11" fill="#15324f">is_parent_task : optional</text>
+<text x="42" y="827" font-family="monospace" font-size="11" fill="#15324f">created_by : optional</text>
+<text x="42" y="842" font-family="monospace" font-size="11" fill="#15324f">is_unpredictable : optional</text>
+<text x="42" y="857" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:266-277</text>
+<rect x="490" y="668" width="440" height="139" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="692" font-family="monospace" font-size="11" fill="#15324f">task_status</text>
+<text x="502" y="707" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="502" y="722" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="502" y="737" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="502" y="752" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="502" y="767" font-family="monospace" font-size="11" fill="#15324f">state_machine_order : optional</text>
+<text x="502" y="782" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:227-233</text>
+<rect x="950" y="668" width="440" height="274" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="692" font-family="monospace" font-size="11" fill="#15324f">task_history</text>
+<text x="962" y="707" font-family="monospace" font-size="11" fill="#15324f">PK (task_id, resource_id, project_id, task_status_id,</text>
+<text x="962" y="722" font-family="monospace" font-size="11" fill="#15324f">creation_date)</text>
+<text x="962" y="737" font-family="monospace" font-size="11" fill="#15324f">task_id : required [F32]</text>
+<text x="962" y="752" font-family="monospace" font-size="11" fill="#15324f">resource_id : required [F32]</text>
+<text x="962" y="767" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F32]</text>
+<text x="962" y="782" font-family="monospace" font-size="11" fill="#15324f">task_status_id : required [F33]</text>
+<text x="962" y="797" font-family="monospace" font-size="11" fill="#15324f">creation_date : required</text>
+<text x="962" y="812" font-family="monospace" font-size="11" fill="#15324f">start_date : required</text>
+<text x="962" y="827" font-family="monospace" font-size="11" fill="#15324f">estimated_time : required</text>
+<text x="962" y="842" font-family="monospace" font-size="11" fill="#15324f">actual_date : optional</text>
+<text x="962" y="857" font-family="monospace" font-size="11" fill="#15324f">actual_time : optional</text>
+<text x="962" y="872" font-family="monospace" font-size="11" fill="#15324f">user_id : optional [F34]</text>
+<text x="962" y="887" font-family="monospace" font-size="11" fill="#15324f">iteration : optional</text>
+<text x="962" y="902" font-family="monospace" font-size="11" fill="#15324f">comment : optional</text>
+<text x="962" y="917" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:324-338</text>
+<rect x="1410" y="668" width="440" height="259" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="692" font-family="monospace" font-size="11" fill="#15324f">resource_task</text>
+<text x="1422" y="707" font-family="monospace" font-size="11" fill="#15324f">PK (task_id, resource_id, project_id)</text>
+<text x="1422" y="722" font-family="monospace" font-size="11" fill="#15324f">task_id : required [F28]</text>
+<text x="1422" y="737" font-family="monospace" font-size="11" fill="#15324f">resource_id : required [F29]</text>
+<text x="1422" y="752" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F29]</text>
+<text x="1422" y="767" font-family="monospace" font-size="11" fill="#15324f">start_date : required</text>
+<text x="1422" y="782" font-family="monospace" font-size="11" fill="#15324f">estimated_time : required</text>
+<text x="1422" y="797" font-family="monospace" font-size="11" fill="#15324f">actual_date : optional</text>
+<text x="1422" y="812" font-family="monospace" font-size="11" fill="#15324f">actual_time : optional</text>
+<text x="1422" y="827" font-family="monospace" font-size="11" fill="#15324f">task_status_id : required [F30]</text>
+<text x="1422" y="842" font-family="monospace" font-size="11" fill="#15324f">is_acceptance_task : optional</text>
+<text x="1422" y="857" font-family="monospace" font-size="11" fill="#15324f">billable : optional</text>
+<text x="1422" y="872" font-family="monospace" font-size="11" fill="#15324f">approver_id : optional [F31]</text>
+<text x="1422" y="887" font-family="monospace" font-size="11" fill="#15324f">approved : optional</text>
+<text x="1422" y="902" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:279-293</text>
+<rect x="30" y="967" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="991" font-family="monospace" font-size="11" fill="#15324f">resource_task_alloc</text>
+<text x="42" y="1006" font-family="monospace" font-size="11" fill="#15324f">PK (task_id, resource_id, project_id, sequence)</text>
+<text x="42" y="1021" font-family="monospace" font-size="11" fill="#15324f">task_id : required [F35]</text>
+<text x="42" y="1036" font-family="monospace" font-size="11" fill="#15324f">resource_id : required [F35]</text>
+<text x="42" y="1051" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F35]</text>
+<text x="42" y="1066" font-family="monospace" font-size="11" fill="#15324f">sequence : required</text>
+<text x="42" y="1081" font-family="monospace" font-size="11" fill="#15324f">alloc_time : required</text>
+<text x="42" y="1096" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:340-347</text>
+<rect x="490" y="967" width="440" height="154" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="991" font-family="monospace" font-size="11" fill="#15324f">resource_task_alloc_plann</text>
+<text x="502" y="1006" font-family="monospace" font-size="11" fill="#15324f">PK (task_id, resource_id, project_id, sequence)</text>
+<text x="502" y="1021" font-family="monospace" font-size="11" fill="#15324f">task_id : required [F36]</text>
+<text x="502" y="1036" font-family="monospace" font-size="11" fill="#15324f">resource_id : required [F36]</text>
+<text x="502" y="1051" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F36]</text>
+<text x="502" y="1066" font-family="monospace" font-size="11" fill="#15324f">sequence : required</text>
+<text x="502" y="1081" font-family="monospace" font-size="11" fill="#15324f">alloc_time : required</text>
+<text x="502" y="1096" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:349-356</text>
+<rect x="950" y="967" width="440" height="184" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="991" font-family="monospace" font-size="11" fill="#15324f">resource_capacity</text>
+<text x="962" y="1006" font-family="monospace" font-size="11" fill="#15324f">PK (resource_id, project_id, cap_year, cap_month, cap_day)</text>
+<text x="962" y="1021" font-family="monospace" font-size="11" fill="#15324f">resource_id : required [F39]</text>
+<text x="962" y="1036" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F39]</text>
+<text x="962" y="1051" font-family="monospace" font-size="11" fill="#15324f">cap_year : required</text>
+<text x="962" y="1066" font-family="monospace" font-size="11" fill="#15324f">cap_month : required</text>
+<text x="962" y="1081" font-family="monospace" font-size="11" fill="#15324f">cap_day : required</text>
+<text x="962" y="1096" font-family="monospace" font-size="11" fill="#15324f">capacity : required</text>
+<text x="962" y="1111" font-family="monospace" font-size="11" fill="#15324f">cost_per_hour : optional</text>
+<text x="962" y="1126" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:742-751</text>
+<rect x="1410" y="967" width="440" height="364" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="991" font-family="monospace" font-size="11" fill="#15324f">tool_user</text>
+<text x="1422" y="1006" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="1422" y="1021" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="1422" y="1036" font-family="monospace" font-size="11" fill="#15324f">username : required</text>
+<text x="1422" y="1051" font-family="monospace" font-size="11" fill="#15324f">password : optional</text>
+<text x="1422" y="1066" font-family="monospace" font-size="11" fill="#15324f">name : required</text>
+<text x="1422" y="1081" font-family="monospace" font-size="11" fill="#15324f">email : optional</text>
+<text x="1422" y="1096" font-family="monospace" font-size="11" fill="#15324f">phone : optional</text>
+<text x="1422" y="1111" font-family="monospace" font-size="11" fill="#15324f">color : optional</text>
+<text x="1422" y="1126" font-family="monospace" font-size="11" fill="#15324f">department_id : required [F1]</text>
+<text x="1422" y="1141" font-family="monospace" font-size="11" fill="#15324f">area_id : required [F2]</text>
+<text x="1422" y="1156" font-family="monospace" font-size="11" fill="#15324f">function_id : optional [F3]</text>
+<text x="1422" y="1171" font-family="monospace" font-size="11" fill="#15324f">company_id : optional [F4]</text>
+<text x="1422" y="1186" font-family="monospace" font-size="11" fill="#15324f">country : required</text>
+<text x="1422" y="1201" font-family="monospace" font-size="11" fill="#15324f">language : required</text>
+<text x="1422" y="1216" font-family="monospace" font-size="11" fill="#15324f">auth_mode : optional</text>
+<text x="1422" y="1231" font-family="monospace" font-size="11" fill="#15324f">birth : optional</text>
+<text x="1422" y="1246" font-family="monospace" font-size="11" fill="#15324f">permission : optional</text>
+<text x="1422" y="1261" font-family="monospace" font-size="11" fill="#15324f">pic_file : optional</text>
+<text x="1422" y="1276" font-family="monospace" font-size="11" fill="#15324f">final_date : optional</text>
+<text x="1422" y="1291" font-family="monospace" font-size="11" fill="#15324f">creation_date : optional</text>
+<text x="1422" y="1306" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:112-133</text>
+<rect x="30" y="1356" width="440" height="229" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="1380" font-family="monospace" font-size="11" fill="#15324f">customer</text>
+<text x="42" y="1395" font-family="monospace" font-size="11" fill="#15324f">PK (id, project_id)</text>
+<text x="42" y="1410" font-family="monospace" font-size="11" fill="#15324f">id : required [F5]</text>
+<text x="42" y="1425" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F8]</text>
+<text x="42" y="1440" font-family="monospace" font-size="11" fill="#15324f">is_disable : optional</text>
+<text x="42" y="1455" font-family="monospace" font-size="11" fill="#15324f">is_req_acceptable : optional</text>
+<text x="42" y="1470" font-family="monospace" font-size="11" fill="#15324f">can_see_tech_comment : optional</text>
+<text x="42" y="1485" font-family="monospace" font-size="11" fill="#15324f">pre_approve_req : optional</text>
+<text x="42" y="1500" font-family="monospace" font-size="11" fill="#15324f">can_see_discussion : optional</text>
+<text x="42" y="1515" font-family="monospace" font-size="11" fill="#15324f">function_id : optional</text>
+<text x="42" y="1530" font-family="monospace" font-size="11" fill="#15324f">can_see_other_reqs : optional</text>
+<text x="42" y="1545" font-family="monospace" font-size="11" fill="#15324f">can_open_otherowner_reqs : optional</text>
+<text x="42" y="1560" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:171-183</text>
+<rect x="490" y="1356" width="440" height="199" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="1380" font-family="monospace" font-size="11" fill="#15324f">resource</text>
+<text x="502" y="1395" font-family="monospace" font-size="11" fill="#15324f">PK (id, project_id)</text>
+<text x="502" y="1410" font-family="monospace" font-size="11" fill="#15324f">id : required [F6]</text>
+<text x="502" y="1425" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F6]</text>
+<text x="502" y="1440" font-family="monospace" font-size="11" fill="#15324f">can_self_alloc : optional</text>
+<text x="502" y="1455" font-family="monospace" font-size="11" fill="#15324f">can_see_repository : optional</text>
+<text x="502" y="1470" font-family="monospace" font-size="11" fill="#15324f">can_see_invoice : optional</text>
+<text x="502" y="1485" font-family="monospace" font-size="11" fill="#15324f">cost_per_hour : optional</text>
+<text x="502" y="1500" font-family="monospace" font-size="11" fill="#15324f">can_see_customer : optional</text>
+<text x="502" y="1515" font-family="monospace" font-size="11" fill="#15324f">capacity_per_day : optional</text>
+<text x="502" y="1530" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:185-195</text>
+<rect x="950" y="1356" width="440" height="109" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="1380" font-family="monospace" font-size="11" fill="#15324f">leader</text>
+<text x="962" y="1395" font-family="monospace" font-size="11" fill="#15324f">PK (id, project_id)</text>
+<text x="962" y="1410" font-family="monospace" font-size="11" fill="#15324f">id : required [F7]</text>
+<text x="962" y="1425" font-family="monospace" font-size="11" fill="#15324f">project_id : required [F7]</text>
+<text x="962" y="1440" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:197-201</text>
+<rect x="1410" y="1356" width="440" height="199" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="1380" font-family="monospace" font-size="11" fill="#15324f">company</text>
+<text x="1422" y="1395" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="1422" y="1410" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="1422" y="1425" font-family="monospace" font-size="11" fill="#15324f">name : required</text>
+<text x="1422" y="1440" font-family="monospace" font-size="11" fill="#15324f">full_name : optional</text>
+<text x="1422" y="1455" font-family="monospace" font-size="11" fill="#15324f">company_number : optional</text>
+<text x="1422" y="1470" font-family="monospace" font-size="11" fill="#15324f">address : optional</text>
+<text x="1422" y="1485" font-family="monospace" font-size="11" fill="#15324f">city : optional</text>
+<text x="1422" y="1500" font-family="monospace" font-size="11" fill="#15324f">state_province : optional</text>
+<text x="1422" y="1515" font-family="monospace" font-size="11" fill="#15324f">country : optional</text>
+<text x="1422" y="1530" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:100-110</text>
+<rect x="30" y="1610" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="42" y="1634" font-family="monospace" font-size="11" fill="#15324f">department</text>
+<text x="42" y="1649" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="42" y="1664" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="42" y="1679" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="42" y="1694" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="42" y="1709" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:135-140</text>
+<rect x="490" y="1610" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="502" y="1634" font-family="monospace" font-size="11" fill="#15324f">area</text>
+<text x="502" y="1649" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="502" y="1664" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="502" y="1679" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="502" y="1694" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="502" y="1709" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:149-154</text>
+<rect x="950" y="1610" width="440" height="124" rx="7" fill="white" stroke="#56738f"/>
+<text x="962" y="1634" font-family="monospace" font-size="11" fill="#15324f">function</text>
+<text x="962" y="1649" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="962" y="1664" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="962" y="1679" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="962" y="1694" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="962" y="1709" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:142-147</text>
+<rect x="1410" y="1610" width="440" height="244" rx="7" fill="white" stroke="#56738f"/>
+<text x="1422" y="1634" font-family="monospace" font-size="11" fill="#15324f">category</text>
+<text x="1422" y="1649" font-family="monospace" font-size="11" fill="#15324f">PK (id)</text>
+<text x="1422" y="1664" font-family="monospace" font-size="11" fill="#15324f">id : required</text>
+<text x="1422" y="1679" font-family="monospace" font-size="11" fill="#15324f">name : optional</text>
+<text x="1422" y="1694" font-family="monospace" font-size="11" fill="#15324f">description : optional</text>
+<text x="1422" y="1709" font-family="monospace" font-size="11" fill="#15324f">type : optional</text>
+<text x="1422" y="1724" font-family="monospace" font-size="11" fill="#15324f">project_id : optional [F37]</text>
+<text x="1422" y="1739" font-family="monospace" font-size="11" fill="#15324f">billable : optional</text>
+<text x="1422" y="1754" font-family="monospace" font-size="11" fill="#15324f">disable_view : optional</text>
+<text x="1422" y="1769" font-family="monospace" font-size="11" fill="#15324f">is_defect : optional</text>
+<text x="1422" y="1784" font-family="monospace" font-size="11" fill="#15324f">is_testing : optional</text>
+<text x="1422" y="1799" font-family="monospace" font-size="11" fill="#15324f">is_developing : optional</text>
+<text x="1422" y="1814" font-family="monospace" font-size="11" fill="#15324f">category_order : optional</text>
+<text x="1422" y="1829" font-family="monospace" font-size="11" fill="#15324f">r348 mysql.sql:156-169</text>
+<text x="30" y="1909" font-family="sans-serif" font-size="20">Relationship register - child to parent; reverse multiplicity after semicolon</text>
+<text x="30" y="1939" font-family="monospace" font-size="13" fill="#15324f">F1 tool_user(department_id) -&gt; department(id)</text>
+<text x="30" y="1958" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | user_department | mysql.sql:1009</text>
+<text x="30" y="1977" font-family="monospace" font-size="13" fill="#15324f">F2 tool_user(area_id) -&gt; area(id)</text>
+<text x="30" y="1996" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | user_area | mysql.sql:1011</text>
+<text x="30" y="2015" font-family="monospace" font-size="13" fill="#15324f">F3 tool_user(function_id) -&gt; function(id)</text>
+<text x="30" y="2034" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | user_function | mysql.sql:1013</text>
+<text x="30" y="2053" font-family="monospace" font-size="13" fill="#15324f">F4 tool_user(company_id) -&gt; company(id)</text>
+<text x="30" y="2072" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | user_company | mysql.sql:1015</text>
+<text x="30" y="2091" font-family="monospace" font-size="13" fill="#15324f">F5 customer(id) -&gt; tool_user(id)</text>
+<text x="30" y="2110" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | customer_user | mysql.sql:1017</text>
+<text x="30" y="2129" font-family="monospace" font-size="13" fill="#15324f">F6 resource(id,project_id) -&gt; customer(id,project_id)</text>
+<text x="30" y="2148" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | resource_customer | mysql.sql:1019</text>
+<text x="30" y="2167" font-family="monospace" font-size="13" fill="#15324f">F7 leader(id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="2186" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | leader_resource | mysql.sql:1021</text>
+<text x="30" y="2205" font-family="monospace" font-size="13" fill="#15324f">F8 customer(project_id) -&gt; project(id)</text>
+<text x="30" y="2224" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | customer_project | mysql.sql:1025</text>
+<text x="30" y="2243" font-family="monospace" font-size="13" fill="#15324f">F9 project(parent_id) -&gt; project(id)</text>
+<text x="30" y="2262" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | project_parent_project | mysql.sql:1027</text>
+<text x="30" y="2281" font-family="monospace" font-size="13" fill="#15324f">F10 project(project_status_id) -&gt; project_status(id)</text>
+<text x="30" y="2300" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | project_status_project | mysql.sql:1029</text>
+<text x="30" y="2319" font-family="monospace" font-size="13" fill="#15324f">F11 project(company_id) -&gt; company(id)</text>
+<text x="30" y="2338" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | proj_company | mysql.sql:1031</text>
+<text x="30" y="2357" font-family="monospace" font-size="13" fill="#15324f">F12 requeriment(id) -&gt; planning(id)</text>
+<text x="30" y="2376" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | req_parent | mysql.sql:1033</text>
+<text x="30" y="2395" font-family="monospace" font-size="13" fill="#15324f">F13 requeriment(category_id) -&gt; category(id)</text>
+<text x="30" y="2414" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | req_cat | mysql.sql:1035</text>
+<text x="30" y="2433" font-family="monospace" font-size="13" fill="#15324f">F14 project(id) -&gt; planning(id)</text>
+<text x="30" y="2452" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | project_parent | mysql.sql:1037</text>
+<text x="30" y="2471" font-family="monospace" font-size="13" fill="#15324f">F15 requeriment(project_id) -&gt; project(id)</text>
+<text x="30" y="2490" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_project | mysql.sql:1039</text>
+<text x="30" y="2509" font-family="monospace" font-size="13" fill="#15324f">F16 requeriment(requeriment_status_id) -&gt; requeriment_status(id)</text>
+<text x="30" y="2528" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_status_req | mysql.sql:1041</text>
+<text x="30" y="2547" font-family="monospace" font-size="13" fill="#15324f">F17 requeriment(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="2566" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_user | mysql.sql:1043</text>
+<text x="30" y="2585" font-family="monospace" font-size="13" fill="#15324f">F18 requeriment_history(requeriment_id) -&gt; requeriment(id)</text>
+<text x="30" y="2604" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_hist_req | mysql.sql:1045</text>
+<text x="30" y="2623" font-family="monospace" font-size="13" fill="#15324f">F19 requeriment_history(requeriment_status_id) -&gt; requeriment_status(id)</text>
+<text x="30" y="2642" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | req_hist_status | mysql.sql:1047</text>
+<text x="30" y="2661" font-family="monospace" font-size="13" fill="#15324f">F20 requeriment_history(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="2680" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | req_hist_user | mysql.sql:1049</text>
+<text x="30" y="2699" font-family="monospace" font-size="13" fill="#15324f">F21 project_history(project_id) -&gt; project(id)</text>
+<text x="30" y="2718" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | prj_hist_prj | mysql.sql:1051</text>
+<text x="30" y="2737" font-family="monospace" font-size="13" fill="#15324f">F22 project_history(project_status_id) -&gt; project_status(id)</text>
+<text x="30" y="2756" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | prj_hist_status | mysql.sql:1053</text>
+<text x="30" y="2775" font-family="monospace" font-size="13" fill="#15324f">F23 task(id) -&gt; planning(id)</text>
+<text x="30" y="2794" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..1 | task_parent | mysql.sql:1055</text>
+<text x="30" y="2813" font-family="monospace" font-size="13" fill="#15324f">F24 task(project_id) -&gt; project(id)</text>
+<text x="30" y="2832" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_proj | mysql.sql:1057</text>
+<text x="30" y="2851" font-family="monospace" font-size="13" fill="#15324f">F25 task(requeriment_id) -&gt; requeriment(id)</text>
+<text x="30" y="2870" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_req | mysql.sql:1059</text>
+<text x="30" y="2889" font-family="monospace" font-size="13" fill="#15324f">F26 task(category_id) -&gt; category(id)</text>
+<text x="30" y="2908" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_cat | mysql.sql:1061</text>
+<text x="30" y="2927" font-family="monospace" font-size="13" fill="#15324f">F27 task(task_id) -&gt; task(id)</text>
+<text x="30" y="2946" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_task | mysql.sql:1063</text>
+<text x="30" y="2965" font-family="monospace" font-size="13" fill="#15324f">F28 resource_task(task_id) -&gt; task(id)</text>
+<text x="30" y="2984" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_res_task | mysql.sql:1065</text>
+<text x="30" y="3003" font-family="monospace" font-size="13" fill="#15324f">F29 resource_task(resource_id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="3022" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_res_task | mysql.sql:1067</text>
+<text x="30" y="3041" font-family="monospace" font-size="13" fill="#15324f">F30 resource_task(task_status_id) -&gt; task_status(id)</text>
+<text x="30" y="3060" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_task_status_task | mysql.sql:1069</text>
+<text x="30" y="3079" font-family="monospace" font-size="13" fill="#15324f">F31 resource_task(approver_id) -&gt; tool_user(id)</text>
+<text x="30" y="3098" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | approver_res_task_fk | mysql.sql:1071</text>
+<text x="30" y="3117" font-family="monospace" font-size="13" fill="#15324f">F32 task_history(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="3136" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_hist_res_task | mysql.sql:1073</text>
+<text x="30" y="3155" font-family="monospace" font-size="13" fill="#15324f">F33 task_history(task_status_id) -&gt; task_status(id)</text>
+<text x="30" y="3174" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | task_hist_status_task | mysql.sql:1075</text>
+<text x="30" y="3193" font-family="monospace" font-size="13" fill="#15324f">F34 task_history(user_id) -&gt; tool_user(id)</text>
+<text x="30" y="3212" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | task_hist_user | mysql.sql:1077</text>
+<text x="30" y="3231" font-family="monospace" font-size="13" fill="#15324f">F35 resource_task_alloc(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="3250" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | alloc_res_task | mysql.sql:1079</text>
+<text x="30" y="3269" font-family="monospace" font-size="13" fill="#15324f">F36 resource_task_alloc_plann(task_id,resource_id,project_id) -&gt; resource_task(task_id,resource_id,project_id)</text>
+<text x="30" y="3288" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | alloc_plan_res_task | mysql.sql:1081</text>
+<text x="30" y="3307" font-family="monospace" font-size="13" fill="#15324f">F37 category(project_id) -&gt; project(id)</text>
+<text x="30" y="3326" font-family="monospace" font-size="13" fill="#15324f">   0..1 ; reverse 0..N | cat_project | mysql.sql:1101</text>
+<text x="30" y="3345" font-family="monospace" font-size="13" fill="#15324f">F38 plan_relation(planning_id) -&gt; planning(id)</text>
+<text x="30" y="3364" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | plan_plan_relation | mysql.sql:1141</text>
+<text x="30" y="3383" font-family="monospace" font-size="13" fill="#15324f">F39 resource_capacity(resource_id,project_id) -&gt; resource(id,project_id)</text>
+<text x="30" y="3402" font-family="monospace" font-size="13" fill="#15324f">   1..1 ; reverse 0..N | res_cap_resource | mysql.sql:1151</text>
+<text x="30" y="3421" font-family="monospace" font-size="13" fill="#a65c00">I1 RECOVERED plan_relation.plan_related_id -&gt; planning.id</text>
+<text x="30" y="3440" font-family="monospace" font-size="13" fill="#a65c00">   Candidate 0..1 / 0..N; unenforced; PlanningRelationDAO.java:40-44</text>
+<text x="30" y="3459" font-family="monospace" font-size="13" fill="#a65c00">I2 RECOVERED task.created_by -&gt; tool_user.id</text>
+<text x="30" y="3478" font-family="monospace" font-size="13" fill="#a65c00">   Candidate 0..1 / 0..N; unenforced; TaskDAO.java:1001-1011</text>
+</svg>

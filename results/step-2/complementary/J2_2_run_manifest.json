@@ -1,0 +1,23 @@
+{
+  "java_sources_sha256": "ee77307bf7f25193e624bd97ea9bfc6f6ef5635678f540b7862584519b112432",
+  "confirmed_additional_jdbc_sites": [],
+  "confirmed_status": "NOT_ESTABLISHED_BY_AUTOMATED_ANALYSIS",
+  "java_count": 760,
+  "query_records": 728,
+  "hotspots": 433,
+  "candidate_count": 16,
+  "ai_assisted_reviewed_candidate_count": 16,
+  "ai_assisted_review_complete": true,
+  "reference_source_fingerprint_matches": true,
+  "dao_sqlinspect_crosscheck": true,
+  "schema_tables": 83,
+  "schema_columns": 563,
+  "input_sha256": {
+    "pandora-queries.xml": "30b7efc3e9dc5f0e01a051fb14f6c5493b5cc46a10ce6ed4fc3caffab6757dd6",
+    "pandora-taa.xml": "3fca609a71ca81b51498a996d5d20baca870f07ca99ff3721468ac6152f52f56",
+    "pandora-schema.json": "c79c730e53e01be11d8a784eb0be8ab162119ba519bd9406cd5edfaaf80c7518",
+    "pandora-JavaMetrics.xml": "bf2babc61bf9776a898baddd521d806afbef2f2f630b03d824d54f414a2f4d52"
+  },
+  "source_path": "code\\plandora\\reference\\r348",
+  "method": "Python lexical preselection + recorded AI-assisted source-excerpt review (no LLM API call)"
+}

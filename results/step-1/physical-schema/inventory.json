@@ -1,0 +1,3547 @@
+{
+  "reference": "SVN r348",
+  "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+  "source": "code/plandora/reference/r348/mysql.sql",
+  "source_sha256": "ea8544b7a3d52de504b29b8db5f42d6fc4fe77984951ff34ecf9a8dde12428c3",
+  "scope": [
+    "planning",
+    "plan_relation",
+    "project",
+    "project_status",
+    "project_history",
+    "requeriment",
+    "requeriment_status",
+    "requeriment_history",
+    "task",
+    "task_status",
+    "task_history",
+    "resource_task",
+    "resource_task_alloc",
+    "resource_task_alloc_plann",
+    "resource_capacity",
+    "tool_user",
+    "customer",
+    "resource",
+    "leader",
+    "company",
+    "department",
+    "area",
+    "function",
+    "category"
+  ],
+  "tables": [
+    {
+      "name": "planning",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 297
+        },
+        {
+          "name": "description",
+          "ordinal": 2,
+          "type": "text",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description text",
+          "line": 298
+        },
+        {
+          "name": "creation_date",
+          "ordinal": 3,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "creation_date timestamp not null",
+          "line": 299
+        },
+        {
+          "name": "final_date",
+          "ordinal": 4,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "final_date timestamp null",
+          "line": 300
+        },
+        {
+          "name": "iteration",
+          "ordinal": 5,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "iteration varchar(10) null",
+          "line": 301
+        },
+        {
+          "name": "rich_text_desc",
+          "ordinal": 6,
+          "type": "text",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "rich_text_desc text null",
+          "line": 302
+        },
+        {
+          "name": "visible",
+          "ordinal": 7,
+          "type": "varchar(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "visible varchar(1) null",
+          "line": 303
+        }
+      ],
+      "primary_key": {
+        "name": "pk_planning",
+        "columns": [
+          "id"
+        ],
+        "line": 304
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 296,
+      "end_line": 305,
+      "ddl": "create table planning (\n\tid varchar(10) not null,\n\tdescription text,\n\tcreation_date timestamp not null,\n\tfinal_date timestamp null,\n\titeration varchar(10) null,\n \trich_text_desc text null,\n\tvisible varchar(1) null,\nprimary key pk_planning (id)\n);"
+    },
+    {
+      "name": "plan_relation",
+      "columns": [
+        {
+          "name": "planning_id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "planning_id varchar(10) not null",
+          "line": 615
+        },
+        {
+          "name": "plan_related_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "plan_related_id varchar (10) not null",
+          "line": 616
+        },
+        {
+          "name": "plan_type",
+          "ordinal": 3,
+          "type": "varchar(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "plan_type varchar(2) not null",
+          "line": 617
+        },
+        {
+          "name": "plan_related_type",
+          "ordinal": 4,
+          "type": "varchar(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "plan_related_type varchar(2) not null",
+          "line": 618
+        },
+        {
+          "name": "relation_type",
+          "ordinal": 5,
+          "type": "varchar(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "relation_type varchar(2) not null",
+          "line": 619
+        }
+      ],
+      "primary_key": {
+        "name": "pk_plan_relation",
+        "columns": [
+          "planning_id",
+          "plan_related_id"
+        ],
+        "line": 620
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 614,
+      "end_line": 621,
+      "ddl": "create table plan_relation (\n\tplanning_id varchar(10) not null,\n\tplan_related_id varchar (10) not null,\n\tplan_type varchar(2) not null,\n\tplan_related_type varchar(2) not null,\n\trelation_type varchar(2) not null,\nprimary key pk_plan_relation (planning_id, plan_related_id)\n);"
+    },
+    {
+      "name": "project",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 236
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (30)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (30)",
+          "line": 237
+        },
+        {
+          "name": "parent_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "parent_id varchar (10)",
+          "line": 238
+        },
+        {
+          "name": "can_alloc",
+          "ordinal": 4,
+          "type": "varchar(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_alloc varchar(1) null",
+          "line": 239
+        },
+        {
+          "name": "project_status_id",
+          "ordinal": 5,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_status_id varchar (10) not null",
+          "line": 240
+        },
+        {
+          "name": "repository_url",
+          "ordinal": 6,
+          "type": "varchar (200)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "repository_url varchar (200)",
+          "line": 241
+        },
+        {
+          "name": "repository_class",
+          "ordinal": 7,
+          "type": "varchar (200)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "repository_class varchar (200)",
+          "line": 242
+        },
+        {
+          "name": "repository_user",
+          "ordinal": 8,
+          "type": "varchar(40)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "repository_user varchar(40)",
+          "line": 243
+        },
+        {
+          "name": "repository_pass",
+          "ordinal": 9,
+          "type": "varchar(40)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "repository_pass varchar(40)",
+          "line": 244
+        },
+        {
+          "name": "estimated_closure_date",
+          "ordinal": 10,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "estimated_closure_date timestamp null",
+          "line": 245
+        },
+        {
+          "name": "allow_billable",
+          "ordinal": 11,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "allow_billable int(1) null",
+          "line": 246
+        },
+        {
+          "name": "company_id",
+          "ordinal": 12,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "company_id varchar(10) null",
+          "line": 247
+        },
+        {
+          "name": "budget",
+          "ordinal": 13,
+          "type": "bigint(20)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "budget bigint(20) NOT NULL",
+          "line": 248
+        }
+      ],
+      "primary_key": {
+        "name": "pk_project",
+        "columns": [
+          "id"
+        ],
+        "line": 249
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 235,
+      "end_line": 250,
+      "ddl": "create table project (\n\tid varchar(10) not null,\n\tname varchar (30),\n\tparent_id varchar (10),\n\tcan_alloc varchar(1) null,\n\tproject_status_id varchar (10) not null,\n\trepository_url varchar (200),\n\trepository_class varchar (200),\n\trepository_user varchar(40),\n\trepository_pass varchar(40),\n\testimated_closure_date timestamp null,\n\tallow_billable int(1) null,\n\tcompany_id varchar(10) null,\n\tbudget bigint(20) NOT NULL,\nprimary key pk_project (id)\n) ;"
+    },
+    {
+      "name": "project_status",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 210
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 211
+        },
+        {
+          "name": "note",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "note varchar (100)",
+          "line": 212
+        },
+        {
+          "name": "state_machine_order",
+          "ordinal": 4,
+          "type": "bigint(4)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "state_machine_order bigint(4)",
+          "line": 213
+        }
+      ],
+      "primary_key": {
+        "name": "pk_proj_status",
+        "columns": [
+          "id"
+        ],
+        "line": 214
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 209,
+      "end_line": 215,
+      "ddl": "create table project_status (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tnote varchar (100),\n\tstate_machine_order bigint(4) ,\nprimary key pk_proj_status (id)\n);"
+    },
+    {
+      "name": "project_history",
+      "columns": [
+        {
+          "name": "project_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 318
+        },
+        {
+          "name": "project_status_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_status_id varchar (10) not null",
+          "line": 319
+        },
+        {
+          "name": "creation_date",
+          "ordinal": 3,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "creation_date timestamp not null",
+          "line": 320
+        }
+      ],
+      "primary_key": {
+        "name": "pk_prj_hist",
+        "columns": [
+          "project_id",
+          "project_status_id",
+          "creation_date"
+        ],
+        "line": 321
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 317,
+      "end_line": 322,
+      "ddl": "create table project_history (\n\tproject_id varchar (10) not null,\n\tproject_status_id varchar (10) not null,\n\tcreation_date timestamp not null,\nprimary key pk_prj_hist (project_id, project_status_id, creation_date)\n);"
+    },
+    {
+      "name": "requeriment",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 253
+        },
+        {
+          "name": "suggested_date",
+          "ordinal": 2,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "suggested_date timestamp null",
+          "line": 254
+        },
+        {
+          "name": "deadline_date",
+          "ordinal": 3,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "deadline_date timestamp null",
+          "line": 255
+        },
+        {
+          "name": "project_id",
+          "ordinal": 4,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 256
+        },
+        {
+          "name": "user_id",
+          "ordinal": 5,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "user_id varchar (10) not null",
+          "line": 257
+        },
+        {
+          "name": "requeriment_status_id",
+          "ordinal": 6,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "requeriment_status_id varchar (10) not null",
+          "line": 258
+        },
+        {
+          "name": "priority",
+          "ordinal": 7,
+          "type": "int(1)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "priority int(1) not null",
+          "line": 259
+        },
+        {
+          "name": "is_acceptance",
+          "ordinal": 8,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_acceptance int(1) null",
+          "line": 260
+        },
+        {
+          "name": "category_id",
+          "ordinal": 9,
+          "type": "varchar (10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "category_id varchar (10) null",
+          "line": 261
+        },
+        {
+          "name": "reopening",
+          "ordinal": 10,
+          "type": "bigint(6)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "reopening bigint(6) null",
+          "line": 262
+        }
+      ],
+      "primary_key": {
+        "name": "pk_req",
+        "columns": [
+          "id"
+        ],
+        "line": 263
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 252,
+      "end_line": 264,
+      "ddl": "create table requeriment (\n\tid varchar(10) not null,\n\tsuggested_date timestamp null,\n\tdeadline_date timestamp null,\t\n\tproject_id varchar (10) not null,\n\tuser_id varchar (10) not null,\n\trequeriment_status_id varchar (10) not null,\n\tpriority int(1) not null,\n\tis_acceptance int(1) null,\n\tcategory_id varchar (10) null,\n\treopening bigint(6) null,\nprimary key pk_req (id)\n);"
+    },
+    {
+      "name": "requeriment_status",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 218
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 219
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 220
+        },
+        {
+          "name": "state_machine_order",
+          "ordinal": 4,
+          "type": "bigint(4)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "state_machine_order bigint(4)",
+          "line": 221
+        },
+        {
+          "name": "accept_project_id",
+          "ordinal": 5,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "accept_project_id varchar(10) null",
+          "line": 222
+        },
+        {
+          "name": "parent_id",
+          "ordinal": 6,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "parent_id varchar(10) null",
+          "line": 223
+        }
+      ],
+      "primary_key": {
+        "name": "pk_req_status",
+        "columns": [
+          "id"
+        ],
+        "line": 224
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 217,
+      "end_line": 225,
+      "ddl": "create table requeriment_status (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\n\tstate_machine_order bigint(4),\n\taccept_project_id varchar(10) null,\n\tparent_id varchar(10) null,\nprimary key pk_req_status (id)\n);"
+    },
+    {
+      "name": "requeriment_history",
+      "columns": [
+        {
+          "name": "requeriment_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "requeriment_id varchar (10) not null",
+          "line": 308
+        },
+        {
+          "name": "requeriment_status_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "requeriment_status_id varchar (10) not null",
+          "line": 309
+        },
+        {
+          "name": "creation_date",
+          "ordinal": 3,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "creation_date timestamp not null",
+          "line": 310
+        },
+        {
+          "name": "user_id",
+          "ordinal": 4,
+          "type": "varchar (10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "user_id varchar (10)",
+          "line": 311
+        },
+        {
+          "name": "iteration",
+          "ordinal": 5,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "iteration varchar(10) null",
+          "line": 312
+        },
+        {
+          "name": "comment",
+          "ordinal": 6,
+          "type": "text",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "comment text",
+          "line": 313
+        }
+      ],
+      "primary_key": {
+        "name": "pk_req_hist",
+        "columns": [
+          "requeriment_id",
+          "requeriment_status_id",
+          "creation_date"
+        ],
+        "line": 314
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 307,
+      "end_line": 315,
+      "ddl": "create table requeriment_history (\n\trequeriment_id varchar (10) not null,\n\trequeriment_status_id varchar (10) not null,\n\tcreation_date timestamp not null,\n\tuser_id varchar (10),\t\n\titeration varchar(10) null,\n\tcomment text,\t\t\nprimary key pk_req_hist (requeriment_id, requeriment_status_id, creation_date)\n);"
+    },
+    {
+      "name": "task",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 267
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 268
+        },
+        {
+          "name": "project_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 269
+        },
+        {
+          "name": "requeriment_id",
+          "ordinal": 4,
+          "type": "varchar (10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "requeriment_id varchar (10)",
+          "line": 270
+        },
+        {
+          "name": "category_id",
+          "ordinal": 5,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "category_id varchar (10) not null",
+          "line": 271
+        },
+        {
+          "name": "task_id",
+          "ordinal": 6,
+          "type": "varchar (10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "task_id varchar (10)",
+          "line": 272
+        },
+        {
+          "name": "is_parent_task",
+          "ordinal": 7,
+          "type": "int(1)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "is_parent_task int(1)",
+          "line": 273
+        },
+        {
+          "name": "created_by",
+          "ordinal": 8,
+          "type": "varchar (10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "created_by varchar (10) null",
+          "line": 274
+        },
+        {
+          "name": "is_unpredictable",
+          "ordinal": 9,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_unpredictable int(1) null",
+          "line": 275
+        }
+      ],
+      "primary_key": {
+        "name": "pk_task",
+        "columns": [
+          "id"
+        ],
+        "line": 276
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 266,
+      "end_line": 277,
+      "ddl": "create table task (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tproject_id varchar (10) not null,\n\trequeriment_id varchar (10),\n\tcategory_id varchar (10) not null,\n\ttask_id varchar (10),\n\tis_parent_task int(1),\n\tcreated_by varchar (10) null,\n\tis_unpredictable int(1) null,\nprimary key pk_task (id)\n);"
+    },
+    {
+      "name": "task_status",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 228
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 229
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 230
+        },
+        {
+          "name": "state_machine_order",
+          "ordinal": 4,
+          "type": "bigint(4)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "state_machine_order bigint(4)",
+          "line": 231
+        }
+      ],
+      "primary_key": {
+        "name": "pk_task_status",
+        "columns": [
+          "id"
+        ],
+        "line": 232
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 227,
+      "end_line": 233,
+      "ddl": "create table task_status (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\n\tstate_machine_order bigint(4),\nprimary key pk_task_status (id)\n);"
+    },
+    {
+      "name": "task_history",
+      "columns": [
+        {
+          "name": "task_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_id varchar (10) not null",
+          "line": 325
+        },
+        {
+          "name": "resource_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "resource_id varchar (10) not null",
+          "line": 326
+        },
+        {
+          "name": "project_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 327
+        },
+        {
+          "name": "task_status_id",
+          "ordinal": 4,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_status_id varchar (10) not null",
+          "line": 328
+        },
+        {
+          "name": "creation_date",
+          "ordinal": 5,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "creation_date timestamp not null",
+          "line": 329
+        },
+        {
+          "name": "start_date",
+          "ordinal": 6,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "start_date timestamp not null",
+          "line": 330
+        },
+        {
+          "name": "estimated_time",
+          "ordinal": 7,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "estimated_time bigint(6) not null",
+          "line": 331
+        },
+        {
+          "name": "actual_date",
+          "ordinal": 8,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "actual_date timestamp null",
+          "line": 332
+        },
+        {
+          "name": "actual_time",
+          "ordinal": 9,
+          "type": "bigint(6)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "actual_time bigint(6) null",
+          "line": 333
+        },
+        {
+          "name": "user_id",
+          "ordinal": 10,
+          "type": "varchar (10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "user_id varchar (10)",
+          "line": 334
+        },
+        {
+          "name": "iteration",
+          "ordinal": 11,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "iteration varchar(10) null",
+          "line": 335
+        },
+        {
+          "name": "comment",
+          "ordinal": 12,
+          "type": "text",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "comment text",
+          "line": 336
+        }
+      ],
+      "primary_key": {
+        "name": "pk_task_hist",
+        "columns": [
+          "task_id",
+          "resource_id",
+          "project_id",
+          "task_status_id",
+          "creation_date"
+        ],
+        "line": 337
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 324,
+      "end_line": 338,
+      "ddl": "create table task_history (\n\ttask_id varchar (10) not null,\n\tresource_id varchar (10) not null,\n\tproject_id varchar (10) not null,\n\ttask_status_id varchar (10) not null,\n\tcreation_date timestamp not null,\t\n\tstart_date timestamp not null,\n\testimated_time bigint(6) not null,\n\tactual_date timestamp null,\n\tactual_time bigint(6) null,\t\t\n\tuser_id varchar (10),\n\titeration varchar(10) null,\t\n\tcomment text,\nprimary key pk_task_hist (task_id, resource_id, project_id, task_status_id, creation_date)\n);"
+    },
+    {
+      "name": "resource_task",
+      "columns": [
+        {
+          "name": "task_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_id varchar (10) not null",
+          "line": 280
+        },
+        {
+          "name": "resource_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "resource_id varchar (10) not null",
+          "line": 281
+        },
+        {
+          "name": "project_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 282
+        },
+        {
+          "name": "start_date",
+          "ordinal": 4,
+          "type": "timestamp",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "start_date timestamp not null",
+          "line": 283
+        },
+        {
+          "name": "estimated_time",
+          "ordinal": 5,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "estimated_time bigint(6) not null",
+          "line": 284
+        },
+        {
+          "name": "actual_date",
+          "ordinal": 6,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "actual_date timestamp null",
+          "line": 285
+        },
+        {
+          "name": "actual_time",
+          "ordinal": 7,
+          "type": "bigint(6)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "actual_time bigint(6) null",
+          "line": 286
+        },
+        {
+          "name": "task_status_id",
+          "ordinal": 8,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_status_id varchar (10) not null",
+          "line": 287
+        },
+        {
+          "name": "is_acceptance_task",
+          "ordinal": 9,
+          "type": "int(1)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "is_acceptance_task int(1)",
+          "line": 288
+        },
+        {
+          "name": "billable",
+          "ordinal": 10,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "billable int(1) null",
+          "line": 289
+        },
+        {
+          "name": "approver_id",
+          "ordinal": 11,
+          "type": "varchar (10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "approver_id varchar (10) null",
+          "line": 290
+        },
+        {
+          "name": "approved",
+          "ordinal": 12,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "approved int(1) null",
+          "line": 291
+        }
+      ],
+      "primary_key": {
+        "name": "pk_resourcetask",
+        "columns": [
+          "task_id",
+          "resource_id",
+          "project_id"
+        ],
+        "line": 292
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 279,
+      "end_line": 293,
+      "ddl": "create table resource_task (\n\ttask_id varchar (10) not null,\n\tresource_id varchar (10) not null,\n\tproject_id varchar (10) not null,\n\tstart_date timestamp not null,\n\testimated_time bigint(6) not null,\n\tactual_date timestamp null,\n\tactual_time bigint(6) null,\t\n\ttask_status_id varchar (10) not null,\n\tis_acceptance_task int(1),\n\tbillable int(1) null,\n\tapprover_id varchar (10) null,\n\tapproved int(1) null,\nprimary key pk_resourcetask (task_id, resource_id, project_id)\n);"
+    },
+    {
+      "name": "resource_task_alloc",
+      "columns": [
+        {
+          "name": "task_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_id varchar (10) not null",
+          "line": 341
+        },
+        {
+          "name": "resource_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "resource_id varchar (10) not null",
+          "line": 342
+        },
+        {
+          "name": "project_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 343
+        },
+        {
+          "name": "sequence",
+          "ordinal": 4,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "sequence bigint(6) not null",
+          "line": 344
+        },
+        {
+          "name": "alloc_time",
+          "ordinal": 5,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "alloc_time bigint(6) not null",
+          "line": 345
+        }
+      ],
+      "primary_key": {
+        "name": "pk_resourcetaskalloc",
+        "columns": [
+          "task_id",
+          "resource_id",
+          "project_id",
+          "sequence"
+        ],
+        "line": 346
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 340,
+      "end_line": 347,
+      "ddl": "create table resource_task_alloc (\n\ttask_id varchar (10) not null,\n\tresource_id varchar (10) not null,\n\tproject_id varchar (10) not null,\n\tsequence bigint(6) not null,\n\talloc_time bigint(6) not null,\nprimary key pk_resourcetaskalloc (task_id, resource_id, project_id, sequence)\n);"
+    },
+    {
+      "name": "resource_task_alloc_plann",
+      "columns": [
+        {
+          "name": "task_id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "task_id varchar (10) not null",
+          "line": 350
+        },
+        {
+          "name": "resource_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "resource_id varchar (10) not null",
+          "line": 351
+        },
+        {
+          "name": "project_id",
+          "ordinal": 3,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 352
+        },
+        {
+          "name": "sequence",
+          "ordinal": 4,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "sequence bigint(6) not null",
+          "line": 353
+        },
+        {
+          "name": "alloc_time",
+          "ordinal": 5,
+          "type": "bigint(6)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "alloc_time bigint(6) not null",
+          "line": 354
+        }
+      ],
+      "primary_key": {
+        "name": "pk_resourcetaskallocplann",
+        "columns": [
+          "task_id",
+          "resource_id",
+          "project_id",
+          "sequence"
+        ],
+        "line": 355
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 349,
+      "end_line": 356,
+      "ddl": "create table resource_task_alloc_plann (\n\ttask_id varchar (10) not null,\n\tresource_id varchar (10) not null,\n\tproject_id varchar (10) not null,\n\tsequence bigint(6) not null,\n\talloc_time bigint(6) not null,\nprimary key pk_resourcetaskallocplann (task_id, resource_id, project_id, sequence)\n);"
+    },
+    {
+      "name": "resource_capacity",
+      "columns": [
+        {
+          "name": "resource_id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "resource_id varchar(10) NOT NULL",
+          "line": 743
+        },
+        {
+          "name": "project_id",
+          "ordinal": 2,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar(10) NOT NULL",
+          "line": 744
+        },
+        {
+          "name": "cap_year",
+          "ordinal": 3,
+          "type": "int(4)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "cap_year int(4) NOT NULL",
+          "line": 745
+        },
+        {
+          "name": "cap_month",
+          "ordinal": 4,
+          "type": "int(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "cap_month int(2) NOT NULL",
+          "line": 746
+        },
+        {
+          "name": "cap_day",
+          "ordinal": 5,
+          "type": "int(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "cap_day int(2) NOT NULL",
+          "line": 747
+        },
+        {
+          "name": "capacity",
+          "ordinal": 6,
+          "type": "int(4)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "capacity int(4) NOT NULL",
+          "line": 748
+        },
+        {
+          "name": "cost_per_hour",
+          "ordinal": 7,
+          "type": "int(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "cost_per_hour int(10) NULL",
+          "line": 749
+        }
+      ],
+      "primary_key": {
+        "name": "pk_resource_capacity",
+        "columns": [
+          "resource_id",
+          "project_id",
+          "cap_year",
+          "cap_month",
+          "cap_day"
+        ],
+        "line": 750
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 742,
+      "end_line": 751,
+      "ddl": "create table resource_capacity (\n\tresource_id varchar(10) NOT NULL,\n\tproject_id varchar(10) NOT NULL,\n    cap_year int(4) NOT NULL,\n\tcap_month int(2) NOT NULL,\n\tcap_day int(2) NOT NULL,\n\tcapacity int(4) NOT NULL,\n\tcost_per_hour int(10) NULL,\nprimary key pk_resource_capacity (resource_id, project_id, cap_year, cap_month, cap_day)\t\n);"
+    },
+    {
+      "name": "tool_user",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 113
+        },
+        {
+          "name": "username",
+          "ordinal": 2,
+          "type": "varchar(30)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "username varchar(30) not null",
+          "line": 114
+        },
+        {
+          "name": "password",
+          "ordinal": 3,
+          "type": "varchar(70)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "password varchar(70) null",
+          "line": 115
+        },
+        {
+          "name": "name",
+          "ordinal": 4,
+          "type": "varchar(50)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "name varchar(50) not null",
+          "line": 116
+        },
+        {
+          "name": "email",
+          "ordinal": 5,
+          "type": "varchar(70)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "email varchar(70)",
+          "line": 117
+        },
+        {
+          "name": "phone",
+          "ordinal": 6,
+          "type": "varchar(20)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "phone varchar(20)",
+          "line": 118
+        },
+        {
+          "name": "color",
+          "ordinal": 7,
+          "type": "varchar(10)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "color varchar(10)",
+          "line": 119
+        },
+        {
+          "name": "department_id",
+          "ordinal": 8,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "department_id varchar(10) not null",
+          "line": 120
+        },
+        {
+          "name": "area_id",
+          "ordinal": 9,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "area_id varchar(10) not null",
+          "line": 121
+        },
+        {
+          "name": "function_id",
+          "ordinal": 10,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "function_id varchar(10) null",
+          "line": 122
+        },
+        {
+          "name": "company_id",
+          "ordinal": 11,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "company_id varchar(10) null",
+          "line": 123
+        },
+        {
+          "name": "country",
+          "ordinal": 12,
+          "type": "varchar(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "country varchar(2) not null",
+          "line": 124
+        },
+        {
+          "name": "language",
+          "ordinal": 13,
+          "type": "varchar(2)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "language varchar(2) not null",
+          "line": 125
+        },
+        {
+          "name": "auth_mode",
+          "ordinal": 14,
+          "type": "varchar(200)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "auth_mode varchar(200) null",
+          "line": 126
+        },
+        {
+          "name": "birth",
+          "ordinal": 15,
+          "type": "date",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "birth date null",
+          "line": 127
+        },
+        {
+          "name": "permission",
+          "ordinal": 16,
+          "type": "text",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "permission text null",
+          "line": 128
+        },
+        {
+          "name": "pic_file",
+          "ordinal": 17,
+          "type": "mediumblob",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "pic_file mediumblob null",
+          "line": 129
+        },
+        {
+          "name": "final_date",
+          "ordinal": 18,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "final_date timestamp null",
+          "line": 130
+        },
+        {
+          "name": "creation_date",
+          "ordinal": 19,
+          "type": "timestamp",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "creation_date timestamp null",
+          "line": 131
+        }
+      ],
+      "primary_key": {
+        "name": "pk_user",
+        "columns": [
+          "id"
+        ],
+        "line": 132
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 112,
+      "end_line": 133,
+      "ddl": "create table tool_user (\n\tid varchar(10) not null,\n\tusername varchar(30) not null,\n\tpassword varchar(70) null,\n\tname varchar(50) not null,\n\temail varchar(70),\n\tphone varchar(20),\n\tcolor varchar(10),\n\tdepartment_id varchar(10) not null,\n\tarea_id varchar(10) not null,\n\tfunction_id varchar(10) null,\n\tcompany_id varchar(10) null,\n\tcountry varchar(2) not null,\n\tlanguage varchar(2) not null,\n\tauth_mode varchar(200) null,\n\tbirth date null,\n\tpermission text null,\n\tpic_file mediumblob null,\n\tfinal_date timestamp null,\n\tcreation_date timestamp null,\t\nprimary key pk_user (id) \n);"
+    },
+    {
+      "name": "customer",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar (10) not null",
+          "line": 172
+        },
+        {
+          "name": "project_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 173
+        },
+        {
+          "name": "is_disable",
+          "ordinal": 3,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_disable int(1) null",
+          "line": 174
+        },
+        {
+          "name": "is_req_acceptable",
+          "ordinal": 4,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_req_acceptable int(1) null",
+          "line": 175
+        },
+        {
+          "name": "can_see_tech_comment",
+          "ordinal": 5,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_tech_comment int(1) null",
+          "line": 176
+        },
+        {
+          "name": "pre_approve_req",
+          "ordinal": 6,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "pre_approve_req int(1) null",
+          "line": 177
+        },
+        {
+          "name": "can_see_discussion",
+          "ordinal": 7,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_discussion int(1) null",
+          "line": 178
+        },
+        {
+          "name": "function_id",
+          "ordinal": 8,
+          "type": "varchar(10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "function_id varchar(10) null",
+          "line": 179
+        },
+        {
+          "name": "can_see_other_reqs",
+          "ordinal": 9,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_other_reqs int(1) null",
+          "line": 180
+        },
+        {
+          "name": "can_open_otherowner_reqs",
+          "ordinal": 10,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_open_otherowner_reqs int(1) null",
+          "line": 181
+        }
+      ],
+      "primary_key": {
+        "name": "pk_customer",
+        "columns": [
+          "id",
+          "project_id"
+        ],
+        "line": 182
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 171,
+      "end_line": 183,
+      "ddl": "create table customer (\n\tid varchar (10) not null,\n\tproject_id varchar (10) not null,\n\tis_disable int(1) null,\t\n\tis_req_acceptable int(1) null,\n\tcan_see_tech_comment int(1) null,\n    pre_approve_req int(1) null,\n\tcan_see_discussion int(1) null,\n\tfunction_id varchar(10) null,\n\tcan_see_other_reqs int(1) null,\n\tcan_open_otherowner_reqs int(1) null,\nprimary key pk_customer (id, project_id)\n);"
+    },
+    {
+      "name": "resource",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar (10) not null",
+          "line": 186
+        },
+        {
+          "name": "project_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 187
+        },
+        {
+          "name": "can_self_alloc",
+          "ordinal": 3,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_self_alloc int(1) null",
+          "line": 188
+        },
+        {
+          "name": "can_see_repository",
+          "ordinal": 4,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_repository int(1) null",
+          "line": 189
+        },
+        {
+          "name": "can_see_invoice",
+          "ordinal": 5,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_invoice int(1) null",
+          "line": 190
+        },
+        {
+          "name": "cost_per_hour",
+          "ordinal": 6,
+          "type": "decimal(9,2)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "cost_per_hour decimal(9,2) null",
+          "line": 191
+        },
+        {
+          "name": "can_see_customer",
+          "ordinal": 7,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "can_see_customer int(1) null",
+          "line": 192
+        },
+        {
+          "name": "capacity_per_day",
+          "ordinal": 8,
+          "type": "decimal(9,2)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "capacity_per_day decimal(9,2) null",
+          "line": 193
+        }
+      ],
+      "primary_key": {
+        "name": "pk_resource",
+        "columns": [
+          "id",
+          "project_id"
+        ],
+        "line": 194
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 185,
+      "end_line": 195,
+      "ddl": "create table resource (\n\tid varchar (10) not null,\n\tproject_id varchar (10) not null,\n\tcan_self_alloc int(1) null,\n\tcan_see_repository int(1) null,\n\tcan_see_invoice int(1) null,\n\tcost_per_hour decimal(9,2) null,\n\tcan_see_customer int(1) null,\n\tcapacity_per_day decimal(9,2) null,\nprimary key pk_resource (id, project_id)\n);"
+    },
+    {
+      "name": "leader",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar (10) not null",
+          "line": 198
+        },
+        {
+          "name": "project_id",
+          "ordinal": 2,
+          "type": "varchar (10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) not null",
+          "line": 199
+        }
+      ],
+      "primary_key": {
+        "name": "pk_leader",
+        "columns": [
+          "id",
+          "project_id"
+        ],
+        "line": 200
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 197,
+      "end_line": 201,
+      "ddl": "create table leader (\n\tid varchar (10) not null,\n\tproject_id varchar (10) not null,\nprimary key pk_leader (id, project_id)\n);"
+    },
+    {
+      "name": "company",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 101
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar(25)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "name varchar(25) not null",
+          "line": 102
+        },
+        {
+          "name": "full_name",
+          "ordinal": 3,
+          "type": "varchar(255)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "full_name varchar(255) null",
+          "line": 103
+        },
+        {
+          "name": "company_number",
+          "ordinal": 4,
+          "type": "varchar(255)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "company_number varchar(255) null",
+          "line": 104
+        },
+        {
+          "name": "address",
+          "ordinal": 5,
+          "type": "varchar(255)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "address varchar(255) null",
+          "line": 105
+        },
+        {
+          "name": "city",
+          "ordinal": 6,
+          "type": "varchar(255)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "city varchar(255) null",
+          "line": 106
+        },
+        {
+          "name": "state_province",
+          "ordinal": 7,
+          "type": "varchar(50)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "state_province varchar(50) null",
+          "line": 107
+        },
+        {
+          "name": "country",
+          "ordinal": 8,
+          "type": "varchar(100)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "country varchar(100) null",
+          "line": 108
+        }
+      ],
+      "primary_key": {
+        "name": "pk_company",
+        "columns": [
+          "id"
+        ],
+        "line": 109
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 100,
+      "end_line": 110,
+      "ddl": "create table company (\n\tid varchar(10) not null,\n\tname varchar(25) not null,\n\tfull_name varchar(255) null,\n\tcompany_number varchar(255) null,\n\taddress varchar(255) null,\n\tcity varchar(255) null,\n\tstate_province varchar(50) null,\n\tcountry varchar(100) null,\nprimary key pk_company (id) \n);"
+    },
+    {
+      "name": "department",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 136
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 137
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 138
+        }
+      ],
+      "primary_key": {
+        "name": "pk_department",
+        "columns": [
+          "id"
+        ],
+        "line": 139
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 135,
+      "end_line": 140,
+      "ddl": "create table department (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\nprimary key pk_department (id) \n);"
+    },
+    {
+      "name": "area",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 150
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 151
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 152
+        }
+      ],
+      "primary_key": {
+        "name": "pk_area",
+        "columns": [
+          "id"
+        ],
+        "line": 153
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 149,
+      "end_line": 154,
+      "ddl": "create table area (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\nprimary key pk_area (id)\n);"
+    },
+    {
+      "name": "function",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 143
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 144
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 145
+        }
+      ],
+      "primary_key": {
+        "name": "pk_function",
+        "columns": [
+          "id"
+        ],
+        "line": 146
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 142,
+      "end_line": 147,
+      "ddl": "create table function (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\nprimary key pk_function (id)\n);"
+    },
+    {
+      "name": "category",
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 1,
+          "type": "varchar(10)",
+          "null_declaration": "NOT NULL",
+          "default_explicit": null,
+          "declaration": "id varchar(10) not null",
+          "line": 157
+        },
+        {
+          "name": "name",
+          "ordinal": 2,
+          "type": "varchar (50)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "name varchar (50)",
+          "line": 158
+        },
+        {
+          "name": "description",
+          "ordinal": 3,
+          "type": "varchar (100)",
+          "null_declaration": null,
+          "default_explicit": null,
+          "declaration": "description varchar (100)",
+          "line": 159
+        },
+        {
+          "name": "type",
+          "ordinal": 4,
+          "type": "int(2)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "type int(2) null",
+          "line": 160
+        },
+        {
+          "name": "project_id",
+          "ordinal": 5,
+          "type": "varchar (10)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "project_id varchar (10) null",
+          "line": 161
+        },
+        {
+          "name": "billable",
+          "ordinal": 6,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "billable int(1) NULL",
+          "line": 162
+        },
+        {
+          "name": "disable_view",
+          "ordinal": 7,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "disable_view int(1) NULL",
+          "line": 163
+        },
+        {
+          "name": "is_defect",
+          "ordinal": 8,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_defect int(1) NULL",
+          "line": 164
+        },
+        {
+          "name": "is_testing",
+          "ordinal": 9,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_testing int(1) NULL",
+          "line": 165
+        },
+        {
+          "name": "is_developing",
+          "ordinal": 10,
+          "type": "int(1)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "is_developing int(1) NULL",
+          "line": 166
+        },
+        {
+          "name": "category_order",
+          "ordinal": 11,
+          "type": "int(2)",
+          "null_declaration": "NULL",
+          "default_explicit": null,
+          "declaration": "category_order int(2) null",
+          "line": 167
+        }
+      ],
+      "primary_key": {
+        "name": "pk_category",
+        "columns": [
+          "id"
+        ],
+        "line": 168
+      },
+      "unique_keys": [],
+      "indexes": [],
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 156,
+      "end_line": 169,
+      "ddl": "create table category (\n\tid varchar(10) not null,\n\tname varchar (50),\n\tdescription varchar (100),\n\ttype int(2) null,\n\tproject_id varchar (10) null,\n    billable int(1) NULL,\n\tdisable_view int(1) NULL,\n\tis_defect int(1) NULL,\n\tis_testing int(1) NULL,\n\tis_developing int(1) NULL,\n\tcategory_order int(2) null,\nprimary key pk_category (id)\n);"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "table": "tool_user",
+      "constraint": "user_department",
+      "columns": [
+        "department_id"
+      ],
+      "target": "department",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1009,
+      "end_line": 1009,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "tool_user",
+      "constraint": "user_area",
+      "columns": [
+        "area_id"
+      ],
+      "target": "area",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1011,
+      "end_line": 1011,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "tool_user",
+      "constraint": "user_function",
+      "columns": [
+        "function_id"
+      ],
+      "target": "function",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1013,
+      "end_line": 1013,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "tool_user",
+      "constraint": "user_company",
+      "columns": [
+        "company_id"
+      ],
+      "target": "company",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1015,
+      "end_line": 1015,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "customer",
+      "constraint": "customer_user",
+      "columns": [
+        "id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1017,
+      "end_line": 1017,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource",
+      "constraint": "resource_customer",
+      "columns": [
+        "id",
+        "project_id"
+      ],
+      "target": "customer",
+      "target_columns": [
+        "id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1019,
+      "end_line": 1019,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "leader",
+      "constraint": "leader_resource",
+      "columns": [
+        "id",
+        "project_id"
+      ],
+      "target": "resource",
+      "target_columns": [
+        "id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1021,
+      "end_line": 1021,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "customer",
+      "constraint": "customer_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1025,
+      "end_line": 1025,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project",
+      "constraint": "project_parent_project",
+      "columns": [
+        "parent_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1027,
+      "end_line": 1027,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project",
+      "constraint": "project_status_project",
+      "columns": [
+        "project_status_id"
+      ],
+      "target": "project_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1029,
+      "end_line": 1029,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project",
+      "constraint": "proj_company",
+      "columns": [
+        "company_id"
+      ],
+      "target": "company",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1031,
+      "end_line": 1031,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment",
+      "constraint": "req_parent",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1033,
+      "end_line": 1033,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment",
+      "constraint": "req_cat",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1035,
+      "end_line": 1035,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project",
+      "constraint": "project_parent",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1037,
+      "end_line": 1037,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment",
+      "constraint": "req_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1039,
+      "end_line": 1039,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment",
+      "constraint": "req_status_req",
+      "columns": [
+        "requeriment_status_id"
+      ],
+      "target": "requeriment_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1041,
+      "end_line": 1041,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment",
+      "constraint": "req_user",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1043,
+      "end_line": 1043,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment_history",
+      "constraint": "req_hist_req",
+      "columns": [
+        "requeriment_id"
+      ],
+      "target": "requeriment",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1045,
+      "end_line": 1045,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment_history",
+      "constraint": "req_hist_status",
+      "columns": [
+        "requeriment_status_id"
+      ],
+      "target": "requeriment_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1047,
+      "end_line": 1047,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "requeriment_history",
+      "constraint": "req_hist_user",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1049,
+      "end_line": 1049,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project_history",
+      "constraint": "prj_hist_prj",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1051,
+      "end_line": 1051,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project_history",
+      "constraint": "prj_hist_status",
+      "columns": [
+        "project_status_id"
+      ],
+      "target": "project_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1053,
+      "end_line": 1053,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task",
+      "constraint": "task_parent",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1055,
+      "end_line": 1055,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task",
+      "constraint": "task_proj",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1057,
+      "end_line": 1057,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task",
+      "constraint": "task_req",
+      "columns": [
+        "requeriment_id"
+      ],
+      "target": "requeriment",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1059,
+      "end_line": 1059,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task",
+      "constraint": "task_cat",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1061,
+      "end_line": 1061,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task",
+      "constraint": "task_task",
+      "columns": [
+        "task_id"
+      ],
+      "target": "task",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1063,
+      "end_line": 1063,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task",
+      "constraint": "task_res_task",
+      "columns": [
+        "task_id"
+      ],
+      "target": "task",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1065,
+      "end_line": 1065,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task",
+      "constraint": "res_res_task",
+      "columns": [
+        "resource_id",
+        "project_id"
+      ],
+      "target": "resource",
+      "target_columns": [
+        "id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1067,
+      "end_line": 1067,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task",
+      "constraint": "res_task_status_task",
+      "columns": [
+        "task_status_id"
+      ],
+      "target": "task_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1069,
+      "end_line": 1069,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task",
+      "constraint": "approver_res_task_fk",
+      "columns": [
+        "approver_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1071,
+      "end_line": 1071,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task_history",
+      "constraint": "task_hist_res_task",
+      "columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "target": "resource_task",
+      "target_columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1073,
+      "end_line": 1073,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task_history",
+      "constraint": "task_hist_status_task",
+      "columns": [
+        "task_status_id"
+      ],
+      "target": "task_status",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1075,
+      "end_line": 1075,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "task_history",
+      "constraint": "task_hist_user",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1077,
+      "end_line": 1077,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task_alloc",
+      "constraint": "alloc_res_task",
+      "columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "target": "resource_task",
+      "target_columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1079,
+      "end_line": 1079,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_task_alloc_plann",
+      "constraint": "alloc_plan_res_task",
+      "columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "target": "resource_task",
+      "target_columns": [
+        "task_id",
+        "resource_id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1081,
+      "end_line": 1081,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "category",
+      "constraint": "cat_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1101,
+      "end_line": 1101,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "plan_relation",
+      "constraint": "plan_plan_relation",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1141,
+      "end_line": 1141,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "resource_capacity",
+      "constraint": "res_cap_resource",
+      "columns": [
+        "resource_id",
+        "project_id"
+      ],
+      "target": "resource",
+      "target_columns": [
+        "id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1151,
+      "end_line": 1151,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "internal",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    }
+  ],
+  "external_dependencies": [
+    {
+      "table": "user_edi_link",
+      "constraint": "user_user_edi_link",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 991,
+      "end_line": 991,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "artifact_template",
+      "constraint": "artif_templ_category",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 995,
+      "end_line": 995,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "artifact",
+      "constraint": "artifact_planning",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 999,
+      "end_line": 999,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "invoice",
+      "constraint": "invoice_category",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1001,
+      "end_line": 1001,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "invoice",
+      "constraint": "invoice_planning",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1005,
+      "end_line": 1005,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "root",
+      "constraint": "root_leader",
+      "columns": [
+        "id",
+        "project_id"
+      ],
+      "target": "leader",
+      "target_columns": [
+        "id",
+        "project_id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1023,
+      "end_line": 1023,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "report",
+      "constraint": "report_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1083,
+      "end_line": 1083,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "report",
+      "constraint": "report_cat",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1085,
+      "end_line": 1085,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "preference",
+      "constraint": "user_preference",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1091,
+      "end_line": 1091,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "meta_field",
+      "constraint": "meta_field_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1093,
+      "end_line": 1093,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "meta_field",
+      "constraint": "meta_field_category",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1095,
+      "end_line": 1095,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "additional_field",
+      "constraint": "addinfo_field_planning",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1097,
+      "end_line": 1097,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "occurrence",
+      "constraint": "occur_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1103,
+      "end_line": 1103,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "occurrence",
+      "constraint": "occurrence_parent",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1105,
+      "end_line": 1105,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "occurrence_dependency",
+      "constraint": "occur_depend_planning",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1115,
+      "end_line": 1115,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "risk",
+      "constraint": "risk_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1121,
+      "end_line": 1121,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "attachment",
+      "constraint": "planning_attach",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1127,
+      "end_line": 1127,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "discussion_topic",
+      "constraint": "planning_disc_topic",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1131,
+      "end_line": 1131,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "discussion_topic",
+      "constraint": "user_disc_topic",
+      "columns": [
+        "user_id"
+      ],
+      "target": "tool_user",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1135,
+      "end_line": 1135,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "discussion",
+      "constraint": "discussion_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1137,
+      "end_line": 1137,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "0..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "discussion",
+      "constraint": "discussion_category",
+      "columns": [
+        "category_id"
+      ],
+      "target": "category",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1139,
+      "end_line": 1139,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "customer_function",
+      "constraint": "cus_func_customer",
+      "columns": [
+        "customer_id"
+      ],
+      "target": "customer",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1153,
+      "end_line": 1153,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "unknown (target not candidate key)",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "customer_function",
+      "constraint": "cus_func_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1155,
+      "end_line": 1155,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "customer_function",
+      "constraint": "cus_func_function",
+      "columns": [
+        "function_id"
+      ],
+      "target": "function",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1157,
+      "end_line": 1157,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "repository_file_project",
+      "constraint": "proj_rep_file_proj",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1159,
+      "end_line": 1159,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "repository_file_plan",
+      "constraint": "rep_file_plan_plan",
+      "columns": [
+        "planning_id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1165,
+      "end_line": 1165,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "repository_policy",
+      "constraint": "rep_polic_prj",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1167,
+      "end_line": 1167,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "cost",
+      "constraint": "cost_project",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1169,
+      "end_line": 1169,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "cost",
+      "constraint": "cost_planning",
+      "columns": [
+        "id"
+      ],
+      "target": "planning",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1171,
+      "end_line": 1171,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..1",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    },
+    {
+      "table": "project_report",
+      "constraint": "proj_rep_proj",
+      "columns": [
+        "project_id"
+      ],
+      "target": "project",
+      "target_columns": [
+        "id"
+      ],
+      "actions_explicit": null,
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1177,
+      "end_line": 1177,
+      "revision": "SVN r348",
+      "repository_revision": "12c9a7b8355ef311fd37b9afa30e18fabe652979",
+      "scope": "incoming",
+      "source_to_target": "1..1",
+      "target_to_source": "0..N",
+      "cardinality_basis": "Ordered target candidate key; NOT NULL/PK semantics; source candidate key containment. Collection minimum unproved, retained 0."
+    }
+  ],
+  "semantics": {
+    "null_declaration": null,
+    "null_note": "null means no explicit NULL/NOT NULL clause, not non-nullability; PK is implicitly non-null under MySQL semantics",
+    "default_note": "null means no explicit DEFAULT clause; no engine/version default is asserted",
+    "indexes_note": "only CREATE INDEX statements and explicit key declarations; no implicit FK index is counted"
+  },
+  "origin": "complementary documentary extraction; not SQLInspect; not database introspection"
+}

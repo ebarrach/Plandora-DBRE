@@ -1,0 +1,25 @@
+{
+  "tables": 24,
+  "columns": 175,
+  "internal_fks": 39,
+  "boundary_fks": 30,
+  "declared_indexes": 0,
+  "structural_failures": [
+    {
+      "constraint": "cus_func_customer",
+      "scope": "incoming",
+      "columns_exist": true,
+      "arity_equal": true,
+      "ordered_type_compatibility": true,
+      "ordered_target_candidate_key": false,
+      "null_declarations": [
+        "NOT NULL"
+      ],
+      "source_to_target": "unknown (target not candidate key)",
+      "target_to_source": "0..N",
+      "source": "code/plandora/reference/r348/mysql.sql",
+      "start_line": 1153,
+      "end_line": 1153
+    }
+  ]
+}

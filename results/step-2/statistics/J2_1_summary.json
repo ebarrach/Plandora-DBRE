@@ -1,0 +1,32 @@
+{
+  "inventory_queries": 728,
+  "inventory_hotspots": 433,
+  "native_metrics": {
+    "Hotspots": 433,
+    "Queries": 728,
+    "Inserts": 67,
+    "Selects": 489,
+    "Updates": 61,
+    "Deletes": 89
+  },
+  "schema_tables": 83,
+  "schema_columns": 563,
+  "smell_count": 16,
+  "text_query_types": {
+    "DELETE": 89,
+    "INSERT": 67,
+    "SELECT": 502,
+    "UNRESOLVED": 9,
+    "UPDATE": 61
+  },
+  "dynamic_placeholder_rows": 695,
+  "taa_matched_rows": 712,
+  "taa_unmatched_rows": 16,
+  "complexity_heuristic": {
+    "high": 59,
+    "low": 519,
+    "moderate": 141,
+    "unclassified": 9
+  },
+  "queries_in_dao_package": 725
+}

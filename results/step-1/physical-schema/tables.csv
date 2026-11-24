@@ -1,0 +1,176 @@
+﻿table,source,revision,repository_revision,name,ordinal,type,null_declaration,default_explicit,declaration,line
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,297
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,2,text,,,description text,298
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,creation_date,3,timestamp,NOT NULL,,creation_date timestamp not null,299
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,final_date,4,timestamp,NULL,,final_date timestamp null,300
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,iteration,5,varchar(10),NULL,,iteration varchar(10) null,301
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,rich_text_desc,6,text,NULL,,rich_text_desc text null,302
+planning,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,visible,7,varchar(1),NULL,,visible varchar(1) null,303
+plan_relation,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,planning_id,1,varchar(10),NOT NULL,,planning_id varchar(10) not null,615
+plan_relation,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,plan_related_id,2,varchar (10),NOT NULL,,plan_related_id varchar (10) not null,616
+plan_relation,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,plan_type,3,varchar(2),NOT NULL,,plan_type varchar(2) not null,617
+plan_relation,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,plan_related_type,4,varchar(2),NOT NULL,,plan_related_type varchar(2) not null,618
+plan_relation,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,relation_type,5,varchar(2),NOT NULL,,relation_type varchar(2) not null,619
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,236
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (30),,,name varchar (30),237
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,parent_id,3,varchar (10),,,parent_id varchar (10),238
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_alloc,4,varchar(1),NULL,,can_alloc varchar(1) null,239
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_status_id,5,varchar (10),NOT NULL,,project_status_id varchar (10) not null,240
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,repository_url,6,varchar (200),,,repository_url varchar (200),241
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,repository_class,7,varchar (200),,,repository_class varchar (200),242
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,repository_user,8,varchar(40),,,repository_user varchar(40),243
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,repository_pass,9,varchar(40),,,repository_pass varchar(40),244
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,estimated_closure_date,10,timestamp,NULL,,estimated_closure_date timestamp null,245
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,allow_billable,11,int(1),NULL,,allow_billable int(1) null,246
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,company_id,12,varchar(10),NULL,,company_id varchar(10) null,247
+project,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,budget,13,bigint(20),NOT NULL,,budget bigint(20) NOT NULL,248
+project_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,210
+project_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),211
+project_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,note,3,varchar (100),,,note varchar (100),212
+project_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,state_machine_order,4,bigint(4),,,state_machine_order bigint(4),213
+project_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,1,varchar (10),NOT NULL,,project_id varchar (10) not null,318
+project_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_status_id,2,varchar (10),NOT NULL,,project_status_id varchar (10) not null,319
+project_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,creation_date,3,timestamp,NOT NULL,,creation_date timestamp not null,320
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,253
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,suggested_date,2,timestamp,NULL,,suggested_date timestamp null,254
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,deadline_date,3,timestamp,NULL,,deadline_date timestamp null,255
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,4,varchar (10),NOT NULL,,project_id varchar (10) not null,256
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,user_id,5,varchar (10),NOT NULL,,user_id varchar (10) not null,257
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,requeriment_status_id,6,varchar (10),NOT NULL,,requeriment_status_id varchar (10) not null,258
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,priority,7,int(1),NOT NULL,,priority int(1) not null,259
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_acceptance,8,int(1),NULL,,is_acceptance int(1) null,260
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,category_id,9,varchar (10),NULL,,category_id varchar (10) null,261
+requeriment,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,reopening,10,bigint(6),NULL,,reopening bigint(6) null,262
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,218
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),219
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),220
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,state_machine_order,4,bigint(4),,,state_machine_order bigint(4),221
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,accept_project_id,5,varchar(10),NULL,,accept_project_id varchar(10) null,222
+requeriment_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,parent_id,6,varchar(10),NULL,,parent_id varchar(10) null,223
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,requeriment_id,1,varchar (10),NOT NULL,,requeriment_id varchar (10) not null,308
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,requeriment_status_id,2,varchar (10),NOT NULL,,requeriment_status_id varchar (10) not null,309
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,creation_date,3,timestamp,NOT NULL,,creation_date timestamp not null,310
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,user_id,4,varchar (10),,,user_id varchar (10),311
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,iteration,5,varchar(10),NULL,,iteration varchar(10) null,312
+requeriment_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,comment,6,text,,,comment text,313
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,267
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),268
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,3,varchar (10),NOT NULL,,project_id varchar (10) not null,269
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,requeriment_id,4,varchar (10),,,requeriment_id varchar (10),270
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,category_id,5,varchar (10),NOT NULL,,category_id varchar (10) not null,271
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_id,6,varchar (10),,,task_id varchar (10),272
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_parent_task,7,int(1),,,is_parent_task int(1),273
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,created_by,8,varchar (10),NULL,,created_by varchar (10) null,274
+task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_unpredictable,9,int(1),NULL,,is_unpredictable int(1) null,275
+task_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,228
+task_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),229
+task_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),230
+task_status,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,state_machine_order,4,bigint(4),,,state_machine_order bigint(4),231
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_id,1,varchar (10),NOT NULL,,task_id varchar (10) not null,325
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,resource_id,2,varchar (10),NOT NULL,,resource_id varchar (10) not null,326
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,3,varchar (10),NOT NULL,,project_id varchar (10) not null,327
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_status_id,4,varchar (10),NOT NULL,,task_status_id varchar (10) not null,328
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,creation_date,5,timestamp,NOT NULL,,creation_date timestamp not null,329
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,start_date,6,timestamp,NOT NULL,,start_date timestamp not null,330
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,estimated_time,7,bigint(6),NOT NULL,,estimated_time bigint(6) not null,331
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,actual_date,8,timestamp,NULL,,actual_date timestamp null,332
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,actual_time,9,bigint(6),NULL,,actual_time bigint(6) null,333
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,user_id,10,varchar (10),,,user_id varchar (10),334
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,iteration,11,varchar(10),NULL,,iteration varchar(10) null,335
+task_history,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,comment,12,text,,,comment text,336
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_id,1,varchar (10),NOT NULL,,task_id varchar (10) not null,280
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,resource_id,2,varchar (10),NOT NULL,,resource_id varchar (10) not null,281
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,3,varchar (10),NOT NULL,,project_id varchar (10) not null,282
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,start_date,4,timestamp,NOT NULL,,start_date timestamp not null,283
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,estimated_time,5,bigint(6),NOT NULL,,estimated_time bigint(6) not null,284
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,actual_date,6,timestamp,NULL,,actual_date timestamp null,285
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,actual_time,7,bigint(6),NULL,,actual_time bigint(6) null,286
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_status_id,8,varchar (10),NOT NULL,,task_status_id varchar (10) not null,287
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_acceptance_task,9,int(1),,,is_acceptance_task int(1),288
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,billable,10,int(1),NULL,,billable int(1) null,289
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,approver_id,11,varchar (10),NULL,,approver_id varchar (10) null,290
+resource_task,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,approved,12,int(1),NULL,,approved int(1) null,291
+resource_task_alloc,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_id,1,varchar (10),NOT NULL,,task_id varchar (10) not null,341
+resource_task_alloc,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,resource_id,2,varchar (10),NOT NULL,,resource_id varchar (10) not null,342
+resource_task_alloc,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,3,varchar (10),NOT NULL,,project_id varchar (10) not null,343
+resource_task_alloc,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,sequence,4,bigint(6),NOT NULL,,sequence bigint(6) not null,344
+resource_task_alloc,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,alloc_time,5,bigint(6),NOT NULL,,alloc_time bigint(6) not null,345
+resource_task_alloc_plann,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,task_id,1,varchar (10),NOT NULL,,task_id varchar (10) not null,350
+resource_task_alloc_plann,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,resource_id,2,varchar (10),NOT NULL,,resource_id varchar (10) not null,351
+resource_task_alloc_plann,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,3,varchar (10),NOT NULL,,project_id varchar (10) not null,352
+resource_task_alloc_plann,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,sequence,4,bigint(6),NOT NULL,,sequence bigint(6) not null,353
+resource_task_alloc_plann,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,alloc_time,5,bigint(6),NOT NULL,,alloc_time bigint(6) not null,354
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,resource_id,1,varchar(10),NOT NULL,,resource_id varchar(10) NOT NULL,743
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,2,varchar(10),NOT NULL,,project_id varchar(10) NOT NULL,744
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,cap_year,3,int(4),NOT NULL,,cap_year int(4) NOT NULL,745
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,cap_month,4,int(2),NOT NULL,,cap_month int(2) NOT NULL,746
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,cap_day,5,int(2),NOT NULL,,cap_day int(2) NOT NULL,747
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,capacity,6,int(4),NOT NULL,,capacity int(4) NOT NULL,748
+resource_capacity,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,cost_per_hour,7,int(10),NULL,,cost_per_hour int(10) NULL,749
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,113
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,username,2,varchar(30),NOT NULL,,username varchar(30) not null,114
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,password,3,varchar(70),NULL,,password varchar(70) null,115
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,4,varchar(50),NOT NULL,,name varchar(50) not null,116
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,email,5,varchar(70),,,email varchar(70),117
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,phone,6,varchar(20),,,phone varchar(20),118
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,color,7,varchar(10),,,color varchar(10),119
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,department_id,8,varchar(10),NOT NULL,,department_id varchar(10) not null,120
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,area_id,9,varchar(10),NOT NULL,,area_id varchar(10) not null,121
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,function_id,10,varchar(10),NULL,,function_id varchar(10) null,122
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,company_id,11,varchar(10),NULL,,company_id varchar(10) null,123
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,country,12,varchar(2),NOT NULL,,country varchar(2) not null,124
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,language,13,varchar(2),NOT NULL,,language varchar(2) not null,125
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,auth_mode,14,varchar(200),NULL,,auth_mode varchar(200) null,126
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,birth,15,date,NULL,,birth date null,127
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,permission,16,text,NULL,,permission text null,128
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,pic_file,17,mediumblob,NULL,,pic_file mediumblob null,129
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,final_date,18,timestamp,NULL,,final_date timestamp null,130
+tool_user,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,creation_date,19,timestamp,NULL,,creation_date timestamp null,131
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar (10),NOT NULL,,id varchar (10) not null,172
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,2,varchar (10),NOT NULL,,project_id varchar (10) not null,173
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_disable,3,int(1),NULL,,is_disable int(1) null,174
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_req_acceptable,4,int(1),NULL,,is_req_acceptable int(1) null,175
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_tech_comment,5,int(1),NULL,,can_see_tech_comment int(1) null,176
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,pre_approve_req,6,int(1),NULL,,pre_approve_req int(1) null,177
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_discussion,7,int(1),NULL,,can_see_discussion int(1) null,178
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,function_id,8,varchar(10),NULL,,function_id varchar(10) null,179
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_other_reqs,9,int(1),NULL,,can_see_other_reqs int(1) null,180
+customer,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_open_otherowner_reqs,10,int(1),NULL,,can_open_otherowner_reqs int(1) null,181
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar (10),NOT NULL,,id varchar (10) not null,186
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,2,varchar (10),NOT NULL,,project_id varchar (10) not null,187
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_self_alloc,3,int(1),NULL,,can_self_alloc int(1) null,188
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_repository,4,int(1),NULL,,can_see_repository int(1) null,189
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_invoice,5,int(1),NULL,,can_see_invoice int(1) null,190
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,cost_per_hour,6,"decimal(9,2)",NULL,,"cost_per_hour decimal(9,2) null",191
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,can_see_customer,7,int(1),NULL,,can_see_customer int(1) null,192
+resource,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,capacity_per_day,8,"decimal(9,2)",NULL,,"capacity_per_day decimal(9,2) null",193
+leader,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar (10),NOT NULL,,id varchar (10) not null,198
+leader,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,2,varchar (10),NOT NULL,,project_id varchar (10) not null,199
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,101
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar(25),NOT NULL,,name varchar(25) not null,102
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,full_name,3,varchar(255),NULL,,full_name varchar(255) null,103
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,company_number,4,varchar(255),NULL,,company_number varchar(255) null,104
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,address,5,varchar(255),NULL,,address varchar(255) null,105
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,city,6,varchar(255),NULL,,city varchar(255) null,106
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,state_province,7,varchar(50),NULL,,state_province varchar(50) null,107
+company,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,country,8,varchar(100),NULL,,country varchar(100) null,108
+department,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,136
+department,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),137
+department,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),138
+area,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,150
+area,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),151
+area,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),152
+function,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,143
+function,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),144
+function,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),145
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,id,1,varchar(10),NOT NULL,,id varchar(10) not null,157
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,name,2,varchar (50),,,name varchar (50),158
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,description,3,varchar (100),,,description varchar (100),159
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,type,4,int(2),NULL,,type int(2) null,160
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,project_id,5,varchar (10),NULL,,project_id varchar (10) null,161
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,billable,6,int(1),NULL,,billable int(1) NULL,162
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,disable_view,7,int(1),NULL,,disable_view int(1) NULL,163
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_defect,8,int(1),NULL,,is_defect int(1) NULL,164
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_testing,9,int(1),NULL,,is_testing int(1) NULL,165
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,is_developing,10,int(1),NULL,,is_developing int(1) NULL,166
+category,code/plandora/reference/r348/mysql.sql,SVN r348,12c9a7b8355ef311fd37b9afa30e18fabe652979,category_order,11,int(2),NULL,,category_order int(2) null,167
