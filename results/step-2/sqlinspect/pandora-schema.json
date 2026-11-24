@@ -1,0 +1,1947 @@
+{
+  "Databases" : [ {
+    "Name" : "DB",
+    "Schemas" : [ {
+      "Name" : "SCH",
+      "Tables" : [ {
+        "Name" : "p_sequence",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "event_log",
+        "Columns" : [ {
+          "Name" : "summary",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "username",
+          "Type" : "VARCHAR(30)"
+        } ]
+      }, {
+        "Name" : "company",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(25)"
+        }, {
+          "Name" : "full_name",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "company_number",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "address",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "city",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "state_province",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "country",
+          "Type" : "VARCHAR(100)"
+        } ]
+      }, {
+        "Name" : "tool_user",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "username",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "password",
+          "Type" : "VARCHAR(70)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "email",
+          "Type" : "VARCHAR(70)"
+        }, {
+          "Name" : "phone",
+          "Type" : "VARCHAR(20)"
+        }, {
+          "Name" : "color",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "department_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "area_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "function_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "company_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "country",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "language",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "auth_mode",
+          "Type" : "VARCHAR(200)"
+        }, {
+          "Name" : "birth",
+          "Type" : "DATE"
+        }, {
+          "Name" : "permission",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "pic_file",
+          "Type" : "MEDIUMBLOB"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "department",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        } ]
+      }, {
+        "Name" : "function",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        } ]
+      }, {
+        "Name" : "area",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        } ]
+      }, {
+        "Name" : "category",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "type",
+          "Type" : "INT"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "billable",
+          "Type" : "INT"
+        }, {
+          "Name" : "disable_view",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_defect",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_testing",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_developing",
+          "Type" : "INT"
+        }, {
+          "Name" : "category_order",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "customer",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_disable",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_req_acceptable",
+          "Type" : "INT"
+        }, {
+          "Name" : "can_see_tech_comment",
+          "Type" : "INT"
+        }, {
+          "Name" : "pre_approve_req",
+          "Type" : "INT"
+        }, {
+          "Name" : "can_see_discussion",
+          "Type" : "INT"
+        }, {
+          "Name" : "function_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "can_see_other_reqs",
+          "Type" : "INT"
+        }, {
+          "Name" : "can_open_otherowner_reqs",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "resource",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "can_self_alloc",
+          "Type" : "INT"
+        }, {
+          "Name" : "can_see_repository",
+          "Type" : "INT"
+        }, {
+          "Name" : "can_see_invoice",
+          "Type" : "INT"
+        }, {
+          "Name" : "cost_per_hour",
+          "Type" : "DECIMAL(2,9)"
+        }, {
+          "Name" : "can_see_customer",
+          "Type" : "INT"
+        }, {
+          "Name" : "capacity_per_day",
+          "Type" : "DECIMAL(2,9)"
+        } ]
+      }, {
+        "Name" : "leader",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "root",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "project_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "note",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "state_machine_order",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "requeriment_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "state_machine_order",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "accept_project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "parent_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "task_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "state_machine_order",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "project",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "parent_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "can_alloc",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "project_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "repository_url",
+          "Type" : "VARCHAR(200)"
+        }, {
+          "Name" : "repository_class",
+          "Type" : "VARCHAR(200)"
+        }, {
+          "Name" : "repository_user",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "repository_pass",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "estimated_closure_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "allow_billable",
+          "Type" : "INT"
+        }, {
+          "Name" : "company_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "budget",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "requeriment",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "suggested_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "deadline_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "requeriment_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "priority",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_acceptance",
+          "Type" : "INT"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "reopening",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "task",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "requeriment_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_parent_task",
+          "Type" : "INT"
+        }, {
+          "Name" : "created_by",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_unpredictable",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "resource_task",
+        "Columns" : [ {
+          "Name" : "task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "start_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "estimated_time",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "actual_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "actual_time",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "task_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_acceptance_task",
+          "Type" : "INT"
+        }, {
+          "Name" : "billable",
+          "Type" : "INT"
+        }, {
+          "Name" : "approver_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "approved",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "planning",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "iteration",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "rich_text_desc",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "visible",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "requeriment_history",
+        "Columns" : [ {
+          "Name" : "requeriment_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "requeriment_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "iteration",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "comment",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "project_history",
+        "Columns" : [ {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "task_history",
+        "Columns" : [ {
+          "Name" : "task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "task_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "start_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "estimated_time",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "actual_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "actual_time",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "iteration",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "comment",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "resource_task_alloc",
+        "Columns" : [ {
+          "Name" : "task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "sequence",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "alloc_time",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "resource_task_alloc_plann",
+        "Columns" : [ {
+          "Name" : "task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "sequence",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "alloc_time",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "report",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "type",
+          "Type" : "INT"
+        }, {
+          "Name" : "kpi_type",
+          "Type" : "INT"
+        }, {
+          "Name" : "report_perspective_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "sql_text",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "execution_hour",
+          "Type" : "INT"
+        }, {
+          "Name" : "last_execution",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "data_type",
+          "Type" : "INT"
+        }, {
+          "Name" : "file_name",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "profile_view",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "goal",
+          "Type" : "VARCHAR(25)"
+        }, {
+          "Name" : "tolerance",
+          "Type" : "VARCHAR(25)"
+        }, {
+          "Name" : "tolerance_type",
+          "Type" : "VARCHAR(2)"
+        } ]
+      }, {
+        "Name" : "report_result",
+        "Columns" : [ {
+          "Name" : "report_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "last_execution",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "value",
+          "Type" : "VARCHAR(25)"
+        } ]
+      }, {
+        "Name" : "project_report",
+        "Columns" : [ {
+          "Name" : "report_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "notification",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "notification_class",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "sql_text",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "retry_number",
+          "Type" : "INT"
+        }, {
+          "Name" : "next_notification",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "last_check",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "period_minute",
+          "Type" : "INT"
+        }, {
+          "Name" : "period_hour",
+          "Type" : "INT"
+        }, {
+          "Name" : "periodicity",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "notification_field",
+        "Columns" : [ {
+          "Name" : "notification_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "preference",
+        "Columns" : [ {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "id",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "meta_field",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "type",
+          "Type" : "INT"
+        }, {
+          "Name" : "apply_to",
+          "Type" : "INT"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "domain",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "meta_form_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "help_content",
+          "Type" : "VARCHAR(300)"
+        }, {
+          "Name" : "field_order",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_mandatory",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "is_qualifier",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "additional_field",
+        "Columns" : [ {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "meta_field_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "date_value",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "numeric_value",
+          "Type" : "DECIMAL(2,13)"
+        }, {
+          "Name" : "modification_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "additional_table",
+        "Columns" : [ {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "meta_field_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "line",
+          "Type" : "INT"
+        }, {
+          "Name" : "col",
+          "Type" : "INT"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "date_value",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "occurrence",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "source",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "loc",
+          "Type" : "VARCHAR(7)"
+        }, {
+          "Name" : "occurrence_status",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "occurrence_status_label",
+          "Type" : "VARCHAR(60)"
+        } ]
+      }, {
+        "Name" : "occurrence_dependency",
+        "Columns" : [ {
+          "Name" : "occurrence_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "occurrence_field",
+        "Columns" : [ {
+          "Name" : "occurrence_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "field",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "date_value",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "occurrence_field_table",
+        "Columns" : [ {
+          "Name" : "occurrence_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "occ_field",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "field",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "line",
+          "Type" : "INT"
+        }, {
+          "Name" : "col",
+          "Type" : "INT"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "date_value",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "occurrence_history",
+        "Columns" : [ {
+          "Name" : "occurrence_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "occurrence_status",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "occurrence_status_label",
+          "Type" : "VARCHAR(60)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "history",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "occurrence_kpi",
+        "Columns" : [ {
+          "Name" : "report_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "occurrence_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "weight",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "risk",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "probability",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "impact",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "tendency",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "responsible",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "risk_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "strategy",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "contingency",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "impact_cost",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_time",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_quality",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_scope",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "risk_type",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "risk_history",
+        "Columns" : [ {
+          "Name" : "risk_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "risk_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "risk_status_label",
+          "Type" : "VARCHAR(60)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "history",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "probability",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "impact",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "tendency",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "impact_cost",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_time",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_quality",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "impact_scope",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "risk_type",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "name",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "responsible",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "strategy",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "contingency",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "risk_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "status_type",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "attachment",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "status",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "visibility",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "type",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "content_type",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "comment",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "binary_file",
+          "Type" : "MEDIUMBLOB"
+        } ]
+      }, {
+        "Name" : "attachment_history",
+        "Columns" : [ {
+          "Name" : "attachment_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "status",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "history",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "discussion_topic",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "content",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "parent_topic",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "discussion",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "owner",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_blocked",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "plan_relation",
+        "Columns" : [ {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "plan_related_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "plan_type",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "plan_related_type",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "relation_type",
+          "Type" : "VARCHAR(2)"
+        } ]
+      }, {
+        "Name" : "template",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "deprecated_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "root_node_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "node_template",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "node_type",
+          "Type" : "VARCHAR(2)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "next_node_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "step_node_template",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_list",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "category_regex",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "iteration",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "decision_node_template",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "question_content",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "next_node_id_if_false",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "custom_node_template",
+        "Columns" : [ {
+          "Name" : "node_template_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "template_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "instance_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "related_task_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "resource_list",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "question_content",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "is_parent_task",
+          "Type" : "INT"
+        }, {
+          "Name" : "decision_answer",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "iteration",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "meta_form",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "viewable_cols",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "grid_row_num",
+          "Type" : "INT"
+        }, {
+          "Name" : "filter_col_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "js_before_save",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "js_after_save",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "js_after_load",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "save_batch",
+          "Type" : "INT"
+        }, {
+          "Name" : "constraint_edit_delete",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "custom_form",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "meta_form_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "modification_user_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "survey",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "is_template",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "is_anonymous",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "final_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "date_publishing",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "anonymous_key",
+          "Type" : "VARCHAR(70)"
+        } ]
+      }, {
+        "Name" : "survey_question",
+        "Columns" : [ {
+          "Name" : "survey_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "type",
+          "Type" : "VARCHAR(1)"
+        }, {
+          "Name" : "content",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "position",
+          "Type" : "INT"
+        }, {
+          "Name" : "sub_title",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "is_mandatory",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "question_alternative",
+        "Columns" : [ {
+          "Name" : "survey_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "question_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "sequence",
+          "Type" : "INT"
+        }, {
+          "Name" : "content",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "question_answer",
+        "Columns" : [ {
+          "Name" : "survey_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "question_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "answer_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "resource_capacity",
+        "Columns" : [ {
+          "Name" : "resource_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "cap_year",
+          "Type" : "INT"
+        }, {
+          "Name" : "cap_month",
+          "Type" : "INT"
+        }, {
+          "Name" : "cap_day",
+          "Type" : "INT"
+        }, {
+          "Name" : "capacity",
+          "Type" : "INT"
+        }, {
+          "Name" : "cost_per_hour",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "customer_function",
+        "Columns" : [ {
+          "Name" : "customer_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "function_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "repository_file",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "repository_file_path",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "repository_file_project",
+        "Columns" : [ {
+          "Name" : "repository_file_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_disable",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_indexable",
+          "Type" : "INT"
+        }, {
+          "Name" : "is_downloadable",
+          "Type" : "INT"
+        }, {
+          "Name" : "last_update",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "repository_file_plan",
+        "Columns" : [ {
+          "Name" : "repository_file_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "repository_history",
+        "Columns" : [ {
+          "Name" : "repository_file",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "repository_file_path",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "hist_type",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "comment",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "cost_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "state_machine_order",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "cost",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "account_code",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "expense_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "cost_installment",
+        "Columns" : [ {
+          "Name" : "cost_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "installment_num",
+          "Type" : "INT"
+        }, {
+          "Name" : "due_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "cost_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "approver",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "value",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "cost_history",
+        "Columns" : [ {
+          "Name" : "cost_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "installment_num",
+          "Type" : "INT"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "account_code",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "expense_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "due_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "cost_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "value",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "expense",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "invoice_status",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(100)"
+        }, {
+          "Name" : "state_machine_order",
+          "Type" : "BIGINT"
+        } ]
+      }, {
+        "Name" : "invoice",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "due_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "invoice_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "invoice_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "invoice_number",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "purchase_order",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "contact",
+          "Type" : "VARCHAR(70)"
+        } ]
+      }, {
+        "Name" : "invoice_item",
+        "Columns" : [ {
+          "Name" : "invoice_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "invoice_item_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "type",
+          "Type" : "INT"
+        }, {
+          "Name" : "price",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "amount",
+          "Type" : "INT"
+        }, {
+          "Name" : "type_index",
+          "Type" : "INT"
+        } ]
+      }, {
+        "Name" : "invoice_history",
+        "Columns" : [ {
+          "Name" : "invoice_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "invoice_status_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "due_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "invoice_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "invoice_number",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "purchase_order",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "contact",
+          "Type" : "VARCHAR(70)"
+        }, {
+          "Name" : "description",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "total_price",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "db_repository_sequence",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "INT"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "db_repository_item",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "repository_file_path",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "repository_file_name",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "is_directory",
+          "Type" : "INT"
+        }, {
+          "Name" : "parent_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "db_repository_version",
+        "Columns" : [ {
+          "Name" : "repository_item_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "version",
+          "Type" : "INT"
+        }, {
+          "Name" : "content_type",
+          "Type" : "VARCHAR(40)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "comment",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "file_size",
+          "Type" : "INT"
+        }, {
+          "Name" : "binary_file",
+          "Type" : "MEDIUMBLOB"
+        } ]
+      }, {
+        "Name" : "repository_policy",
+        "Columns" : [ {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "type_policy",
+          "Type" : "VARCHAR(30)"
+        }, {
+          "Name" : "value",
+          "Type" : "TEXT"
+        } ]
+      }, {
+        "Name" : "artifact_template",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "name",
+          "Type" : "VARCHAR(70)"
+        }, {
+          "Name" : "description",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "category_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "header_html",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "body_html",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "footer_html",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "profile_view",
+          "Type" : "VARCHAR(1)"
+        } ]
+      }, {
+        "Name" : "external_data",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "external_id",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "external_sys",
+          "Type" : "VARCHAR(50)"
+        }, {
+          "Name" : "external_host",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "external_accont",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "planning_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "msg_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "event_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "destination",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "source",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "summary",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "body",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "priority",
+          "Type" : "INT"
+        }, {
+          "Name" : "due_date",
+          "Type" : "TIMESTAMP"
+        } ]
+      }, {
+        "Name" : "external_data_attach",
+        "Columns" : [ {
+          "Name" : "external_data_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "attachment_id",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "content_type",
+          "Type" : "VARCHAR(255)"
+        }, {
+          "Name" : "creation_date",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "file_size",
+          "Type" : "BIGINT"
+        }, {
+          "Name" : "file_name",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "binary_file",
+          "Type" : "MEDIUMBLOB"
+        } ]
+      }, {
+        "Name" : "artifact",
+        "Columns" : [ {
+          "Name" : "id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "repository_file_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "last_update",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "artifact_template_type",
+          "Type" : "TEXT"
+        }, {
+          "Name" : "project_id",
+          "Type" : "VARCHAR(10)"
+        } ]
+      }, {
+        "Name" : "user_edi_link",
+        "Columns" : [ {
+          "Name" : "user_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "edi_id",
+          "Type" : "VARCHAR(10)"
+        }, {
+          "Name" : "last_update",
+          "Type" : "TIMESTAMP"
+        }, {
+          "Name" : "edi_uuid",
+          "Type" : "TEXT"
+        } ]
+      } ]
+    } ]
+  } ]
+}
