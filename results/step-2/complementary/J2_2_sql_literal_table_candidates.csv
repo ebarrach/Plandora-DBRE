@@ -1,0 +1,632 @@
+﻿file_path,line,table,source_line,status
+java/com/pandora/bus/gadget/BillableTaskHighchartGadget.java,158,resource_task_alloc,"sql = sql +	""from resource_task_alloc a, task t, resource_task rt, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/DefectTaskHighchartGadget.java,164,resource_task_alloc,"sql = sql +	""from resource_task_alloc a, task t, resource_task rt, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/Gadget.java,221,resource,"String sqlData = ""select distinct t.id, t.name from resource r, customer c, tool_user t "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/Gadget.java,225,resource,"sqlData = sqlData + ""r.project_id in (select project_id from resource where id= '"" + userId + ""' ) "";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/Gadget.java,242,resource,"String sqlData2 = ""select distinct t.id, t.name from resource r, customer c, tool_user t "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/Gadget.java,246,resource,"sqlData2 = sqlData2 + ""r.project_id in (select project_id from resource where id= '"" + userId + ""' ) "";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/InvoiceIncomeHighchartGadget.java,122,invoice,"""from invoice v, invoice_item i, invoice_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,186,task_history,"""from task_history h, task_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,192,task_history,"""from task_history h, task_status s  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,198,task_history,"""from task_history h, task_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,207,task_history,"""from task_history h, task_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,214,task_history,"""from task_history h, task_status s  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KanbanLimitWIPChartGadget.java,220,task_history,"""from task_history h, task_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/KPIHistogramHighchartGadget.java,133,report,"""from report r, report_result rr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/OccurrenceHighchartGadget.java,154,occurrence,"""from occurrence o "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/OccurrenceHighchartGadget.java,155,planning,"""inner join planning p on (p.id = o.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/OccurrenceHighchartGadget.java,156,occurrence_history,"""left outer join occurrence_history h on (h.occurrence_id = o.id and h.occurrence_status in ('100','99', '98')) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/PredictableTaskHighchartGadget.java,131,resource_task_alloc,"sql = sql +	""from resource_task_alloc a, task t, resource_task rt, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/RemainingDaysHtmlGadget.java,112,project,"""from project p, resource r, occurrence o, planning po "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/RequirementLeadTimeGadget.java,124,requeriment,"""from requeriment r, planning p ""+",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/RequirementSummaryChartGadget.java,129,requeriment,"""from requeriment r, planning p ""+",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/ResourceAllocationChartGadget.java,111,resource,"String sql = ""select distinct r.id, u.username from resource as r, tool_user as u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/ResourceAllocationChartGadget.java,147,resource_task_alloc,"sqlData = sqlData + ""from resource_task_alloc a, task t, resource_task rt "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/ResourceCategoryAllocHighchartGadget.java,189,resource_task_alloc,"""from resource_task_alloc a, task t, resource_task rt, category c, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/ResourceCategoryAllocHighchartGadget.java,190,occurrence,"""planning pn left outer join occurrence o on (o.id = pn.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/ResourceProjectAllocHighchartGadget.java,136,resource_task_alloc,"sqlData = sqlData + ""from resource_task_alloc a, task t, resource_task rt, project p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/TaskStreamHtmlGadget.java,137,task_history,"""from task_history h , task t, tool_user u, task_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/WorkflowTimeHighchartGadget.java,154,node_template,"""from node_template n, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/WorkflowTimeHighchartGadget.java,158,resource_task_alloc,"sqlData.append(""  from resource_task_alloc a, task t, resource_task rt "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/gadget/WorkflowTimeHighchartGadget.java,165,custom_node_template,"sqlData.append(""   and a.task_id in ( select related_task_id from custom_node_template where template_id=? ) "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/ProjectBUS.java,337,project,"throw new InvalidProjectUserReplaceException(""The customer ["" + cto.getUsername() + ""] cannot be removed from project, because it related with requirement into project."");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/ProjectBUS.java,355,project,"throw new InvalidProjectUserReplaceException(""The resource ["" + rto.getUsername() + ""] cannot be removed from project, because it related with tasks into project."");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,67,db_repository_item,"""from db_repository_item i "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,68,db_repository_version,"""left outer join db_repository_version v on v.repository_item_id = i.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,69,tool_user,"""left outer join tool_user u on v.user_id = u.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,71,db_repository_version,"""from db_repository_version v "" + versionPath + "" group by v.repository_item_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,133,db_repository_item,"""from db_repository_item i "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,134,db_repository_version,"""left outer join db_repository_version v on v.repository_item_id = i.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,135,tool_user,"""left outer join tool_user u on v.user_id = u.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,137,db_repository_version,"""from db_repository_version v "" + versionPath + "" group by v.repository_item_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,218,db_repository_item,"String sql = ""select count(*) as c from db_repository_item "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,231,db_repository_version,"sqls.add(""delete from db_repository_version where repository_item_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,237,db_repository_item,"sqls.add(""delete from db_repository_item where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,293,db_repository_item,"sqls.add(""insert into db_repository_item (id, repository_file_path, repository_file_name, project_id, is_directory, parent_id) values (?, ?, ?, ?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,312,db_repository_version,"sqls.add(""insert into db_repository_version (repository_item_id, version, content_type, creation_date, comment, user_id, file_size, binary_file) values (?, ?, ?, ?, ?, ?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,352,db_repository_item,"""from db_repository_item i "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,353,db_repository_version,"""left outer join db_repository_version v on v.repository_item_id = i.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,354,tool_user,"""left outer join tool_user u on v.user_id = u.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,438,db_repository_item,"sqls.add(""insert into db_repository_item (id, repository_file_path, repository_file_name, project_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,447,db_repository_version,"sqls.add(""insert into db_repository_version (repository_item_id, version, content_type, creation_date, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,486,db_repository_sequence,"Vector<Vector<Object>> vseq = del.performQuery(""select id from db_repository_sequence where project_id=?"", tp, pr);",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,498,db_repository_sequence,"del.executeQuery(""update db_repository_sequence set id="" + currentValue + "" where project_id='"" + pto.getId() + ""'"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/bus/repository/WrapperDBRepository.java,500,db_repository_sequence,"del.executeQuery(""insert into db_repository_sequence (id, project_id) values (1, '"" + pto.getId() + ""')"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,52,additional_field,"+ ""from additional_field af, meta_field mf, planning pl """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,114,meta_field,"qualifConstraint = "" and meta_field_id in (select id from meta_field where is_qualifier='1')"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,117,additional_field,"pstmt1 = c.prepareStatement(""delete from additional_field where planning_id=?"" + qualifConstraint);",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,121,additional_table,"pstmt2 = c.prepareStatement(""delete from additional_table where planning_id=?"" + qualifConstraint);",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,145,additional_field,"""insert into additional_field (planning_id, meta_field_id, value, date_value, numeric_value, modification_date) values (?,?,?,?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,185,additional_field,"""update additional_field set value = ?, date_value = ?, numeric_value = ? where planning_id = ? and meta_field_id = ? and modification_date = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,212,additional_table,"pstmt = c.prepareStatement(""insert into additional_table (planning_id, meta_field_id, """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,239,additional_field,"pstmt = c.prepareStatement( ""update additional_field set value = ?, date_value = ? where planning_id = ? and meta_field_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,265,additional_table,"+ ""from additional_table where meta_field_id=? and planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,318,additional_field,"pstmt = c.prepareStatement( ""update additional_field set value = ? where planning_id = ? and meta_field_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AdditionalFieldDAO.java,338,additional_field,"pstmt = c.prepareStatement(""select modification_date from additional_field where meta_field_id=? and planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,29,area,"pstmt = c.prepareStatement(""select id, name, description from area"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,57,area,"pstmt = c.prepareStatement(""select id, name, description from area where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,82,area,"pstmt = c.prepareStatement(""insert into area (id, name, description) values (?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,103,area,"pstmt = c.prepareStatement(""update area set name=?, description=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,124,area,"pstmt = c.prepareStatement(""delete from area where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AreaDAO.java,165,area,"pstmt = c.prepareStatement(""select id, name, description from area where name = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactDAO.java,73,artifact,"pstmt = c.prepareStatement(""insert into artifact (id, repository_file_id, last_update, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactDAO.java,88,artifact,"pstmt = c.prepareStatement(""update artifact set last_update=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactDAO.java,117,artifact,"""from artifact a, planning p, repository_file r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactDAO.java,141,artifact,"""from artifact a, planning p, repository_file r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactTemplateDAO.java,39,artifact_template,"""from artifact_template t, category c where t.category_id = c.id and t.id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ArtifactTemplateDAO.java,61,artifact_template,"""from artifact_template t, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,77,attachment,"""status, visibility, type, content_type, creation_date, comment from attachment "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,105,attachment,"pstmt = c.prepareStatement(""select binary_file from attachment where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,141,attachment,"pstmt = c.prepareStatement(""update attachment set comment=?, status=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,170,external_data_attach,"pstmt = c.prepareStatement(""select binary_file from external_data_attach where attachment_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,176,attachment,"pstmt2 = c.prepareStatement(""update attachment set binary_file=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,205,attachment,"pstmt = c.prepareStatement(""insert into attachment(id, comment, name, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,240,external_data_attach,"pstmt = c.prepareStatement(""select binary_file from external_data_attach where attachment_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,251,attachment,"pstmt2 = c.prepareStatement(""insert into attachment(id, comment, name, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,286,attachment,"pstmt = c.prepareStatement(""update attachment set planning_id=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,288,attachment_history,"""from attachment_history h, ( "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,290,attachment,"""from attachment a, attachment_history h "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,308,attachment,"""visibility, type, content_type, creation_date, comment from attachment "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,338,attachment,"""from attachment "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,340,requeriment,"""and (planning_id in (select id from requeriment where project_id = ?) or "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,341,artifact,"""planning_id in (select id from artifact where project_id = ?) or "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,415,attachment,"""from attachment where id > "" + initialId + "" and id <= "" + finalId;",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,451,attachment,"String sql = ""select id as maxid from attachment "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentDAO.java,452,attachment,"""where creation_date = (select max(creation_date) from attachment order by 1 desc)"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentHistoryDAO.java,23,attachment_history,"pstmt = c.prepareStatement(""insert into attachment_history (attachment_id, status, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/AttachmentHistoryDAO.java,63,attachment_history,"""from attachment_history ah, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,77,category,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,77,project,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,104,category,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,104,project,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,136,category,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,136,project,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,163,category,"pstmt = c.prepareStatement(""insert into category (id, name, description, type, project_id, billable, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,224,category,"pstmt = c.prepareStatement(""update category set name=?, description=?, type=?, project_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,284,category,"pstmt = c.prepareStatement(""delete from category where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,308,planning,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id LEFT OUTER JOIN planning pn on p.id = pn.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,308,category,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id LEFT OUTER JOIN planning pn on p.id = pn.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CategoryDAO.java,308,project,"""from category c LEFT OUTER JOIN project p on c.project_id = p.id LEFT OUTER JOIN planning pn on p.id = pn.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CompanyDAO.java,21,company,"pstmt = c.prepareStatement(""select id, name, full_name, company_number, address, city, country, state_province from company order by name asc"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CompanyDAO.java,43,company,"pstmt = c.prepareStatement(""select id, name, full_name, company_number, address, city, country, state_province from company where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CompanyDAO.java,62,company,"pstmt = c.prepareStatement(""insert into company (id, name, full_name, company_number, address, city, country, state_province) values (?,?,?,?,?,?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CompanyDAO.java,85,company,"pstmt = c.prepareStatement(""update company set name=?, full_name=?, company_number=?, address=?, city=?, country=?, state_province=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CompanyDAO.java,107,company,"pstmt = c.prepareStatement(""delete from company where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,140,cost,"pstmt = c.prepareStatement(""update cost set category_id=?, account_code=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,156,cost_installment,"pstmt = c.prepareStatement(""update cost_installment set cost_status_id=?, approver=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,180,cost,"pstmt = c.prepareStatement(""update cost set name=?, project_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,218,cost,"pstmt = c.prepareStatement(""insert into cost (id, name, project_id, category_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,273,cost_installment,"pstmt = c.prepareStatement(""update cost_installment set due_date=?, cost_status_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,327,expense,"""from expense e, tool_user u, project p, planning a, cost c, cost_installment ci, cost_status cs "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,331,leader,"""and c.project_id in (select project_id from leader where id=?) order by c.project_id, e.user_id"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,363,cost_installment,"pstmt = c.prepareStatement(""insert into cost_installment (cost_id, installment_num, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,414,cost_history,"pstmt = c.prepareStatement(""insert into cost_history (cost_id, installment_num, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,459,cost,"""from cost c, planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,486,cost_installment,"pstmt1 = c.prepareStatement(""delete from cost_installment where cost_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,490,cost,"pstmt2 = c.prepareStatement(""delete from cost where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,494,plan_relation,"pstmt3 = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,499,additional_field,"pstmt4 = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,503,planning,"pstmt5 = c.prepareStatement(""delete from planning where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,530,cost_installment,"pstmt1 = c.prepareStatement(""delete from cost_installment "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,531,cost,"""where cost_id in (select id from cost where expense_id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,535,cost,"pstmt2 = c.prepareStatement(""delete from cost where expense_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,539,plan_relation,"pstmt3 = c.prepareStatement(""delete from plan_relation "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,540,cost,"""where plan_related_id in (select id from cost where expense_id=?) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,541,cost,"""or planning_id in (select id from cost where expense_id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,547,additional_field,"pstmt4 = c.prepareStatement(""delete from additional_field "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,548,cost,"""where planning_id in (select id from cost where expense_id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,553,planning,"pstmt5 = c.prepareStatement(""delete from planning "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,554,cost,"""where id in (select id from cost where expense_id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,562,additional_field,"pstmt6 = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,566,planning,"pstmt7 = c.prepareStatement(""delete from planning where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,590,cost_installment,"pstmt = c.prepareStatement(""delete from cost_installment where cost_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,608,cost,"""from cost c, planning p, category cg "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,638,cost,"""from cost c, planning p, cost_installment i "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,681,planning,"""from planning p, cost_installment i, cost c, additional_field af "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,728,cost,"""from cost c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,729,planning,"""inner join planning p on (c.id = p.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,730,cost_installment,"""inner join cost_installment i on (i.cost_id = c.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,731,expense,"""left join expense e on (c.expense_id = e.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,732,tool_user,"""left join tool_user u on (e.user_id = u.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,733,attachment,"""left join attachment ae on (ae.planning_id = e.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,791,cost,"""from cost c, planning p, cost_installment i "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,829,cost,"""from cost where account_code is not null and project_id in "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,830,resource,"""(select project_id from resource where id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,852,cost_status,"""from cost_status cs, cost_installment i left outer join tool_user t on (t.id = i.approver) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostDAO.java,852,tool_user,"""from cost_status cs, cost_installment i left outer join tool_user t on (t.id = i.approver) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostStatusDAO.java,52,cost_status,"""from cost_status where state_machine_order=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostStatusDAO.java,74,cost_status,"""from cost_status where state_machine_order >= ? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CostStatusDAO.java,98,cost_status,"""from cost_status where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,83,customer,"pstmt = c.prepareStatement(""select id, project_id from customer "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,116,tool_user,"""from tool_user u, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,184,tool_user,"""from tool_user u, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,214,customer,"""from customer c, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,244,customer,"""from customer c, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,246,customer,"""and c.project_id in (select distinct project_id from customer where id=? and can_see_other_reqs=1)"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,277,customer,"""from customer c, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,302,customer,"pstmt = c.prepareStatement(""update customer set is_disable=?, is_req_acceptable=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,335,customer,"pstmt = c.prepareStatement(""insert into customer (id, project_id, is_disable, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerDAO.java,382,customer,"pstmt = c.prepareStatement(""delete from customer where id=? and project_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerFunctionDAO.java,43,customer_function,"""from customer_function "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerFunctionDAO.java,70,function,"""from function f, customer_function c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerFunctionDAO.java,104,customer_function,"pstmt = c.prepareStatement(""insert into customer_function(customer_id, project_id, function_id, creation_date) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerFunctionDAO.java,124,customer_function,"pstmt = c.prepareStatement(""delete from customer_function "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomerFunctionDAO.java,169,customer_function,"pstmt = c.prepareStatement(""delete from customer_function where customer_id=? and project_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,49,custom_form,"""from custom_form cf "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,50,planning,"""inner join planning pl on (pl.id = cf.id and pl.creation_date > ?) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,51,additional_field,"""inner join additional_field af on (af.planning_id = pl.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,52,meta_field,"""inner join meta_field mf on (af.meta_field_id = mf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,107,custom_form,"pstmt = c.prepareStatement(""select id, meta_form_id, creation_user_id, modification_user_id from custom_form where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,129,custom_form,"pstmt = c.prepareStatement(""update custom_form set meta_form_id=?, modification_user_id=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,154,custom_form,"pstmt = c.prepareStatement(""insert into custom_form (id, meta_form_id, creation_user_id) values (?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,193,custom_form,"pstmt = c.prepareStatement(""insert into custom_form (id, meta_form_id, creation_user_id) values (?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/CustomFormDAO.java,215,custom_form,"pstmt = c.prepareStatement(""delete from custom_form where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DataAccess.java,308,p_sequence,"pstmt = c.prepareStatement(""select id from p_sequence"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DataAccess.java,326,p_sequence,"pstmt = c.prepareStatement(""update p_sequence set id="" + currentValue);",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DepartmentDAO.java,31,department,"pstmt = c.prepareStatement(""select id, name, description from department order by name"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,58,discussion,"""from discussion d, planning p, category c, tool_user tu "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,109,tool_user,"""from tool_user u, ( "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,112,task_history,"""from task_history h, task_status s, task t "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,116,requeriment_history,"""from requeriment_history h, requeriment_status s, planning p, requeriment r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,122,occurrence_history,"""from occurrence_history h, occurrence o "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,123,planning,"""inner join planning p on p.id = o.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,129,attachment_history,"""from attachment_history h, attachment a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,130,requeriment,"""LEFT OUTER JOIN (select id, project_id from requeriment) as r on r.id = a.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,131,task,"""LEFT OUTER JOIN (select id, project_id from task) as t on t.id = a.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,132,risk,"""LEFT OUTER JOIN (select id, project_id from risk) as k on k.id = a.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,133,occurrence,"""LEFT OUTER JOIN (select id, project_id from occurrence) as o on o.id = a.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,137,risk_history,"""from risk_history h, risk r inner join planning p on p.id = r.id, risk_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,137,planning,"""from risk_history h, risk r inner join planning p on p.id = r.id, risk_status s "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,142,repository_history,"""from repository_history "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,147,discussion_topic,"""from discussion_topic d "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,148,requeriment,"""LEFT OUTER JOIN (select id, project_id from requeriment) as r on r.id = d.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,149,task,"""LEFT OUTER JOIN (select id, project_id from task) as t on t.id = d.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,150,risk,"""LEFT OUTER JOIN (select id, project_id from risk) as k on k.id = d.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,151,occurrence,"""LEFT OUTER JOIN (select id, project_id from occurrence) as o on o.id = d.planning_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,152,discussion_topic,"""LEFT OUTER JOIN (select u.username, dd.id from discussion_topic dd, tool_user u where u.id = dd.user_id) as dd on dd.id = d.parent_topic "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,155,project,"""LEFT OUTER JOIN (select id, name from project) as pr on pr.id = sub.req_project "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,156,project,"""LEFT OUTER JOIN (select id, name from project) as pt on pt.id = sub.task_project "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,157,project,"""LEFT OUTER JOIN (select id, name from project) as po on po.id = sub.occ_project "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionDAO.java,158,project,"""LEFT OUTER JOIN (select id, name from project) as pk on pk.id = sub.risk_project "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,47,discussion_topic,"""from discussion_topic dt, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,77,discussion_topic,"""from discussion_topic dt, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,131,discussion_topic,"pstmt1 = c.prepareStatement(""update discussion_topic set parent_topic=null where parent_topic=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,135,discussion_topic,"pstmt2 = c.prepareStatement(""delete from discussion_topic where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,158,discussion_topic,"pstmt = c.prepareStatement(""select distinct id from discussion_topic where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,187,discussion_topic,"pstmt = c.prepareStatement(""insert into discussion_topic (id, planning_id, content, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/DiscussionTopicDAO.java,213,discussion_topic,"pstmt = c.prepareStatement(""update discussion_topic set planning_id=?, content=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/EdiDAO.java,39,user_edi_link,"pstmt = c.prepareStatement(""insert into user_edi_link (user_id, edi_id, last_update, edi_uuid) values (?,?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/EdiDAO.java,79,user_edi_link,"""from user_edi_link where user_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/EdiDAO.java,103,user_edi_link,"""from user_edi_link where edi_uuid=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/EventDAO.java,21,event_log,"pstmt = c.prepareStatement(""insert into event_log (summary, description, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,47,tool_user,"""from tool_user u, project p, planning a, expense e  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,49,cost,"""from cost c, cost_status s, cost_installment i  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,78,expense,"""from expense e, tool_user u, project p, planning a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,101,expense,"pstmt = c.prepareStatement(""update expense set project_id=?, user_id=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,136,expense,"pstmt = c.prepareStatement(""insert into expense (id, project_id, user_id) values (?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,169,expense,"pstmt1 = c.prepareStatement(""delete from expense where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,173,plan_relation,"pstmt2 = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,178,additional_field,"pstmt3 = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExpenseDAO.java,182,planning,"pstmt4 = c.prepareStatement(""delete from planning where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,44,external_data,"""from external_data where external_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,72,external_data_attach,"""from external_data_attach where external_data_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,98,external_data,"pstmt = c.prepareStatement(""insert into external_data (id, external_id, external_sys, planning_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,136,external_data,"pstmt = c.prepareStatement(""update external_data set external_sys=?, planning_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,154,external_data_attach,"pstmt = c.prepareStatement(""delete from external_data_attach where external_data_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,189,external_data,"pstmt = c.prepareStatement(""update external_data set planning_id=? where external_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ExternalDataDAO.java,267,external_data_attach,"pstmt = c.prepareStatement(""insert into external_data_attach (external_data_id, attachment_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/FunctionDAO.java,32,function,"pstmt = c.prepareStatement(""select id, name, description from function order by name"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/FunctionDAO.java,64,function,"pstmt = c.prepareStatement(""select id, name, description from function where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,49,invoice,"pstmt = c.prepareStatement(""insert into invoice (id, name, project_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,92,invoice,"pstmt = c.prepareStatement(""update invoice set name=?, project_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,162,invoice,"""from invoice i, planning p, project pr, invoice_status isn, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,188,invoice_history,"pstmt = c.prepareStatement(""delete from invoice_history where invoice_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,192,invoice,"pstmt = c.prepareStatement(""delete from invoice where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,211,invoice_item,"pstmt = c.prepareStatement(""insert into invoice_item (invoice_id, invoice_item_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,232,invoice_item,"pstmt = c.prepareStatement(""update invoice_item set type=?, price=?, amount=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,252,invoice_item,"pstmt = c.prepareStatement(""delete from invoice_item where invoice_id=? and invoice_item_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,270,invoice_item,"""from invoice_item where invoice_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceDAO.java,294,invoice,"""from invoice i, planning p, project pr, invoice_status isn, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceHistoryDAO.java,39,invoice_history,"pstmt = c.prepareStatement(""insert into invoice_history (invoice_id, creation_date, name, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceHistoryDAO.java,82,invoice_history,"""from invoice_history h, invoice_status ivs, tool_user u, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceStatusDAO.java,21,invoice_status,"""from invoice_status"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/InvoiceStatusDAO.java,58,invoice_status,"""from invoice_status where state_machine_order = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/LeaderDAO.java,29,leader,"pstmt = c.prepareStatement(""insert into leader (id, project_id) values (?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/LeaderDAO.java,49,leader,"pstmt = c.prepareStatement(""delete from leader where id=? and project_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/LeaderDAO.java,74,tool_user,"""from tool_user u, customer c, resource r, leader e "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/LeaderDAO.java,126,tool_user,"""from tool_user u, customer c, resource r, leader e "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/LeaderDAO.java,177,leader,"""from leader e, tool_user u, resource r, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,33,meta_field,"""from meta_field m, project p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,92,meta_field,"""from meta_field "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,119,meta_field,"""from meta_field m left outer join additional_field a on (a.meta_field_id = m.id and a.planning_id=?) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,119,additional_field,"""from meta_field m left outer join additional_field a on (a.meta_field_id = m.id and a.planning_id=?) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,153,meta_field,"""from meta_field where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,193,meta_field,"""from meta_field "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,222,meta_field,"pstmt = c.prepareStatement(""insert into meta_field (id, name, type, project_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,280,meta_field,"pstmt = c.prepareStatement(""update meta_field set name=?, type=?, project_id=?, category_id=?,"" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFieldDAO.java,338,meta_field,"pstmt = c.prepareStatement(""delete from meta_field where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFormDAO.java,26,meta_form,"""from meta_form"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFormDAO.java,50,meta_form,"""from meta_form where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFormDAO.java,70,meta_form,"pstmt = c.prepareStatement(""update meta_form set name=?, viewable_cols=?, grid_row_num=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFormDAO.java,98,meta_form,"pstmt = c.prepareStatement(""insert into meta_form (id, name, viewable_cols, grid_row_num, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/MetaFormDAO.java,124,meta_form,"pstmt = c.prepareStatement(""delete from meta_form where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,46,notification,"""from notification "" + whereHide +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,70,notification,"pstmt = c.prepareStatement(""update notification set name=?, description=?, notification_class=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,128,notification,"pstmt = c.prepareStatement(""insert into notification(id, name, description, notification_class, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,183,notification,"""from notification "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,209,notification_field,"pstmt = c.prepareStatement(""select notification_id, name, value from notification_field "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,241,notification_field,"pstmt = c.prepareStatement(""insert into notification_field (notification_id, name, value) values (?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,267,notification,"pstmt = c.prepareStatement(""delete from notification where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/NotificationDAO.java,282,notification_field,"pstmt = c.prepareStatement(""delete from notification_field where notification_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,107,occurrence_kpi,".prepareStatement(""delete from occurrence_kpi where report_id=? and occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,126,occurrence_kpi,".prepareStatement(""select report_id from occurrence_kpi where report_id=? and occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,143,occurrence_kpi,".prepareStatement(""insert into occurrence_kpi (report_id, occurrence_id, creation_date, weight) values (?, ?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,166,occurrence,"+ ""from occurrence o, planning p """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,207,occurrence,"+ ""from occurrence o, planning p, project pr, leader e """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,249,occurrence,"+ ""from occurrence o, planning p, project pr """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,282,occurrence_field,"""from occurrence_field where occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,295,occurrence_field_table,"""from occurrence_field_table where occurrence_id=? and occ_field=? order by line, col"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,324,occurrence,"+ ""from occurrence o, planning p, occurrence_field of """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,357,occurrence,".prepareStatement(""update occurrence set source=?, project_id=?, name=?, """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,393,occurrence,".prepareStatement(""insert into occurrence(id, name, source, project_id, """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,424,occurrence_history,"pstmt = c.prepareStatement(""delete from occurrence_history where occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,431,plan_relation,"pstmt = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,436,additional_field,"pstmt = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,440,occurrence,"pstmt = c.prepareStatement(""delete from occurrence where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,444,planning,"pstmt = c.prepareStatement(""delete from planning where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,483,occurrence_field,"pstmt = c.prepareStatement(""insert into occurrence_field (occurrence_id, field, value, date_value) values (?,?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,501,occurrence_field_table,"pstmt = c.prepareStatement(""insert into occurrence_field_table (occurrence_id, occ_field, field, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,530,occurrence_field,"pstmt = c.prepareStatement(""delete from occurrence_field where occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,534,occurrence_field_table,"pstmt = c.prepareStatement(""delete from occurrence_field_table where occurrence_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceDAO.java,568,occurrence,"+ ""from occurrence o, planning p """,SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceHistoryDAO.java,23,occurrence_history,"pstmt = c.prepareStatement(""insert into occurrence_history (occurrence_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/OccurrenceHistoryDAO.java,68,occurrence_history,"""oh.creation_date, oh.history, oh.user_id, u.name from occurrence_history oh, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,61,planning,"pstmt = c.prepareStatement(""insert into planning (id, description, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,103,planning,"pstmt = c.prepareStatement(""update planning set description=?, final_date=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,160,requeriment,"""(select id from requeriment where p.id = id) as is_req, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,161,task,"""(select id from task where p.id = id) as is_task, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,162,occurrence,"""(select id from occurrence where p.id = id) as is_occ, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,163,project,"""(select id from project where p.id = id) as is_prj, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,164,risk,"""(select id from risk where p.id = id) as is_risk, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,165,cost,"""(select id from cost where p.id = id) as is_cost, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,166,expense,"""(select id from expense where p.id = id) as is_exp, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,167,artifact,"""(select id from artifact where p.id = id) as is_art, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,168,invoice,"""(select id from invoice where p.id = id) as is_inv "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,169,planning,"""from planning as p where p.id=?"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,280,resource,"projectResource = "" and project_id in (select project_id from resource where id='"" + uto.getId() + ""')"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,281,resource,"projProjResource = "" and id in (select project_id from resource where id='"" + uto.getId() + ""')"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,284,task,"""(select '"" + PlanningTO.PLANNING_TASK + ""' from task where id=p.id "" + projectWhere + projectResource + "") as IS_TSK, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,285,requeriment,"""(select '"" + PlanningTO.PLANNING_REQUIREMENT + ""' from requeriment where id=p.id "" + projectWhere + projectResource + "") as IS_REQ, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,286,project,"""(select '"" + PlanningTO.PLANNING_PROJECT + ""' from project where id=p.id "" + projProjWhere + projProjResource + "") as IS_PRJ, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,287,occurrence,"""(select '"" + PlanningTO.PLANNING_OCCURENCE + ""' from occurrence where id=p.id "" + projectWhere + projectResource + "") as IS_OCC, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,288,risk,"""(select '"" + PlanningTO.PLANNING_RISK + ""' from risk where id=p.id "" + projectWhere + projectResource + "") as IS_RSK, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,290,planning,"""from planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,291,task,"""LEFT OUTER JOIN task t on p.id = t.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,292,risk,"""LEFT OUTER JOIN risk r on p.id = r.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,293,occurrence,"""LEFT OUTER JOIN occurrence o on p.id = o.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,294,project,"""LEFT OUTER JOIN project pr on p.id = pr.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningDAO.java,367,planning,"String sql = ""select id as maxid from planning "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningRelationDAO.java,43,planning,"""from planning p , plan_relation pr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningRelationDAO.java,63,planning,"""from planning p , plan_relation pr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningRelationDAO.java,164,plan_relation,"pstmt = c.prepareStatement(""insert into plan_relation (planning_id, plan_related_id, plan_type, plan_related_type, relation_type)"" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PlanningRelationDAO.java,188,plan_relation,"pstmt = c.prepareStatement(""delete from plan_relation where planning_id=? and plan_related_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PreferenceDAO.java,46,preference,"pstmt = c.prepareStatement(""select id, value from preference where user_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PreferenceDAO.java,87,preference,"pstmt = c.prepareStatement(""select * from preference where id=? and user_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PreferenceDAO.java,157,preference,"pstmt = c.prepareStatement(""insert into preference (id, value, user_id) values (?,?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/PreferenceDAO.java,179,preference,"pstmt = c.prepareStatement(""update preference set value=? where Id=? and user_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,133,project,"""from project p, planning a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,166,customer,"""(select distinct id from customer where id=c.id and project_id = c.project_id) as IS_CUSTOMER, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,167,resource,"""(select distinct id from resource  where id=c.id and project_id = c.project_id) as IS_RESOURCE, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,168,leader,"""(select distinct id from leader where id=c.id and project_id = c.project_id) as IS_LEADER "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,169,planning,"""from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,169,project,"""from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,170,resource,"""customer c LEFT OUTER JOIN resource r on r.id = c.id and r.project_id = c.project_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,233,planning,"""from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,233,project,"""from planning a, project_status ps, project p LEFT OUTER JOIN project pp on pp.id = p.parent_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,273,project,"""from project p, planning a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,311,project,"""from project p, planning a, project_status ps, leader e "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,353,project,"""from project p, planning a, project_status ps, resource r, customer cu "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,418,project,"""from project p, project_status ps, planning a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,523,project,"pstmt = c.prepareStatement(""insert into project (id, name, parent_id, project_status_id, can_alloc, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,601,project,"pstmt = c.prepareStatement(""update project set name=?, parent_id=?, project_status_id=?, can_alloc=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectDAO.java,760,project,"""from project p, project_status ps, planning a "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectHistoryDAO.java,29,project_history,"pstmt = c.prepareStatement(""INSERT INTO project_history (project_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectStatusDAO.java,28,project_status,"""from project_status"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectStatusDAO.java,71,project_status,"""from project_status "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ProjectStatusDAO.java,94,project_status,"""from project_status where state_machine_order=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,328,project_report,"""from project_report pr, report_result re, (select report_id, max(last_execution) as last_execution  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,329,report_result,"""from report_result where last_execution <= ? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,332,occurrence_kpi,"""from occurrence_kpi ok, occurrence o  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,366,occurrence_kpi,"""from occurrence_kpi ok, report r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,390,project_report,"pstmt = c.prepareStatement(""select report_id, project_id from project_report where report_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,420,report,"""from report "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,482,report,"""from report r, project p, project_report pr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,566,report,"""from report r where r.kpi_type = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,597,report,"""from report r, project_report pr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,636,report,"""from report where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,663,report,"pstmt = c.prepareStatement(""insert into report (id, name, type, report_perspective_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,728,project_report,"pstmt = c.prepareStatement(""insert into project_report (report_id, project_id) values (?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,749,report,"pstmt = c.prepareStatement(""update report set name=?, type=?, report_perspective_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,810,project_report,"pstmt = c.prepareStatement(""delete from project_report where report_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,815,project_report,"pstmt = c.prepareStatement(""insert into project_report (report_id, project_id) values (?,?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,848,report,"pstmt = c.prepareStatement(""update report set final_date=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,855,project_report,"pstmt = c.prepareStatement(""delete from project_report where report_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportDAO.java,859,report,"pstmt = c.prepareStatement(""delete from report where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportResultDAO.java,31,report_result,"pstmt = c.prepareStatement(""insert into report_result (report_Id, project_id, last_execution, value) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportResultDAO.java,52,report_result,"pstmt = c.prepareStatement(""select report_id from report_result where report_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ReportResultDAO.java,84,report_result,"""from report_result "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,204,repository_file_project,"""from repository_file_project rfp, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,205,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,228,repository_history,"pstmt = c.prepareStatement(""insert into repository_history (repository_file, repository_file_path, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,264,repository_file_plan,"pstmt = c.prepareStatement(""insert into repository_file_plan (repository_file_id, planning_id) values (?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,297,repository_file,"pstmt = c.prepareStatement(""select id from repository_file where repository_file_path=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,304,repository_file,"pstmt = c.prepareStatement(""insert into repository_file (id, repository_file_path) values (?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,327,repository_file_plan,"pstmt = c.prepareStatement(""delete from repository_file_plan where repository_file_id=? and planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,359,repository_file_project,"pstmt = c.prepareStatement(""update repository_file_project set is_disable=?, last_update=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,381,repository_file_project,"pstmt = c.prepareStatement(""update repository_file_project set is_downloadable=?, last_update=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,401,repository_file_project,"pstmt = c.prepareStatement(""select repository_file_id from repository_file_project where repository_file_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,406,repository_file_project,"pstmt = c.prepareStatement(""insert into repository_file_project (repository_file_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,434,repository_file_project,"""from repository_file_project rfp,  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,435,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,462,repository_file_project,"""from repository_file_project rfp,  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,463,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,491,planning,"""from planning p, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,492,repository_file_plan,"""repository_file_plan rfp left outer join (select count(*) as NUM_REF, repository_file_id from repository_file_plan group by repository_file_id) r2 on (r2.repository_file_id = rfp.repository_file_id), "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,493,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,534,repository_file_plan,"""from repository_file_plan rfp, planning p, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,535,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,560,repository_file_plan,"""from repository_file_plan rfp, planning p, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryDAO.java,561,artifact,"""repository_file rf left outer join artifact ar on (ar.repository_file_id = rf.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryPolicyDAO.java,23,repository_policy,"pstmt = c.prepareStatement(""delete from repository_policy where project_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryPolicyDAO.java,45,repository_policy,"pstmt = c.prepareStatement(""insert into repository_policy (project_id, type_policy, value) values (?, ?, ?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RepositoryPolicyDAO.java,65,repository_policy,"""from repository_policy "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,150,requeriment_history,"iterationWhere = ""and r.id in (select distinct requeriment_id from requeriment_history where iteration=?) "";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,164,planning,"""from planning p, requeriment_status rs, requeriment r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,165,task,"""LEFT OUTER JOIN task t on t.requeriment_id = r.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,166,resource_task,"""LEFT OUTER JOIN resource_task rt on t.id = rt.task_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,167,task_status,"""LEFT OUTER JOIN task_status ts on rt.task_status_id = ts.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,168,tool_user,"""LEFT OUTER JOIN tool_user tu on tu.id = rt.resource_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,249,requeriment,"""from requeriment r, tool_user u, planning p, requeriment_status rs, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,313,customer,"String userSql = ""r.user_id='"" + uto.getId() + ""' and r.project_id in (select project_id from customer where id = '"" + uto.getId() + ""' and (is_disable=0 or is_disable is null) ) "";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,326,requeriment,"""from requeriment r, requeriment_status rs, planning p, project pr, category c, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,396,requeriment,"""from requeriment r, requeriment_status rs, planning p, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,461,requeriment,"""  from requeriment r, planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,505,requeriment,"""from requeriment r, requeriment_status rs, planning p, tool_user u, category c, project pr "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,535,custom_node_template,"sql+="" AND r.id in (select t.requeriment_id from custom_node_template c, task t "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,620,requeriment,"""from requeriment r, requeriment_status rs, planning p, planning pp, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,680,requeriment,"""from requeriment r, requeriment_status rs, planning p, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,748,requeriment,"""from requeriment r, tool_user u, planning p, requeriment_status rs, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,805,requeriment,"pstmt = c.prepareStatement(""INSERT INTO requeriment (id, suggested_date, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,852,planning,"pstmt = c.prepareStatement(""update planning set iteration=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,885,requeriment,"pstmt = c.prepareStatement(""update requeriment set suggested_date=?, project_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,979,requeriment_history,"pstmt1 = c.prepareStatement(""delete from requeriment_history where requeriment_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,983,plan_relation,"pstmt2 = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,988,additional_field,"pstmt3 = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,992,requeriment,"pstmt4 = c.prepareStatement(""delete from requeriment where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,996,planning,"pstmt5 = c.prepareStatement(""delete from planning where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementDAO.java,1090,requeriment,"pstmt = c.prepareStatement(""update requeriment set requeriment_status_id=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementHistoryDAO.java,30,requeriment_history,"pstmt = c.prepareStatement(""insert into requeriment_history (requeriment_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementHistoryDAO.java,87,requeriment_history,"String sql = ""select distinct rh.iteration from requeriment_history rh "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementHistoryDAO.java,115,requeriment_history,"""from requeriment_history rh, requeriment_status rs, tool_user u "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementStatusDAO.java,27,requeriment_status,"""from requeriment_status"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementStatusDAO.java,66,requeriment_status,"""from requeriment_status where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RequirementStatusDAO.java,92,requeriment_status,"""from requeriment_status where state_machine_order=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,103,resource_capacity,"""cap_day, capacity, cost_per_hour from resource_capacity "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,153,resource_capacity,"""from resource_capacity rc, project p, tool_user tu "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,211,resource_capacity,"""cap_day, capacity, cost_per_hour from resource_capacity "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,235,resource_capacity,"pstmt = c.prepareStatement(""insert into resource_capacity (resource_id, project_id, cap_year, cap_month, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,263,resource_capacity,"pstmt = c.prepareStatement(""update resource_capacity set capacity=?, cost_per_hour=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,293,resource_capacity,"pstmt = c.prepareStatement(""delete from resource_capacity where resource_id=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceCapacityDAO.java,316,resource_capacity,"pstmt = c.prepareStatement(""delete from resource_capacity where resource_id=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,32,resource,"pstmt = c.prepareStatement(""insert into resource (id, project_id, can_see_customer, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,74,resource,"pstmt = c.prepareStatement(""delete from resource where id=? and project_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,123,resource,"pstmt = c.prepareStatement(""update resource set can_see_customer=?, can_self_alloc=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,219,resource,"""from resource r, tool_user u, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,269,resource,"""from resource r, tool_user u, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,319,tool_user,"""from tool_user u, customer c, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceDAO.java,350,tool_user,"""from tool_user u, customer c, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,57,resource_task_alloc,"""from resource_task_alloc "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,90,resource_task,"""from resource_task rt, resource_task_alloc rta, planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,126,resource_task_alloc,"""from resource_task_alloc "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,180,resource_task_alloc,"String sql = ""insert into resource_task_alloc (task_id, resource_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,225,resource_task_alloc,"String sql = ""delete from resource_task_alloc "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocDAO.java,307,resource_task_alloc,"""            resource_task rt inner join resource_task_alloc rta "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocPlannedDAO.java,27,resource_task_alloc_plann,"String sql = ""insert into resource_task_alloc_plann (task_id, resource_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocPlannedDAO.java,53,resource_task_alloc_plann,"""from resource_task_alloc_plann "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocPlannedDAO.java,83,resource_task_alloc_plann,"String sql = ""insert into resource_task_alloc_plann (task_id, resource_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskAllocPlannedDAO.java,113,resource_task_alloc_plann,"String sql = ""delete from resource_task_alloc_plann "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,116,resource_task,"""from resource_task rt, tool_user u, task_status ts, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,177,requeriment,"""from requeriment rq, resource_task rt, tool_user u, task_status ts, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,178,custom_node_template,"""task t LEFT OUTER JOIN (select instance_id, related_task_id from custom_node_template) as cnt on cnt.related_task_id = t.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,313,resource_task,"pstmt = c.prepareStatement(""update resource_task set billable=? where "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,434,leader,"sql.append(""FROM leader l   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,435,project,"sql.append(""INNER JOIN project p   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,437,task,"sql.append(""INNER JOIN task t   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,439,category,"sql.append(""INNER JOIN category c   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,441,resource_task,"sql.append(""INNER JOIN resource_task rt   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,443,task_status,"sql.append(""INNER JOIN task_status ts   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,445,tool_user,"sql.append(""INNER JOIN tool_user tu   "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,593,resource_task,"""from resource_task rt, tool_user u, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,594,planning,"""task t LEFT OUTER JOIN (select id, iteration, description as REQ_DESC from planning) as req on req.id = t.requeriment_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,595,custom_node_template,"""planning p LEFT OUTER JOIN (select instance_id, related_task_id from custom_node_template) as tpl on p.id = tpl.related_task_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,597,preference,"""task_status ts LEFT OUTER JOIN (select substr(id,21) as task_status_id, value from preference where user_id=	? and id like 'home.taskList.order.%' order by value) as po on ts.id = po.task_status_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,626,resource_task,"""from resource_task rt, task t, planning p, category c, task_status ts "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,691,resource_task,"""from resource_task rt LEFT OUTER JOIN task_history th "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,691,task_history,"""from resource_task rt LEFT OUTER JOIN task_history th "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,694,custom_node_template,"""(select instance_id, related_task_id  from custom_node_template) as cnt on cnt.related_task_id = t.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,695,planning,"""LEFT OUTER JOIN (select id, iteration, description as REQ_DESC from planning ) as rp on rp.id = t.requeriment_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,798,resource_task,"""from resource_task rt, task_status ts, tool_user u, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,876,resource_task,"pstmt = c.prepareStatement(""insert into resource_task (task_id, resource_id, project_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,991,resource_task,"pstmt = c.prepareStatement(""delete from resource_task where "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,1039,resource_task,"pstmt = c.prepareStatement(""update resource_task set task_status_id=?, start_date=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,1325,resource_task,"pstmt = c.prepareStatement(""update resource_task set task_status_id=?, actual_date=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,1469,resource_task,"pstmt = c.prepareStatement(""update resource_task set resource_id=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,1524,resource_task,"""from resource_task rt, tool_user u, task_status ts, resource r, task t, planning pt, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/ResourceTaskDAO.java,1741,resource_task,"pstmt = c.prepareStatement(""update resource_task set approver_id=?, approved=? where task_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,73,risk,"""from risk r, planning p, risk_status rs "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,110,risk,"""from risk r, planning p, category c, risk_status rs, project pr, leader e "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,155,risk,"""from risk r, planning p, risk_status rs, project pr, category c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,192,risk,"pstmt = c.prepareStatement(""update risk set project_id=?, category_id=?, name=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,245,risk,"pstmt = c.prepareStatement(""insert into risk (id, project_id, category_id, name, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,347,risk_history,"pstmt = c.prepareStatement(""delete from risk_history where risk_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,351,risk,"pstmt = c.prepareStatement(""delete from risk where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,355,plan_relation,"pstmt = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,360,additional_field,"pstmt = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskDAO.java,364,planning,"pstmt = c.prepareStatement(""delete from planning where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskHistoryDAO.java,24,risk_history,"pstmt = c.prepareStatement(""insert into risk_history (risk_id, risk_status_id, creation_date, user_id, history, probability, impact, tendency, impact_cost, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskHistoryDAO.java,88,risk_history,"""from risk_history rh, tool_user u, risk_status rs "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskHistoryDAO.java,114,risk_history,"String sql = ""select history, max(creation_date) from risk_history "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskStatusDAO.java,20,risk_status,"pstmt = c.prepareStatement(""select id, name, description, status_type from risk_status"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RiskStatusDAO.java,42,risk_status,"""status_type from risk_status where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/RootDAO.java,36,root,"""from root ro, leader e, tool_user u, resource r, customer c "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,95,question_answer,"pstmt = c.prepareStatement(""delete from question_answer "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,139,survey,"""from survey s, project p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,141,customer,"""and s.project_id in (select distinct project_id from customer where id = ?) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,177,survey,"""from survey where project_id=?"" + closedWhere);",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,220,survey,"""from survey where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,245,survey_question,"""from survey_question where survey_id=? order by position, sub_title"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,278,question_answer,"""from question_answer q LEFT OUTER JOIN tool_user t on (q.user_id = t.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,278,tool_user,"""from question_answer q LEFT OUTER JOIN tool_user t on (q.user_id = t.id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,310,survey,"""from survey where anonymous_key=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,334,question_alternative,"""from question_alternative where question_id=? and survey_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,361,question_alternative,"pstmt = c.prepareStatement(""insert into question_alternative (survey_id, question_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,382,question_answer,"pstmt = c.prepareStatement(""insert into question_answer (survey_id, question_id, answer_date, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,408,question_answer,"pstmt = c.prepareStatement(""select count(*) as answers from question_answer "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,434,survey,"pstmt = c.prepareStatement(""insert into survey (id, name, description, is_template, is_anonymous, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,479,survey,"pstmt = c.prepareStatement(""update survey set name=?, description=?, is_template=?, is_anonymous=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,541,question_alternative,"pstmt = c.prepareStatement(""delete from question_alternative where survey_id=? and question_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,546,survey_question,"pstmt = c.prepareStatement(""delete from survey_question where survey_id=? and id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,561,survey_question,"pstmt = c.prepareStatement(""update survey_question set content=?, position=?, sub_title=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,573,question_alternative,"pstmt = c.prepareStatement(""delete from question_alternative where survey_id=? and question_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,596,survey_question,"pstmt = c.prepareStatement(""insert into survey_question (survey_id, id, type, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,623,question_alternative,"pstmt = c.prepareStatement(""delete from question_alternative where survey_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,627,survey_question,"pstmt = c.prepareStatement(""delete from survey_question where survey_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/SurveyDAO.java,631,survey,"pstmt = c.prepareStatement(""delete from survey where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,255,task,"pstmt = c.prepareStatement(""update planning set iteration=? where id in (select id from task where requeriment_id=?) and iteration is null"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,255,planning,"pstmt = c.prepareStatement(""update planning set iteration=? where id in (select id from task where requeriment_id=?) and iteration is null"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,288,category,"""from category c, planning p, project pr, task t left outer join ( "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,292,resource_task,"""from resource_task rt, resource_task_alloc rta "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,366,planning,"""from planning p, category c, task t LEFT OUTER JOIN "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,367,custom_node_template,"""(select instance_id, related_task_id  from custom_node_template) as cnt on cnt.related_task_id = t.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,408,task,"""from task t, planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,453,planning,"""from planning p, category c, task t LEFT OUTER JOIN "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,454,custom_node_template,"""(select instance_id, related_task_id from custom_node_template) as cnt on cnt.related_task_id = t.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,543,task,"""from task t, planning p "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,619,task,"pstmt = c.prepareStatement(""insert into task (id, name, project_id, requeriment_id, category_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,695,task,"pstmt = c.prepareStatement(""update task set name=?, project_id=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,755,task,"pstmt = c.prepareStatement(""update task set name=?, category_id=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,775,task,"pstmt = c.prepareStatement(""update task set task_id=?, requeriment_id=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,792,planning,"pstmt = c.prepareStatement(""update planning set iteration=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,813,task_history,"pstmt = c.prepareStatement(""delete from task_history where task_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,817,resource_task_alloc,"pstmt = c.prepareStatement(""delete from resource_task_alloc where task_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,821,resource_task_alloc_plann,"pstmt = c.prepareStatement(""delete from resource_task_alloc_plann where task_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,825,plan_relation,"pstmt = c.prepareStatement(""delete from plan_relation where plan_related_id=? or planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,830,repository_file_plan,"pstmt = c.prepareStatement(""delete from repository_file_plan where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,834,additional_field,"pstmt = c.prepareStatement(""delete from additional_field where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,838,resource_task,"pstmt = c.prepareStatement(""delete from resource_task where task_id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,842,task,"pstmt = c.prepareStatement(""delete from task where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,846,planning,"pstmt = c.prepareStatement(""delete from planning where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,967,task,"pstmt = c.prepareStatement(""select t.id from task t, custom_node_template cn "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskDAO.java,975,task,"pstmt = c.prepareStatement(""update task set requeriment_id=? where id=? "");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,128,tool_user,"""from tool_user u, task_status ts, task t, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,129,occurrence,"""task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,177,tool_user,"""from tool_user u, task t, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,178,occurrence,"""task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,218,tool_user,"""from tool_user u, task_status ts, task t, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,219,occurrence,"""task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,268,tool_user,"""from tool_user u, task_status ts, task t, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,269,occurrence,"""task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,313,task_history,"""from task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,313,occurrence,"""from task_history th LEFT OUTER JOIN occurrence o on (o.id = th.iteration) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,336,task_history,"pstmt = c.prepareStatement(""delete from task_history where task_id = ? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,355,task_history,"pstmt = c.prepareStatement(""delete from task_history where task_id = ? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskHistoryDAO.java,379,task_history,"pstmt = c.prepareStatement(""insert into task_history (task_id, resource_id, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,60,node_template,"pstmt1 = c.prepareStatement(""select count(*) from node_template where planning_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,67,custom_node_template,"pstmt2 = c.prepareStatement(""select count(*) from custom_node_template where instance_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,300,custom_node_template,"""is_parent_task, decision_answer from custom_node_template "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,346,custom_node_template,"""from custom_node_template where template_id=? and planning_id=? "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,350,custom_node_template,"""from custom_node_template) as sub "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,375,node_template,"""planning_id, next_node_id from node_template where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,396,node_template,"""planning_id, next_node_id from node_template where planning_id = ? order by id"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,513,custom_node_template,"""from custom_node_template c, node_template n, decision_node_template d, node_template dn "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,516,custom_node_template,""") as sub LEFT OUTER JOIN custom_node_template dc on (dc.node_template_id = sub.id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,563,custom_node_template,"""from custom_node_template c, node_template n "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,593,custom_node_template,"pstmt = c.prepareStatement(""select node_template_id from custom_node_template "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,606,custom_node_template,"pstmt1 = c.prepareStatement(""update custom_node_template "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,632,custom_node_template,"pstmt2 = c.prepareStatement(""insert into custom_node_template ("" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,698,node_template,"""planning_id, next_node_id from node_template where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,721,custom_node_template,"pstmt = c.prepareStatement(""update custom_node_template set planning_id=? where instance_id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,797,step_node_template,"""from step_node_template where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskNodeTemplateDAO.java,809,decision_node_template,"""from decision_node_template where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskStatusDAO.java,64,task_status,"""from task_status ts, resource_task rt "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskStatusDAO.java,99,task_status,"""from task_status where state_machine_order=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskStatusDAO.java,133,task_status,"""from task_status"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskStatusDAO.java,166,task_status,"""from task_status "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,27,planning,"""from planning p, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,27,category,"""from planning p, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,79,planning,"""from planning p, node_template nt, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,79,category,"""from planning p, node_template nt, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,107,planning,"""from planning p, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,107,category,"""from planning p, template t LEFT OUTER JOIN category c on c.id = t.category_id "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/TaskTemplateDAO.java,109,custom_node_template,"""and t.id in (select distinct template_id from custom_node_template where instance_id=?)"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,65,tool_user,"""from tool_user "" + hideWhere + ""order by username asc"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,96,tool_user,"""from tool_user where id = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,126,tool_user,"pstmt = c.prepareStatement(""insert into tool_user (id, username, color, email, name, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,199,tool_user,"pstmt = c.prepareStatement(""update tool_user set username=?, color=?, email=?, "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,314,tool_user,"pstmt = c.prepareStatement(""update tool_user set password=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,329,tool_user,"pstmt = c.prepareStatement(""update tool_user set pic_file=? where id=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,368,tool_user,"pstmt = c.prepareStatement(""DELETE from tool_user WHERE ID=?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,410,tool_user,"""from tool_user where username = ?"");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,466,tool_user,"""from tool_user u left outer join company c on (c.id = u.company_id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,466,company,"""from tool_user u left outer join company c on (c.id = u.company_id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,522,leader,"whereClause = ""and id in (select distinct id from "" + roleTable + "" where project_id in (select project_id from leader where id = ?))"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/dao/UserDAO.java,527,tool_user,"""from tool_user "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/exception/InvalidProjectUserReplaceException.java,23,project,"super(""A user cannot be removed from project, because it related with requirements or tasks into project."");",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/imp/CostCsvExportBUS.java,129,project,"""from project p, category cat,  "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/imp/CostCsvExportBUS.java,130,expense,"""cost c left outer join expense e on (e.id = c.expense_id) "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/pandora/imp/CostCsvExportBUS.java,131,tool_user,"""left outer join tool_user u on (u.id = e.user_id), cost_installment i, cost_status cs "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/alert/ReplicateTableNotificationTest.java,59,company,"""insert into company (id, name, full_name, company_number, address, city, state_province, country) values (?,?,?,?,?,?,?,?)"",",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/alert/ReplicateTableNotificationTest.java,60,company,""""", ""delete from company where id='1'"",",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/alert/ReplicateTableNotificationTest.java,65,company,"values[7] = ""update company set id=?, name=?, full_name=?, company_number=?, address=?, city=?, state_province=?, country=? where id=?"";",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,31,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,45,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,61,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,68,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,75,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,85,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,97,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,107,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,120,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/bus/ReportBUSTest.java,128,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,16,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,22,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,28,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,35,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,43,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,47,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,53,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,57,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,63,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,67,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,72,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
+java/com/tests/ReportTOTest.java,76,resource_task,"""from resource_task rt, resource r "" +",SQL_LITERAL_REFERENCE_CANDIDATE
