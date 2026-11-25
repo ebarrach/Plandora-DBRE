@@ -57,5 +57,5 @@ Manual J2.2 accesses by kind
   sql stored in report table: 6
 
 Manual J2.2 accesses, SQL known
-  yes: 50
-  no: 11
+  yes: 47
+  no: 14

@@ -1,6 +1,6 @@
 id,file_path,line,kind,sql_known
-M01,java/com/pandora/bus/alert/FileToTableNotification.java,148,executor call,yes
-M02,java/com/pandora/bus/alert/FileToTableNotification.java,97,executor call,yes
+M01,java/com/pandora/bus/alert/FileToTableNotification.java,148,executor call,no
+M02,java/com/pandora/bus/alert/FileToTableNotification.java,97,executor call,no
 M03,java/com/pandora/bus/alert/NotificationBUS.java,78,executor call,no
 M04,java/com/pandora/bus/repository/WrapperDBRepository.java,243,executor call,yes
 M05,java/com/pandora/bus/repository/WrapperDBRepository.java,325,executor call,yes
@@ -16,7 +16,7 @@ M14,java/com/pandora/bus/repository/WrapperDBRepository.java,361,executor call,y
 M15,java/com/pandora/bus/repository/WrapperDBRepository.java,486,executor call,yes
 M16,java/com/pandora/bus/alert/NotificationBUS.java,70,executor call,no
 M17,java/com/pandora/bus/alert/ReplicateTableNotification.java,56,executor call,no
-M18,java/com/pandora/bus/alert/ReplicateTableNotification.java,164,executor call,yes
+M18,java/com/pandora/bus/alert/ReplicateTableNotification.java,164,executor call,no
 M19,java/com/pandora/bus/gadget/PredictableTaskHighchartGadget.java,141,executor call,yes
 M20,java/com/pandora/bus/gadget/ResourceProjectAllocHighchartGadget.java,149,executor call,yes
 M21,java/com/pandora/bus/gadget/OccurrenceHighchartGadget.java,165,executor call,yes

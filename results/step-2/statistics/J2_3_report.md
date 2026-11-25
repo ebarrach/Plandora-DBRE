@@ -1,6 +1,6 @@
 # J2.3 Statistics, logical subschema and coverage gaps
 
-This part keeps what touches our 24 tables, using three inputs: the SQLInspect inventory of J2.1, the manual list of J2.2 and the schema of step 1 (175 columns). The numbers come from [j2_3_analysis.py](../../../code/scripts/j2_3_analysis.py), run from the repository root. It writes [J2_3_scope_statistics.txt](J2_3_scope_statistics.txt) and [LSS_columns.csv](../logical-subschema/LSS_columns.csv).
+This part keeps what touches our 24 tables, using three inputs: the SQLInspect inventory of J2.1, the manual list of J2.2 and the schema of step 1 (175 columns). The numbers come from [j2_3_analysis.py](../../../code/tools/extraction/j2_3_analysis.py), run from the repository root. It writes [J2_3_scope_statistics.txt](J2_3_scope_statistics.txt) and [LSS_columns.csv](../logical-subschema/LSS_columns.csv).
 
 ## Statistics on our 24 tables
 
@@ -12,7 +12,7 @@ This part keeps what touches our 24 tables, using three inputs: the SQLInspect i
 - All of them are in the DAO layer (com.pandora.dao).
 - Most used tables: planning (309), tool_user (281), project (272), task and category (243 each). Least used: department and project_history (1 each), function (3).
 
-On top of that, the manual J2.2 found 61 accesses that SQLInspect does not report: 43 calls to Plandora's own sql executor, 12 Jasper subreports and 6 sql queries stored in the report table. For 11 of them the sql is only known at runtime.
+On top of that, the manual J2.2 found 61 accesses that SQLInspect does not report: 43 calls to Plandora's own sql executor, 12 Jasper subreports and 6 sql queries stored in the report table. For 14 of them the sql, or the table name, is only known at runtime.
 
 ## Logical subschema (LSS)
 
@@ -50,6 +50,6 @@ What SQLInspect does not see (details in the J2.2 manual report):
 
 ## Limitations
 
-- 11 accesses run sql that is only known at runtime, they could touch any column.
+- 14 accesses run sql, or use a table, that is only known at runtime, they could touch any column.
 - Only the mysql.sql seed rows of the report table are counted, HSQL.sql has 3 more.
 - The LSS relies on the columns named in the queries.

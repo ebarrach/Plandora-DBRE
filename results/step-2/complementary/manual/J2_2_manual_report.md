@@ -37,7 +37,7 @@ I opened each place in IntelliJ, and decided what it is.
 | ConnectorTest.java: 35, 39, 43, 48, 55, 59, 63, 67 | connector.execute() sends data over HTTP, not to the db, lines 39-67 are commented anyway                   | no                   |
 | DbQueryDelegate.java:50 | comment                                                                                                     | no                   |
 | DbQueryBUS.java: 56, 67, DbQueryDAO.java: 94, 110, DbQueryDelegate.java: 53, 57 | only passes the sql string to the next method, the real call is DbQueryDAO.java:264 (already in SQLInspect) | no, middle step      |
-| FileToTableNotification.java: 97, 148 | delete and insert are built here, the table name comes from the notification config                         | yes                  |
+| FileToTableNotification.java: 97, 148 | delete and insert are built here, the table name comes from the notification config                         | yes, but table unknown                |
 | WrapperDBRepository.java: 243, 325, 454, 498, 500 | SQL is written right here (delete, insert, update on the db_repository tables)                              | yes                  |
 | NotificationBUS.java:78 | SQL comes from the notification table in the DB                                                             | yes, but sql unknown |
 | DbAction.java:75 | the admin types the sql on a web page                                                                       | yes, but sql unknown |
@@ -54,7 +54,7 @@ The executor has 3 methods that take sql: executeQuery, performQuery and getMeta
 grep -rnE "\.(performQuery|getMetaData)\(" --include='*.java' code/plandora/reference/r348 | grep -vE "DbQuery(DAO|BUS|Delegate)\.java" | cut -d: -f1,2 > results/step-2/complementary/manual/04_executor_calls.txt
 ```
 
-Result: 34 places in 04_executor_calls.txt. In 25 of them the SQL is written right in the method (mostly the dashboard gadgets and WrapperDBRepository). In 9: sql comes from data or from the admin: the notification, notification_field, report and meta_field tables, artifact templates and the admin sql page. Marks for each place are in 04_check_temp.txt.
+Result: 34 places in 04_executor_calls.txt. In 24 of them the SQL is written right in the method (mostly the dashboard gadgets and WrapperDBRepository). In 10: sql comes from data or from the admin: the notification, notification_field, report and meta_field tables, artifact templates and the admin sql page. In ReplicateTableNotification.java:164 sql is built in the method, but the table name comes from the notification config. Marks for each place are in 04_check_temp.txt.
 
 ### Step 5: Find SQL outside the Java code
 
@@ -100,4 +100,4 @@ M=results/step-2/complementary/manual
 } > $M/J2_2_manual_detected_accesses.csv
 ```
 
-Result: 61 accesses in J2_2_manual_detected_accesses.csv: 43 executor calls (32 with the sql in the code, 11 where the sql comes from data or from admin), 12 jasper subreports and 6 sql queries stored in the report table.
+Result: 61 accesses in J2_2_manual_detected_accesses.csv: 43 executor calls (29 with sql in the code, 14 where the sql or table name comes from data, from notification config or from admin), 12 jasper subreports and 6 sql queries stored in the report table.
